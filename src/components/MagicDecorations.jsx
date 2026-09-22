@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 
 const butterflies = [
-  { left: "6%", delay: 0, duration: 15, size: 25 },
-  { left: "18%", delay: 4, duration: 18, size: 18 },
-  { left: "38%", delay: 7, duration: 16, size: 23 },
-  { left: "58%", delay: 2, duration: 20, size: 20 },
-  { left: "78%", delay: 8, duration: 17, size: 26 },
-  { left: "91%", delay: 5, duration: 19, size: 17 },
+  { left: "100%", delay: 0, duration: 15, size: 25 },
+  { left: "100%", delay: 4, duration: 18, size: 18 },
+  { left: "100%", delay: 7, duration: 16, size: 23 },
+  { left: "100%", delay: 2, duration: 20, size: 20 },
+  { left: "100%", delay: 8, duration: 17, size: 26 },
+  { left: "100%", delay: 5, duration: 19, size: 17 },
 ];
 
 const sparkles = Array.from({ length: 18 });
