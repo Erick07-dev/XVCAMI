@@ -4841,3 +4841,314 @@ body {
     }
 
 }
+
+/* ========================================
+   ITINERARIO
+======================================== */
+
+.itinerary-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 20px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(205, 174, 222, 0.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(201, 154, 61, 0.08),
+      transparent 30%
+    ),
+    #fffafc;
+}
+
+/* HEADER */
+
+.itinerary-header {
+  max-width: 700px;
+  margin: 0 auto 75px;
+  text-align: center;
+}
+
+.itinerary-small {
+  margin-bottom: 12px;
+  color: #b88a3b;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.itinerary-header h2 {
+  margin: 0;
+  color: #713452;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(45px, 6vw, 72px);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.itinerary-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 18px auto 25px;
+  color: #c99a3d;
+}
+
+.itinerary-divider div {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #c99a3d,
+    transparent
+  );
+}
+
+.itinerary-divider span {
+  font-size: 10px;
+}
+
+.itinerary-intro {
+  color: #795d6b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* TIMELINE */
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* línea central */
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(201, 154, 61, 0.7) 8%,
+    rgba(201, 154, 61, 0.7) 92%,
+    transparent
+  );
+}
+
+/* cada evento */
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  width: 50%;
+  min-height: 190px;
+  padding: 25px 65px;
+}
+
+/* izquierda */
+
+.timeline-left {
+  justify-content: flex-end;
+  margin-right: auto;
+  text-align: right;
+}
+
+/* derecha */
+
+.timeline-right {
+  justify-content: flex-start;
+  margin-left: auto;
+  text-align: left;
+}
+
+/* círculo */
+
+.timeline-dot {
+  position: absolute;
+  top: 25px;
+  z-index: 2;
+
+  display: flex;
+  width: 54px;
+  height: 54px;
+  align-items: center;
+  justify-content: center;
+
+  color: #a46c24;
+  border: 1px solid rgba(201, 154, 61, 0.65);
+  border-radius: 50%;
+
+  background: #fffafc;
+
+  box-shadow:
+    0 0 0 7px #fffafc,
+    0 8px 25px rgba(112, 52, 82, 0.12);
+}
+
+.timeline-left .timeline-dot {
+  right: -27px;
+}
+
+.timeline-right .timeline-dot {
+  left: -27px;
+}
+
+/* información */
+
+.timeline-content {
+  max-width: 290px;
+}
+
+.timeline-time {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #b48234;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.timeline-content h3 {
+  margin: 0 0 10px;
+
+  color: #713452;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.timeline-content p {
+  margin: 0;
+
+  color: #856c78;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* final */
+
+.itinerary-ending {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  margin-top: 55px;
+
+  color: #b48234;
+}
+
+.itinerary-ending p {
+  margin: 0;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.itinerary-ending span {
+  font-size: 10px;
+}
+
+/* ========================================
+   CELULAR
+======================================== */
+
+@media (max-width: 700px) {
+
+  .itinerary-section {
+    padding: 75px 18px;
+  }
+
+  .itinerary-header {
+    margin-bottom: 55px;
+  }
+
+  .itinerary-header h2 {
+    font-size: 48px;
+  }
+
+  .itinerary-intro {
+    padding: 0 10px;
+    font-size: 14px;
+  }
+
+  .timeline {
+    max-width: 430px;
+  }
+
+  /* línea a la izquierda */
+
+  .timeline-line {
+    left: 28px;
+    transform: none;
+  }
+
+  .timeline-item,
+  .timeline-left,
+  .timeline-right {
+    width: 100%;
+    min-height: 175px;
+
+    margin: 0;
+
+    padding:
+      12px
+      5px
+      35px
+      90px;
+
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .timeline-left .timeline-dot,
+  .timeline-right .timeline-dot {
+    top: 5px;
+    left: 2px;
+    right: auto;
+  }
+
+  .timeline-dot {
+    width: 52px;
+    height: 52px;
+  }
+
+  .timeline-content {
+    max-width: 100%;
+  }
+
+  .timeline-time {
+    font-size: 10px;
+  }
+
+  .timeline-content h3 {
+    font-size: 24px;
+  }
+
+  .timeline-content p {
+    max-width: 280px;
+    font-size: 13px;
+  }
+
+  .itinerary-ending {
+    margin-top: 25px;
+  }
+
+  .itinerary-ending p {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+}

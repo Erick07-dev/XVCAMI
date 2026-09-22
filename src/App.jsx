@@ -5,6 +5,7 @@ import MusicPlayer from "./components/MusicPlayer";
 import Hero from "./components/Hero";
 import Countdown from "./components/Countdown";
 import Family from "./components/Family";
+import Litinerary from "./components/Litinerary";
 import DressCode from "./components/DressCode";
 import Gallery from "./components/Gallery";
 import Gifts from "./components/Gifts";
@@ -13,6 +14,7 @@ import "./App.css";
 import EventDetails from "./components/EventDetails";
 import { Gift } from "lucide-react";
 import Closing from "./components/Closing";
+
 
 
 
@@ -61,6 +63,8 @@ function App() {
                     <Family />
 
                     <EventDetails />
+
+                    <Litinerary />
 
                     <DressCode />
 
