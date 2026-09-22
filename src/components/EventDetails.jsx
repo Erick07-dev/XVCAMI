@@ -87,11 +87,11 @@ export default function EventDetails() {
                         </p>
 
                         <h3>
-                            Parroquia de Nuestra Señora
+                            Santuario del Señor de Las Maravillas
                         </h3>
 
                         <p className="event-time">
-                            6:00 P.M.
+                            2:00 P.M.
                         </p>
 
                         <div className="event-location">
@@ -99,8 +99,8 @@ export default function EventDetails() {
                             <MapPin size={18} />
 
                             <p>
-                                Av. Principal 123,
-                                Monterrey, Nuevo León
+                                Av. 16 de Enero s/n,
+                                El Arenal, Hidalgo
                             </p>
 
                         </div>
@@ -109,7 +109,7 @@ export default function EventDetails() {
                             className="map-button"
                             onClick={() =>
                                 openMap(
-                                    "https://www.google.com/maps/search/?api=1&query=Monterrey+Nuevo+Leon"
+                                    "https://maps.app.goo.gl/VwvdKBH4m5rBtzYw6"
                                 )
                             }
                         >
@@ -150,11 +150,11 @@ export default function EventDetails() {
                         </p>
 
                         <h3>
-                            Salón Jardín Real
+                            Casa. Fam. Gonzalez Pineda
                         </h3>
 
                         <p className="event-time">
-                            8:00 P.M.
+                            4:00 P.M.
                         </p>
 
                         <div className="event-location">
@@ -162,8 +162,8 @@ export default function EventDetails() {
                             <MapPin size={18} />
 
                             <p>
-                                Calle de las Flores 456,
-                                Monterrey, Nuevo León
+                                Av. Mina,
+                                El Arenal, Hidalgo
                             </p>
 
                         </div>
@@ -172,7 +172,7 @@ export default function EventDetails() {
                             className="map-button"
                             onClick={() =>
                                 openMap(
-                                    "https://www.google.com/maps/search/?api=1&query=Monterrey+Nuevo+Leon"
+                                     "https://maps.app.goo.gl/mPT8jEa33TLFz2Dy7"
                                 )
                             }
                         >
