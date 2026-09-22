@@ -53,7 +53,7 @@ export default function Hero() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1 }}
             >
-                19 · NOVIEMBRE · 2026
+                16 · NOVIEMBRE · 2026
             </motion.p>
 
             <motion.p

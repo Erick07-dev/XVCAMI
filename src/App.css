@@ -5159,16 +5159,21 @@ body {
 }
 
 /* =====================================================
-   MUNDO MÁGICO - XV CAMILA
+   DECORACIONES MÁGICAS - XV CAMILA
 ===================================================== */
 
-.magic-world {
-  position: absolute;
+.invitation {
+    position: relative;
+    overflow: hidden;
+}
 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+
+/* CAPA COMPLETA */
+
+.magic-world {
+    position: absolute;
+
+    inset: 0;
 
     width: 100%;
     height: 100%;
@@ -5177,317 +5182,654 @@ body {
 
     pointer-events: none;
 
-    z-index: 50;
+    z-index: 30;
 }
 
-/* =====================================
+
+/* =====================================================
    MARIPOSAS
-===================================== */
-
-.butterfly-layer {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
+===================================================== */
 
 .magic-butterfly {
-  position: absolute;
-  top: 0;
+    position: absolute;
 
-  filter:
-    drop-shadow(0 3px 5px rgba(116, 62, 130, .20))
-    drop-shadow(0 0 10px rgba(211, 171, 235, .25));
+    z-index: 10;
 
-  opacity: .8;
-  will-change: transform;
+    line-height: 1;
+
+    opacity: .75;
+
+    will-change: transform;
 }
 
-.magic-butterfly:nth-child(even) {
-  filter:
-    sepia(.4)
-    saturate(.8)
-    drop-shadow(0 0 8px rgba(201,154,61,.35));
+
+/* LILA */
+
+.magic-butterfly.lilac {
+    filter:
+        hue-rotate(30deg)
+        saturate(1.5)
+        drop-shadow(
+            0 0 7px
+            rgba(177, 102, 220, .75)
+        )
+        drop-shadow(
+            0 0 15px
+            rgba(202, 150, 235, .40)
+        );
 }
 
-/* =====================================
+
+/* DORADAS */
+
+.magic-butterfly.gold {
+    filter:
+        sepia(1)
+        saturate(2)
+        hue-rotate(350deg)
+        drop-shadow(
+            0 0 7px
+            rgba(229, 180, 75, .75)
+        )
+        drop-shadow(
+            0 0 16px
+            rgba(255, 216, 120, .45)
+        );
+}
+
+
+/* =====================================================
    DESTELLOS
-===================================== */
+===================================================== */
 
 .magic-sparkles {
-  position: absolute;
-  inset: 0;
+    position: absolute;
+
+    inset: 0;
 }
 
 .magic-sparkle {
-  position: absolute;
+    position: absolute;
 
-  color: #d5a84b;
+    color: #d7a943;
 
-  font-size: 12px;
+    font-size: 12px;
 
-  opacity: 0;
-
-  text-shadow:
-    0 0 8px rgba(255, 223, 145, .8);
-
-  animation:
-    magicTwinkle 3s ease-in-out infinite;
-}
-
-.magic-sparkle-1  { top: 4%; left: 8%; }
-.magic-sparkle-2  { top: 9%; left: 88%; animation-delay: .5s; }
-.magic-sparkle-3  { top: 15%; left: 24%; animation-delay: 1.2s; }
-.magic-sparkle-4  { top: 21%; left: 72%; animation-delay: .3s; }
-.magic-sparkle-5  { top: 28%; left: 94%; animation-delay: 1.7s; }
-.magic-sparkle-6  { top: 34%; left: 5%; animation-delay: .8s; }
-.magic-sparkle-7  { top: 40%; left: 81%; animation-delay: 2s; }
-.magic-sparkle-8  { top: 47%; left: 16%; animation-delay: .4s; }
-.magic-sparkle-9  { top: 52%; left: 91%; animation-delay: 1.1s; }
-.magic-sparkle-10 { top: 58%; left: 6%; animation-delay: 1.8s; }
-.magic-sparkle-11 { top: 64%; left: 73%; animation-delay: .7s; }
-.magic-sparkle-12 { top: 70%; left: 25%; animation-delay: 2.1s; }
-.magic-sparkle-13 { top: 76%; left: 93%; animation-delay: .2s; }
-.magic-sparkle-14 { top: 82%; left: 12%; animation-delay: 1.5s; }
-.magic-sparkle-15 { top: 88%; left: 77%; animation-delay: .9s; }
-.magic-sparkle-16 { top: 93%; left: 32%; animation-delay: 2.2s; }
-.magic-sparkle-17 { top: 97%; left: 90%; animation-delay: .6s; }
-.magic-sparkle-18 { top: 55%; left: 48%; animation-delay: 1.3s; }
-
-@keyframes magicTwinkle {
-  0%,
-  100% {
     opacity: 0;
-    transform: scale(.4) rotate(0deg);
-  }
 
-  50% {
-    opacity: .85;
-    transform: scale(1.3) rotate(45deg);
-  }
+    text-shadow:
+        0 0 7px rgba(255, 230, 160, .9),
+        0 0 15px rgba(255, 210, 100, .5);
+
+    animation:
+        magicalSparkle 3.2s
+        ease-in-out infinite;
 }
 
-/* =====================================
-   DETALLES DE CUENTO
-===================================== */
 
-.fairytale-decoration {
-  position: absolute;
+@keyframes magicalSparkle {
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    0%,
+    100% {
+        opacity: 0;
 
-  gap: 7px;
+        transform:
+            scale(.3)
+            rotate(0deg);
+    }
 
-  opacity: .18;
+    50% {
+        opacity: .9;
 
-  color: #a9772f;
+        transform:
+            scale(1.4)
+            rotate(45deg);
+    }
 }
 
-.fairytale-left {
-  top: 12%;
-  left: 25px;
+
+/* =====================================================
+   PÉTALOS
+===================================================== */
+
+.magic-petal {
+    position: absolute;
+
+    color: #b86bc5;
+
+    font-size: 17px;
+
+    opacity: .55;
+
+    text-shadow:
+        0 0 8px
+        rgba(205, 145, 225, .5);
 }
 
-.fairytale-right {
-  top: 30%;
-  right: 25px;
+
+/* =====================================================
+   CORONAS
+===================================================== */
+
+.floating-crown {
+    position: absolute;
+
+    color: #c99a3d;
+
+    font-size: 42px;
+
+    opacity: .25;
+
+    text-shadow:
+        0 0 12px
+        rgba(230, 190, 100, .35);
 }
 
-.fairytale-symbol {
-  font-size: 55px;
+
+/* =====================================================
+   ELEMENTOS GENERALES DE CUENTO
+===================================================== */
+
+.story-decoration {
+    position: absolute;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    color: #a77731;
+
+    opacity: .30;
+
+    z-index: 5;
 }
 
-.glass-slipper {
-  font-size: 40px;
+.story-decoration p {
+    margin-top: 12px;
 
-  filter:
-    grayscale(.2)
-    opacity(.7);
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    text-align: center;
+
+    color: #91672e;
 }
 
-.fairytale-text {
-  font-size: 9px;
 
-  letter-spacing: 3px;
+/* =====================================================
+   CASTILLO
+===================================================== */
 
-  text-transform: uppercase;
+.magic-castle {
+    top: 15%;
+    right: 3%;
 
-  writing-mode: vertical-rl;
+    width: 150px;
 }
 
-/* =====================================
-   CARRUAJE MÁGICO
-===================================== */
+.castle-towers {
+    display: flex;
+
+    align-items: flex-end;
+
+    color: #9b70ac;
+
+    text-shadow:
+        0 0 15px
+        rgba(182, 120, 215, .4);
+}
+
+.castle-towers span {
+    font-size: 45px;
+}
+
+.castle-towers .castle-main {
+    font-size: 75px;
+
+    margin:
+        0 -7px;
+}
+
+
+/* =====================================================
+   ZAPATILLA
+===================================================== */
+
+.crystal-shoe {
+    top: 31%;
+    left: 3%;
+}
+
+.shoe-shape {
+    font-size: 55px;
+
+    filter:
+        grayscale(.7)
+        hue-rotate(180deg)
+        drop-shadow(
+            0 0 10px
+            rgba(190, 170, 230, .8)
+        );
+}
+
+.crystal-shoe > span {
+    color: #d6b8e7;
+
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   RELOJ
+===================================================== */
+
+.antique-clock {
+    top: 49%;
+    right: 3%;
+}
+
+.clock-face {
+    position: relative;
+
+    width: 105px;
+    height: 105px;
+
+    border:
+        3px double
+        rgba(166, 116, 48, .65);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 250, 240, .35);
+
+    box-shadow:
+        0 0 20px
+        rgba(201, 154, 61, .18);
+}
+
+.clock-number {
+    position: absolute;
+
+    color: #93682e;
+
+    font-size: 10px;
+}
+
+.clock-12 {
+    top: 6px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+}
+
+.clock-3 {
+    right: 5px;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+}
+
+.clock-6 {
+    bottom: 5px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+}
+
+.clock-9 {
+    left: 5px;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+}
+
+
+.clock-hand {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    display: block;
+
+    width: 2px;
+
+    transform-origin:
+        bottom center;
+
+    background:
+        #8c632d;
+}
+
+
+.clock-hand.hour {
+    height: 28px;
+
+    transform:
+        translate(-50%, -100%)
+        rotate(-35deg);
+}
+
+
+.clock-hand.minute {
+    height: 38px;
+
+    margin-top: -38px;
+
+    transform-origin:
+        50% 100%;
+}
+
+
+.clock-center {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 7px;
+    height: 7px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        #a87834;
+}
+
+
+/* =====================================================
+   CARRUAJE
+===================================================== */
 
 .magic-carriage {
-  position: absolute;
+    top: 68%;
+    left: 3%;
 
-  right: 3%;
-  top: 63%;
-
-  width: 130px;
-  height: 110px;
-
-  opacity: .25;
-
-  transform: scale(.9);
+    width: 145px;
+    height: 135px;
 }
 
 .carriage-crown {
-  position: absolute;
+    color: #c99a3d;
 
-  top: -17px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  color: #c99a3d;
-
-  font-size: 24px;
+    font-size: 24px;
 }
+
 
 .carriage-body {
-  position: absolute;
+    position: relative;
 
-  top: 18px;
-  left: 25px;
+    width: 90px;
+    height: 67px;
 
-  width: 80px;
-  height: 62px;
+    display: flex;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    align-items: center;
+    justify-content: center;
 
-  border:
-    2px solid rgba(201,154,61,.55);
+    border:
+        2px solid
+        rgba(190, 139, 52, .7);
 
-  border-radius:
-    50% 50% 40% 40%;
+    border-radius:
+        50% 50% 38% 38%;
 
-  color: #b52d5b;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.55),
+            rgba(222,196,235,.25)
+        );
 
-  background:
-    radial-gradient(
-      circle,
-      rgba(255,255,255,.7),
-      rgba(231,210,240,.25)
-    );
+    color: #c99a3d;
 
-  box-shadow:
-    0 0 25px rgba(201,154,61,.18);
+    box-shadow:
+        0 0 25px
+        rgba(201,154,61,.20);
 }
+
 
 .carriage-body::before,
 .carriage-body::after {
-  content: "";
+    content: "";
 
-  position: absolute;
+    position: absolute;
 
-  top: 8px;
+    top: 8px;
 
-  width: 20px;
-  height: 45px;
+    width: 21px;
+    height: 46px;
 
-  border:
-    1px solid rgba(201,154,61,.45);
+    border:
+        1px solid
+        rgba(190,139,52,.5);
 
-  border-radius: 50%;
+    border-radius: 50%;
 }
 
+
 .carriage-body::before {
-  left: 7px;
+    left: 8px;
 }
 
 .carriage-body::after {
-  right: 7px;
+    right: 8px;
 }
+
 
 .carriage-wheels {
-  position: absolute;
+    width: 115px;
 
-  left: 16px;
-  bottom: 3px;
+    margin-top: -3px;
 
-  width: 98px;
+    display: flex;
 
-  display: flex;
-  justify-content: space-between;
+    justify-content:
+        space-between;
 }
+
 
 .carriage-wheels span {
-  width: 31px;
-  height: 31px;
+    width: 34px;
+    height: 34px;
 
-  border:
-    2px solid rgba(201,154,61,.55);
+    border:
+        2px solid
+        rgba(190,139,52,.7);
 
-  border-radius: 50%;
-
-  box-shadow:
-    inset 0 0 0 5px rgba(255,255,255,.35);
+    border-radius: 50%;
 }
 
-/* =====================================
-   MÁS MAGIA EN LAS SECCIONES
-===================================== */
 
-.hero-section,
-.countdown-section,
-.family-section,
-.events-section,
-.dress-section,
-.gallery-section,
-.itinerary-section,
-.closing-section {
-  isolation: isolate;
+/* =====================================================
+   ROSAS LILA
+===================================================== */
+
+.rose-decoration {
+    position: absolute;
+
+    display: flex;
+
+    gap: 3px;
+
+    color: #9f62ad;
+
+    opacity: .28;
+
+    text-shadow:
+        0 0 10px
+        rgba(180,110,205,.35);
 }
 
-/* pequeña decoración dorada */
 
-.hero-section::after {
-  content: "✦  ♕  ✦";
-
-  position: absolute;
-
-  bottom: 55px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  color: rgba(201,154,61,.38);
-
-  letter-spacing: 14px;
-
-  font-size: 14px;
+.rose-decoration span {
+    font-size: 30px;
 }
 
-/* brillo en tarjetas */
 
-.countdown-card,
-.family-name-card,
-.event-card,
-.dress-option,
-.reserved-card,
-.timeline-content {
-  transition:
-    transform .35s ease,
-    box-shadow .35s ease,
-    border-color .35s ease;
+.rose-left {
+    top: 80%;
+    left: 2%;
+
+    transform:
+        rotate(-20deg);
 }
 
-.countdown-card:hover,
-.family-name-card:hover,
-.event-card:hover,
-.dress-option:hover,
-.reserved-card:hover {
-  border-color:
-    rgba(201,154,61,.55);
 
-  box-shadow:
-    0 20px 55px
-    rgba(112,52,82,.14);
+.rose-right {
+    top: 91%;
+    right: 2%;
+
+    transform:
+        rotate(20deg);
+}
+
+
+/* =====================================================
+   FRASES
+===================================================== */
+
+.fairytale-phrase {
+    position: absolute;
+
+    color:
+        rgba(119, 69, 119, .45);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-style: italic;
+
+    font-size: 20px;
+
+    z-index: 5;
+}
+
+
+.phrase-one {
+    top: 25%;
+    right: 5%;
+
+    transform:
+        rotate(-7deg);
+}
+
+
+.phrase-two {
+    top: 87%;
+    left: 5%;
+
+    transform:
+        rotate(5deg);
+}
+
+
+/* =====================================================
+   IMPORTANTE
+   LAS DECORACIONES SE VEN ENCIMA DE LOS FONDOS
+===================================================== */
+
+.invitation > section,
+.invitation > div:not(.magic-world) {
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .magic-butterfly {
+        font-size:
+            18px !important;
+
+        opacity: .65;
+    }
+
+
+    .floating-crown {
+        font-size: 28px;
+    }
+
+
+    .magic-castle {
+        right: -25px;
+
+        transform:
+            scale(.65);
+
+        opacity: .16;
+    }
+
+
+    .crystal-shoe {
+        left: -15px;
+
+        transform:
+            scale(.70);
+
+        opacity: .20;
+    }
+
+
+    .antique-clock {
+        right: -30px;
+
+        transform:
+            scale(.70);
+
+        opacity: .20;
+    }
+
+
+    .magic-carriage {
+        left: -30px;
+
+        transform:
+            scale(.70);
+
+        opacity: .20;
+    }
+
+
+    .rose-decoration span {
+        font-size: 20px;
+    }
+
+
+    .fairytale-phrase {
+        font-size: 13px;
+
+        opacity: .30;
+    }
+
+
+    .phrase-one {
+        right: 3px;
+    }
+
+
+    .phrase-two {
+        left: 3px;
+    }
+
 }
 
 /* =====================================
