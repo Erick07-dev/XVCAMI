@@ -5550,3 +5550,17 @@ body {
   }
 
 }
+
+.invitation > section {
+    position: relative;
+    z-index: 1;
+}
+
+.magic-world {
+    z-index: 10;
+}
+
+.magic-butterfly,
+.magic-sparkle {
+    pointer-events: none;
+}

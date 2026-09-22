@@ -1,12 +1,23 @@
 import { motion } from "framer-motion";
 
 const butterflies = [
-  { left: "100%", delay: 0, duration: 15, size: 25 },
-  { left: "100%", delay: 4, duration: 18, size: 18 },
-  { left: "100%", delay: 7, duration: 16, size: 23 },
-  { left: "100%", delay: 2, duration: 20, size: 20 },
-  { left: "100%", delay: 8, duration: 17, size: 26 },
-  { left: "100%", delay: 5, duration: 19, size: 17 },
+    { left: "6%",  delay: 0, duration: 8, size: 24 },
+    { left: "88%", delay: 1, duration: 10, size: 20 },
+
+    { left: "16%", delay: 2, duration: 9, size: 18 },
+    { left: "75%", delay: 0, duration: 11, size: 25 },
+
+    { left: "5%",  delay: 3, duration: 10, size: 22 },
+    { left: "92%", delay: 2, duration: 8, size: 19 },
+
+    { left: "20%", delay: 1, duration: 12, size: 21 },
+    { left: "82%", delay: 4, duration: 9, size: 24 },
+
+    { left: "8%",  delay: 2, duration: 11, size: 18 },
+    { left: "90%", delay: 0, duration: 10, size: 22 },
+
+    { left: "28%", delay: 3, duration: 9, size: 17 },
+    { left: "68%", delay: 1, duration: 12, size: 20 },
 ];
 
 const sparkles = Array.from({ length: 18 });
@@ -26,7 +37,7 @@ export default function MagicDecorations() {
             style={{
                 left: butterfly.left,
                 fontSize: butterfly.size,
-                top: `${8 + index * 15}%`,
+                top: `${5 + index * 8}%`,
             }}
 
             animate={{
