@@ -5152,3 +5152,388 @@ body {
     letter-spacing: 2px;
   }
 }
+
+/* =====================================================
+   MUNDO MÁGICO - XV CAMILA
+===================================================== */
+
+.magic-world {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* =====================================
+   MARIPOSAS
+===================================== */
+
+.butterfly-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.magic-butterfly {
+  position: absolute;
+  top: 0;
+
+  filter:
+    drop-shadow(0 3px 5px rgba(116, 62, 130, .20))
+    drop-shadow(0 0 10px rgba(211, 171, 235, .25));
+
+  opacity: .8;
+  will-change: transform;
+}
+
+.magic-butterfly:nth-child(even) {
+  filter:
+    sepia(.4)
+    saturate(.8)
+    drop-shadow(0 0 8px rgba(201,154,61,.35));
+}
+
+/* =====================================
+   DESTELLOS
+===================================== */
+
+.magic-sparkles {
+  position: absolute;
+  inset: 0;
+}
+
+.magic-sparkle {
+  position: absolute;
+
+  color: #d5a84b;
+
+  font-size: 12px;
+
+  opacity: 0;
+
+  text-shadow:
+    0 0 8px rgba(255, 223, 145, .8);
+
+  animation:
+    magicTwinkle 3s ease-in-out infinite;
+}
+
+.magic-sparkle-1  { top: 4%; left: 8%; }
+.magic-sparkle-2  { top: 9%; left: 88%; animation-delay: .5s; }
+.magic-sparkle-3  { top: 15%; left: 24%; animation-delay: 1.2s; }
+.magic-sparkle-4  { top: 21%; left: 72%; animation-delay: .3s; }
+.magic-sparkle-5  { top: 28%; left: 94%; animation-delay: 1.7s; }
+.magic-sparkle-6  { top: 34%; left: 5%; animation-delay: .8s; }
+.magic-sparkle-7  { top: 40%; left: 81%; animation-delay: 2s; }
+.magic-sparkle-8  { top: 47%; left: 16%; animation-delay: .4s; }
+.magic-sparkle-9  { top: 52%; left: 91%; animation-delay: 1.1s; }
+.magic-sparkle-10 { top: 58%; left: 6%; animation-delay: 1.8s; }
+.magic-sparkle-11 { top: 64%; left: 73%; animation-delay: .7s; }
+.magic-sparkle-12 { top: 70%; left: 25%; animation-delay: 2.1s; }
+.magic-sparkle-13 { top: 76%; left: 93%; animation-delay: .2s; }
+.magic-sparkle-14 { top: 82%; left: 12%; animation-delay: 1.5s; }
+.magic-sparkle-15 { top: 88%; left: 77%; animation-delay: .9s; }
+.magic-sparkle-16 { top: 93%; left: 32%; animation-delay: 2.2s; }
+.magic-sparkle-17 { top: 97%; left: 90%; animation-delay: .6s; }
+.magic-sparkle-18 { top: 55%; left: 48%; animation-delay: 1.3s; }
+
+@keyframes magicTwinkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(.4) rotate(0deg);
+  }
+
+  50% {
+    opacity: .85;
+    transform: scale(1.3) rotate(45deg);
+  }
+}
+
+/* =====================================
+   DETALLES DE CUENTO
+===================================== */
+
+.fairytale-decoration {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 7px;
+
+  opacity: .18;
+
+  color: #a9772f;
+}
+
+.fairytale-left {
+  top: 12%;
+  left: 25px;
+}
+
+.fairytale-right {
+  top: 30%;
+  right: 25px;
+}
+
+.fairytale-symbol {
+  font-size: 55px;
+}
+
+.glass-slipper {
+  font-size: 40px;
+
+  filter:
+    grayscale(.2)
+    opacity(.7);
+}
+
+.fairytale-text {
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  writing-mode: vertical-rl;
+}
+
+/* =====================================
+   CARRUAJE MÁGICO
+===================================== */
+
+.magic-carriage {
+  position: absolute;
+
+  right: 3%;
+  top: 63%;
+
+  width: 130px;
+  height: 110px;
+
+  opacity: .25;
+
+  transform: scale(.9);
+}
+
+.carriage-crown {
+  position: absolute;
+
+  top: -17px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #c99a3d;
+
+  font-size: 24px;
+}
+
+.carriage-body {
+  position: absolute;
+
+  top: 18px;
+  left: 25px;
+
+  width: 80px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    2px solid rgba(201,154,61,.55);
+
+  border-radius:
+    50% 50% 40% 40%;
+
+  color: #b52d5b;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.7),
+      rgba(231,210,240,.25)
+    );
+
+  box-shadow:
+    0 0 25px rgba(201,154,61,.18);
+}
+
+.carriage-body::before,
+.carriage-body::after {
+  content: "";
+
+  position: absolute;
+
+  top: 8px;
+
+  width: 20px;
+  height: 45px;
+
+  border:
+    1px solid rgba(201,154,61,.45);
+
+  border-radius: 50%;
+}
+
+.carriage-body::before {
+  left: 7px;
+}
+
+.carriage-body::after {
+  right: 7px;
+}
+
+.carriage-wheels {
+  position: absolute;
+
+  left: 16px;
+  bottom: 3px;
+
+  width: 98px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.carriage-wheels span {
+  width: 31px;
+  height: 31px;
+
+  border:
+    2px solid rgba(201,154,61,.55);
+
+  border-radius: 50%;
+
+  box-shadow:
+    inset 0 0 0 5px rgba(255,255,255,.35);
+}
+
+/* =====================================
+   MÁS MAGIA EN LAS SECCIONES
+===================================== */
+
+.hero-section,
+.countdown-section,
+.family-section,
+.events-section,
+.dress-section,
+.gallery-section,
+.itinerary-section,
+.closing-section {
+  isolation: isolate;
+}
+
+/* pequeña decoración dorada */
+
+.hero-section::after {
+  content: "✦  ♕  ✦";
+
+  position: absolute;
+
+  bottom: 55px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: rgba(201,154,61,.38);
+
+  letter-spacing: 14px;
+
+  font-size: 14px;
+}
+
+/* brillo en tarjetas */
+
+.countdown-card,
+.family-name-card,
+.event-card,
+.dress-option,
+.reserved-card,
+.timeline-content {
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+.countdown-card:hover,
+.family-name-card:hover,
+.event-card:hover,
+.dress-option:hover,
+.reserved-card:hover {
+  border-color:
+    rgba(201,154,61,.55);
+
+  box-shadow:
+    0 20px 55px
+    rgba(112,52,82,.14);
+}
+
+/* =====================================
+   MÓVIL
+===================================== */
+
+@media (max-width: 700px) {
+
+  .magic-butterfly {
+    font-size: 18px !important;
+    opacity: .6;
+  }
+
+  .fairytale-left,
+  .fairytale-right {
+    opacity: .10;
+  }
+
+  .fairytale-left {
+    left: 7px;
+  }
+
+  .fairytale-right {
+    right: 7px;
+  }
+
+  .fairytale-symbol {
+    font-size: 36px;
+  }
+
+  .glass-slipper {
+    font-size: 30px;
+  }
+
+  .fairytale-text {
+    font-size: 7px;
+    letter-spacing: 2px;
+  }
+
+  .magic-carriage {
+    right: -25px;
+
+    width: 105px;
+
+    transform: scale(.7);
+
+    opacity: .17;
+  }
+
+}
+
+/* Personas que prefieren menos movimiento */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .magic-butterfly,
+  .magic-sparkle,
+  .magic-carriage {
+    animation: none !important;
+  }
+
+}

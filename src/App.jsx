@@ -14,6 +14,7 @@ import "./App.css";
 import EventDetails from "./components/EventDetails";
 import { Gift } from "lucide-react";
 import Closing from "./components/Closing";
+import MagicDecorations from "./components/MagicDecorations";
 
 
 
@@ -75,6 +76,8 @@ function App() {
                     <RSVP />
 
                     <Closing />
+
+                    <MagicDecorations /> 
 
                     
 
