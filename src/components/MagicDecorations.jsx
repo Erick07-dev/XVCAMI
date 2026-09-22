@@ -16,37 +16,39 @@ export default function MagicDecorations() {
     <div className="magic-world" aria-hidden="true">
 
       {/* MARIPOSAS */}
-      <div className="butterfly-layer">
-        {butterflies.map((butterfly, index) => (
-          <motion.div
+<div className="butterfly-layer">
+
+    {butterflies.map((butterfly, index) => (
+        <motion.div
             key={index}
             className={`magic-butterfly butterfly-${index + 1}`}
+
             style={{
-              left: butterfly.left,
-              fontSize: butterfly.size,
+                left: butterfly.left,
+                fontSize: butterfly.size,
+                top: `${8 + index * 15}%`,
             }}
-            initial={{
-              y: "110vh",
-              opacity: 0,
-              rotate: -10,
-            }}
+
             animate={{
-              y: "-20vh",
-              x: [0, 35, -25, 45, 0],
-              rotate: [-8, 12, -12, 8, -8],
-              opacity: [0, 0.8, 1, 0.8, 0],
+                x: [0, 35, -25, 45, 0],
+                y: [0, -40, -80, -40, 0],
+                rotate: [-10, 12, -12, 10, -10],
+                scale: [1, 1.1, .9, 1.05, 1],
+                opacity: [.25, .8, 1, .7, .25],
             }}
+
             transition={{
-              duration: butterfly.duration,
-              delay: butterfly.delay,
-              repeat: Infinity,
-              ease: "linear",
+                duration: butterfly.duration,
+                delay: butterfly.delay,
+                repeat: Infinity,
+                ease: "easeInOut",
             }}
-          >
+        >
             🦋
-          </motion.div>
-        ))}
-      </div>
+        </motion.div>
+    ))}
+
+</div>
 
       {/* DESTELLOS */}
       <div className="magic-sparkles">
