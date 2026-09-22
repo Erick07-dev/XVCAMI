@@ -4,7 +4,7 @@ import { CalendarDays, CalendarPlus } from "lucide-react";
 
 export default function Countdown() {
 
-    const eventDate = new Date("2026-11-19T18:00:00");
+    const eventDate = new Date("2026-11-16T18:00:00");
 
     const calculateTimeLeft = () => {
 
@@ -101,8 +101,8 @@ export default function Countdown() {
 
             "BEGIN:VEVENT",
 
-            "DTSTART:20261119T180000",
-            "DTEND:20261119T235900",
+            "DTSTART:20261116T180000",
+            "DTEND:20261116T235900",
 
             "SUMMARY:Mis XV Años - Camila",
 
@@ -139,7 +139,7 @@ export default function Countdown() {
         link.href = url;
 
         link.download =
-            "XV-Camila-19-Noviembre-2026.ics";
+            "XV-Camila-16-Noviembre-2026.ics";
 
 
         document.body.appendChild(link);
@@ -318,7 +318,7 @@ export default function Countdown() {
                 <div className="event-date-card">
 
                     <span className="event-day">
-                        19
+                        16
                     </span>
 
 

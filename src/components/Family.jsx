@@ -68,7 +68,7 @@ export default function Family() {
                             <span>✦</span>
 
                             <h3>
-                                Alejandro Martínez
+                                Jorge Gonzalez Perez 
                             </h3>
 
                             <p>
@@ -87,7 +87,7 @@ export default function Family() {
                             <span>✦</span>
 
                             <h3>
-                                Mariana González
+                                Arina Lizbeth Pineda Garcia
                             </h3>
 
                             <p>
@@ -110,25 +110,7 @@ export default function Family() {
 
                     <div className="family-names">
 
-                        <motion.div
-                            className="family-name-card"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.7 }}
-                        >
-                            <span>♕</span>
-
-                            <h3>
-                                Carlos Hernández
-                            </h3>
-
-                            <p>
-                                Padrino
-                            </p>
-                        </motion.div>
-
-
+                
                         <motion.div
                             className="family-name-card"
                             initial={{ opacity: 0, y: 30 }}
@@ -142,7 +124,7 @@ export default function Family() {
                             <span>♕</span>
 
                             <h3>
-                                Daniela Ramírez
+                                Damaris Leal Bonilla
                             </h3>
 
                             <p>
