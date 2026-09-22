@@ -2,6 +2,24 @@
    CONFIGURACIÓN GENERAL
 ========================================= */
 
+:root {
+    --royal-lilac: #8d5aa6;
+    --royal-purple: #6f3f82;
+
+    --soft-lilac: #eadcf1;
+    --soft-lavender: #f2e8f5;
+    --soft-pink: #f8e5ed;
+    --soft-rose: #f4dce7;
+
+    --cream: #fff8f6;
+
+    --gold: #c99a3d;
+    --gold-light: #e5c57c;
+
+    --text-purple: #713452;
+    --text-soft: #806676;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -5905,4 +5923,1100 @@ body {
 .magic-butterfly,
 .magic-sparkle {
     pointer-events: none;
+}
+
+/* =========================================================
+   PALETA FINAL UNIFICADA - XV CAMILA
+   Tema: Princesa Real / Lila / Rosa / Dorado
+========================================================= */
+
+
+/* =========================================================
+   1. FONDO MAESTRO
+========================================================= */
+
+.invitation {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+
+    color: #713452;
+
+    background:
+        radial-gradient(
+            circle at 10% 8%,
+            rgba(173, 121, 201, .22),
+            transparent 24%
+        ),
+
+        radial-gradient(
+            circle at 88% 20%,
+            rgba(229, 160, 197, .18),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 15% 45%,
+            rgba(185, 137, 210, .20),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 68%,
+            rgba(230, 168, 200, .18),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 20% 90%,
+            rgba(177, 126, 204, .20),
+            transparent 27%
+        ),
+
+        linear-gradient(
+            180deg,
+            #e9d8ef 0%,
+            #ecd9ed 10%,
+            #efdbe9 20%,
+            #ead7ed 30%,
+            #efd9e8 40%,
+            #e8d5ed 50%,
+            #eed8e8 60%,
+            #e7d3ec 70%,
+            #edd5e6 80%,
+            #e4cfeb 90%,
+            #dcc4e5 100%
+        );
+}
+
+
+/* =========================================================
+   2. SECCIONES
+========================================================= */
+
+.hero-section,
+.countdown-section,
+.family-section,
+.events-section,
+.itinerary-section,
+.dress-section,
+.gallery-section,
+.gifts-section,
+.rsvp-section,
+.closing-section {
+    position: relative;
+    overflow: hidden;
+
+    color: #713452;
+
+    border: none !important;
+}
+
+
+/* =========================================================
+   3. HERO
+========================================================= */
+
+.hero-section {
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255, 232, 246, .25),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(220, 195, 233, .50) 0%,
+            rgba(232, 207, 234, .38) 55%,
+            rgba(236, 211, 231, .30) 100%
+        ) !important;
+}
+
+
+/* =========================================================
+   4. COUNTDOWN
+========================================================= */
+
+.countdown-section {
+    background:
+        radial-gradient(
+            circle at 10% 50%,
+            rgba(189, 139, 211, .13),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(236, 211, 231, .30) 0%,
+            rgba(239, 214, 229, .38) 50%,
+            rgba(232, 207, 235, .32) 100%
+        ) !important;
+}
+
+
+/* =========================================================
+   5. FAMILIA
+========================================================= */
+
+.family-section {
+    background:
+        radial-gradient(
+            circle at 85% 35%,
+            rgba(218, 173, 218, .16),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(232, 207, 235, .32) 0%,
+            rgba(234, 208, 234, .38) 50%,
+            rgba(238, 211, 230, .32) 100%
+        ) !important;
+}
+
+
+/* =========================================================
+   6. EVENTOS
+========================================================= */
+
+.events-section {
+    background:
+        radial-gradient(
+            circle at 15% 70%,
+            rgba(180, 127, 205, .14),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(238, 211, 230, .32) 0%,
+            rgba(230, 204, 235, .40) 50%,
+            rgba(233, 208, 234, .32) 100%
+        ) !important;
+}
+
+
+/* =========================================================
+   7. ITINERARIO
+========================================================= */
+
+.itinerary-section {
+    background:
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(232, 171, 204, .15),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(233, 208, 234, .32) 0%,
+            rgba(239, 212, 228, .40) 50%,
+            rgba(233, 206, 235, .32) 100%
+        ) !important;
+}
+
+
+/* =========================================================
+   8. VESTIMENTA
+========================================================= */
+
+.dress-section {
+    background:
+        radial-gradient(
+            circle at 15% 40%,
+            rgba(181, 129, 206, .14),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(233, 206, 235, .32) 0%,
+            rgba(228, 202, 235, .40) 50%,
+            rgba(236, 208, 231, .32) 100%
+        ) !important;
+}
+
+
+/* =========================================================
+   9. GALERÍA
+========================================================= */
+
+.gallery-section {
+    background:
+        radial-gradient(
+            circle at 90% 60%,
+            rgba(232, 168, 200, .14),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(236, 208, 231, .32) 0%,
+            rgba(239, 211, 228, .40) 50%,
+            rgba(230, 203, 234, .32) 100%
+        ) !important;
+}
+
+
+/* =========================================================
+   10. REGALOS
+========================================================= */
+
+.gifts-section {
+    background:
+        radial-gradient(
+            circle at 15% 35%,
+            rgba(180, 127, 205, .14),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(230, 203, 234, .32) 0%,
+            rgba(235, 207, 231, .40) 50%,
+            rgba(228, 200, 233, .34) 100%
+        ) !important;
+}
+
+
+/* =========================================================
+   11. RSVP
+========================================================= */
+
+.rsvp-section {
+    background:
+        radial-gradient(
+            circle at 85% 50%,
+            rgba(232, 168, 201, .14),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(228, 200, 233, .34) 0%,
+            rgba(235, 205, 228, .42) 50%,
+            rgba(222, 193, 230, .38) 100%
+        ) !important;
+}
+
+
+/* =========================================================
+   12. CIERRE
+========================================================= */
+
+.closing-section {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(238, 190, 216, .20),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(222, 193, 230, .38) 0%,
+            rgba(215, 184, 225, .50) 55%,
+            rgba(199, 163, 214, .62) 100%
+        ) !important;
+}
+
+
+/* =========================================================
+   13. CONTENIDO SOBRE DECORACIONES
+========================================================= */
+
+.hero-section > *,
+.countdown-section > *,
+.family-section > *,
+.events-section > *,
+.itinerary-section > *,
+.dress-section > *,
+.gallery-section > *,
+.gifts-section > *,
+.rsvp-section > *,
+.closing-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   14. TARJETAS DE CRISTAL
+========================================================= */
+
+.countdown-card,
+.family-name-card,
+.event-card,
+.dress-option,
+.reserved-card,
+.gift-card,
+.rsvp-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 247, 252, .72),
+            rgba(236, 216, 241, .63)
+        ) !important;
+
+    border:
+        1px solid
+        rgba(201, 154, 61, .30) !important;
+
+    backdrop-filter:
+        blur(15px);
+
+    -webkit-backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 15px 45px
+        rgba(91, 51, 105, .11);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+
+.countdown-card:hover,
+.family-name-card:hover,
+.event-card:hover,
+.dress-option:hover,
+.gift-card:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(201, 154, 61, .45) !important;
+
+    box-shadow:
+        0 20px 55px
+        rgba(91, 51, 105, .16);
+}
+
+
+/* =========================================================
+   15. TARJETAS DE FECHA
+========================================================= */
+
+.event-date-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 247, 252, .70),
+            rgba(234, 213, 240, .65)
+        ) !important;
+
+    border:
+        1px solid
+        rgba(201, 154, 61, .32) !important;
+
+    backdrop-filter:
+        blur(14px);
+
+    box-shadow:
+        0 12px 35px
+        rgba(91, 51, 105, .10);
+}
+
+
+/* =========================================================
+   16. ITINERARIO
+========================================================= */
+
+.timeline-content {
+    background:
+        transparent !important;
+
+    border:
+        none !important;
+
+    box-shadow:
+        none !important;
+
+    backdrop-filter:
+        none !important;
+
+    -webkit-backdrop-filter:
+        none !important;
+}
+
+
+.timeline-line {
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(181, 133, 65, .70) 8%,
+            rgba(181, 133, 65, .70) 92%,
+            transparent
+        ) !important;
+}
+
+
+.timeline-dot {
+    background:
+        linear-gradient(
+            145deg,
+            #f8eaf5,
+            #e5cfea
+        ) !important;
+
+    color:
+        #9c6a2d !important;
+
+    border:
+        1px solid
+        rgba(201, 154, 61, .62) !important;
+
+    box-shadow:
+        0 0 0 7px
+        rgba(235, 214, 238, .82),
+
+        0 8px 25px
+        rgba(103, 59, 112, .14) !important;
+}
+
+
+/* =========================================================
+   17. ICONOS
+========================================================= */
+
+.countdown-icon,
+.family-icon,
+.event-icon {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(250, 239, 247, .92),
+            rgba(228, 207, 238, .82)
+        ) !important;
+
+    color:
+        #87519b !important;
+
+    border:
+        1px solid
+        rgba(201, 154, 61, .42) !important;
+
+    box-shadow:
+        0 10px 30px
+        rgba(103, 59, 112, .11);
+}
+
+
+/* =========================================================
+   18. TÍTULOS PRINCIPALES
+========================================================= */
+
+.hero-section h1,
+.countdown-section h2,
+.family-section h2,
+.events-section h2,
+.itinerary-header h2,
+.dress-section h2,
+.gallery-section h2,
+.gifts-section h2,
+.rsvp-section h2,
+.closing-section h2 {
+    color:
+        #713452 !important;
+
+    text-shadow:
+        0 2px 14px
+        rgba(255, 245, 250, .55);
+}
+
+
+/* Nombre Camila un poco más especial */
+
+.hero-section h1 {
+    color:
+        #8b416b !important;
+
+    text-shadow:
+        0 3px 18px
+        rgba(118, 64, 101, .18);
+}
+
+
+/* =========================================================
+   19. SUBTÍTULOS
+========================================================= */
+
+.hero-small,
+.countdown-small,
+.family-small,
+.events-small,
+.itinerary-small,
+.dress-small,
+.gallery-small,
+.gifts-small,
+.rsvp-small,
+.closing-small,
+.family-title,
+.event-type,
+.timeline-time {
+    color:
+        #a57630 !important;
+}
+
+
+/* =========================================================
+   20. TEXTOS
+========================================================= */
+
+.hero-message,
+.countdown-description,
+.family-message,
+.events-message,
+.itinerary-intro,
+.dress-message,
+.gallery-message {
+    color:
+        #76566f !important;
+}
+
+
+/* =========================================================
+   21. NÚMEROS DEL COUNTDOWN
+========================================================= */
+
+.countdown-number {
+    color:
+        #75405f !important;
+
+    text-shadow:
+        0 2px 10px
+        rgba(255, 255, 255, .45);
+}
+
+
+.countdown-label {
+    color:
+        #9b7130 !important;
+}
+
+
+/* =========================================================
+   22. LÍNEAS DORADAS
+========================================================= */
+
+.hero-line,
+.countdown-divider,
+.family-divider,
+.events-divider,
+.itinerary-divider,
+.dress-divider,
+.gallery-divider {
+    color:
+        #c99a3d !important;
+}
+
+
+/* =========================================================
+   23. BOTONES PRINCIPALES
+========================================================= */
+
+.map-button,
+.countdown-calendar-button {
+    background:
+        linear-gradient(
+            135deg,
+            #805096,
+            #a26091
+        ) !important;
+
+    color:
+        #ffffff !important;
+
+    border:
+        1px solid
+        rgba(225, 190, 111, .55) !important;
+
+    box-shadow:
+        0 10px 30px
+        rgba(105, 64, 120, .23);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.map-button:hover,
+.countdown-calendar-button:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 15px 38px
+        rgba(105, 64, 120, .32);
+}
+
+
+/* =========================================================
+   24. BOTÓN DE MÚSICA
+========================================================= */
+
+.music-button {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(242, 225, 243, .96),
+            rgba(224, 201, 234, .94)
+        ) !important;
+
+    color:
+        #713452 !important;
+
+    border:
+        1px solid
+        rgba(201, 154, 61, .55) !important;
+
+    box-shadow:
+        0 8px 30px
+        rgba(91, 51, 105, .18);
+}
+
+
+/* =========================================================
+   25. MARIPOSAS
+========================================================= */
+
+.magic-butterfly {
+    pointer-events:
+        none;
+
+    z-index:
+        12;
+}
+
+
+.magic-butterfly.lilac {
+    filter:
+        hue-rotate(25deg)
+        saturate(1.25)
+
+        drop-shadow(
+            0 0 7px
+            rgba(145, 83, 176, .65)
+        )
+
+        drop-shadow(
+            0 0 15px
+            rgba(191, 137, 215, .42)
+        );
+}
+
+
+.magic-butterfly.gold {
+    filter:
+        sepia(1)
+        saturate(1.8)
+        hue-rotate(350deg)
+
+        drop-shadow(
+            0 0 7px
+            rgba(201, 154, 61, .68)
+        )
+
+        drop-shadow(
+            0 0 15px
+            rgba(231, 195, 113, .42)
+        );
+}
+
+
+/* =========================================================
+   26. DESTELLOS
+========================================================= */
+
+.magic-sparkle {
+    color:
+        #d6ac58 !important;
+
+    text-shadow:
+        0 0 7px
+        rgba(255, 228, 164, .90),
+
+        0 0 15px
+        rgba(201, 154, 61, .45);
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   27. PÉTALOS
+========================================================= */
+
+.magic-petal {
+    color:
+        #a866b2 !important;
+
+    opacity:
+        .52;
+
+    filter:
+        drop-shadow(
+            0 3px 5px
+            rgba(100, 55, 110, .15)
+        );
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   28. CORONAS
+========================================================= */
+
+.floating-crown {
+    color:
+        #c99a3d !important;
+
+    opacity:
+        .38;
+
+    text-shadow:
+        0 0 10px
+        rgba(218, 178, 88, .32);
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   29. ROSAS
+========================================================= */
+
+.rose-decoration {
+    color:
+        #9556a4 !important;
+
+    opacity:
+        .38;
+
+    filter:
+        drop-shadow(
+            0 5px 10px
+            rgba(92, 48, 105, .16)
+        );
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   30. CARRUAJE
+========================================================= */
+
+.magic-carriage {
+    color:
+        #bd8b37;
+
+    opacity:
+        .46;
+
+    filter:
+        drop-shadow(
+            0 5px 12px
+            rgba(160, 110, 40, .20)
+        );
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   31. ZAPATILLA
+========================================================= */
+
+.glass-slipper {
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(209, 180, 235, .70)
+        )
+
+        drop-shadow(
+            0 0 15px
+            rgba(255, 230, 250, .55)
+        );
+}
+
+
+/* =========================================================
+   32. DECORACIONES DE CUENTO
+========================================================= */
+
+.fairytale-decoration {
+    color:
+        #86518f;
+
+    opacity:
+        .55;
+
+    pointer-events:
+        none;
+}
+
+
+.fairytale-symbol {
+    color:
+        #c99a3d;
+}
+
+
+.fairytale-text {
+    color:
+        #76466e;
+}
+
+
+/* =========================================================
+   33. GALERÍA
+========================================================= */
+
+.gallery-item {
+    border:
+        1px solid
+        rgba(201, 154, 61, .36) !important;
+
+    box-shadow:
+        0 15px 42px
+        rgba(89, 46, 101, .14) !important;
+}
+
+
+/* =========================================================
+   34. COLOR RESERVADO
+========================================================= */
+
+.reserved-card strong {
+    color:
+        #6e4779 !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8d5ed,
+            #cfb0dc
+        ) !important;
+
+    border:
+        1px solid
+        rgba(150, 100, 170, .32) !important;
+}
+
+
+/* =========================================================
+   35. EFECTO DE LUZ GENERAL
+========================================================= */
+
+.invitation::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 900px;
+    height: 100%;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 240, 250, .10),
+            transparent
+        );
+
+    pointer-events:
+        none;
+
+    z-index:
+        0;
+}
+
+
+/* =========================================================
+   36. SECCIONES ENCIMA DEL FONDO GENERAL
+========================================================= */
+
+.invitation > section {
+    position:
+        relative;
+
+    z-index:
+        1;
+}
+
+
+/* =========================================================
+   37. DECORACIONES ENCIMA DE LA INVITACIÓN
+========================================================= */
+
+.magic-world {
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    overflow:
+        hidden;
+
+    pointer-events:
+        none;
+
+    z-index:
+        10;
+}
+
+
+/* =========================================================
+   38. RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .invitation {
+        background:
+            linear-gradient(
+                180deg,
+                #e8d7ee,
+                #edd9e9,
+                #e4d0ea
+            );
+    }
+
+}
+
+
+/* =========================================================
+   39. RESPONSIVE - CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero-section,
+    .countdown-section,
+    .family-section,
+    .events-section,
+    .itinerary-section,
+    .dress-section,
+    .gallery-section,
+    .gifts-section,
+    .rsvp-section,
+    .closing-section {
+        background-color:
+            transparent !important;
+    }
+
+
+    .countdown-card,
+    .family-name-card,
+    .event-card,
+    .dress-option,
+    .reserved-card,
+    .gift-card,
+    .rsvp-card {
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255, 247, 252, .74),
+                rgba(232, 210, 239, .68)
+            ) !important;
+
+        backdrop-filter:
+            blur(10px);
+
+        -webkit-backdrop-filter:
+            blur(10px);
+    }
+
+
+    .magic-butterfly {
+        opacity:
+            .78;
+    }
+
+
+    .magic-sparkle {
+        opacity:
+            .70;
+    }
+
+
+    .floating-crown,
+    .rose-decoration {
+        opacity:
+            .30;
+    }
+
+}
+
+
+/* =========================================================
+   40. CELULARES PEQUEÑOS
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .countdown-card,
+    .family-name-card,
+    .event-card,
+    .dress-option,
+    .reserved-card,
+    .gift-card,
+    .rsvp-card {
+        box-shadow:
+            0 10px 30px
+            rgba(91, 51, 105, .10);
+    }
+
+
+    .magic-butterfly {
+        transform:
+            scale(.90);
+    }
+
+}
+
+
+/* =========================================================
+   41. ACCESIBILIDAD
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .magic-butterfly,
+    .magic-sparkle,
+    .magic-carriage,
+    .magic-petal,
+    .floating-crown {
+        animation:
+            none !important;
+    }
+
 }
