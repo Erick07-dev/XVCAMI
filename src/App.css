@@ -5086,95 +5086,462 @@ body {
   font-size: 10px;
 }
 
-/* ========================================
+/* =========================================================
    CELULAR
-======================================== */
+========================================================= */
 
 @media (max-width: 700px) {
 
-  .itinerary-section {
-    padding: 75px 18px;
-  }
+    .garden-frame {
+        inset: 8px;
+        border-radius: 24px;
+    }
 
-  .itinerary-header {
-    margin-bottom: 55px;
-  }
+    .garden-frame::before {
+        inset: 6px;
+        border-radius: 19px;
+    }
 
-  .itinerary-header h2 {
-    font-size: 48px;
-  }
+    /* ARCO */
 
-  .itinerary-intro {
-    padding: 0 10px;
-    font-size: 14px;
-  }
+    .garden-arch {
+        top: 52%;
+        width: 90%;
+        max-width: 360px;
+        height: 76%;
 
-  .timeline {
-    max-width: 430px;
-  }
+        border-radius:
+            190px 190px 0 0;
+    }
 
-  /* línea a la izquierda */
+    .garden-arch-inner {
+        border-radius:
+            175px 175px 0 0;
+    }
 
-  .timeline-line {
-    left: 28px;
-    transform: none;
-  }
+    /* CONTENIDO */
 
-  .timeline-item,
-  .timeline-left,
-  .timeline-right {
-    width: 100%;
-    min-height: 175px;
+    .garden-content {
+        width: 100%;
+        max-width: 430px;
 
-    margin: 0;
+        padding: 15px 10px 20px;
 
-    padding:
-      12px
-      5px
-      35px
-      90px;
+        overflow: visible;
+    }
 
-    justify-content: flex-start;
-    text-align: left;
-  }
+    /* CORONA */
 
-  .timeline-left .timeline-dot,
-  .timeline-right .timeline-dot {
-    top: 5px;
-    left: 2px;
-    right: auto;
-  }
+    .garden-crown {
+        font-size: 39px;
+    }
 
-  .timeline-dot {
-    width: 52px;
-    height: 52px;
-  }
+    /* MIS XV AÑOS */
 
-  .timeline-content {
-    max-width: 100%;
-  }
+    .garden-xv {
+        margin-bottom: 13px;
 
-  .timeline-time {
-    font-size: 10px;
-  }
+        font-size: 9px;
 
-  .timeline-content h3 {
-    font-size: 24px;
-  }
+        letter-spacing: 5px;
+    }
 
-  .timeline-content p {
-    max-width: 280px;
-    font-size: 13px;
-  }
+    /* DIVISOR */
 
-  .itinerary-ending {
-    margin-top: 25px;
-  }
+    .garden-divider {
+        width: 60%;
 
-  .itinerary-ending p {
-    font-size: 8px;
-    letter-spacing: 2px;
-  }
+        margin-bottom: 8px;
+    }
+
+    /* =====================================================
+       NOMBRE CAMILA - CELULAR
+    ===================================================== */
+
+    .garden-name {
+        position: relative;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0 auto 8px;
+
+        padding: 8px 4px 12px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 0;
+
+        overflow: visible;
+    }
+
+    .garden-name h1 {
+        position: relative;
+
+        margin: 0;
+
+        /* Espacio para que el trazo de la C no se corte */
+        padding: 0 18px 10px 24px;
+
+        font-family:
+            "Great Vibes",
+            cursive;
+
+        /*
+           Más grande en teléfono.
+           32vw permite aprovechar el ancho disponible.
+        */
+        font-size: clamp(108px, 32vw, 142px);
+
+        font-weight: 400;
+
+        line-height: 1.08;
+
+        white-space: nowrap;
+
+        overflow: visible;
+
+        background:
+            linear-gradient(
+                180deg,
+                #a47b83 0%,
+                #bd919c 48%,
+                #9a7684 100%
+            );
+
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+
+        filter:
+            drop-shadow(
+                0 6px 12px
+                rgba(136, 98, 112, .12)
+            );
+
+        animation:
+            gardenNameGlow
+            4s ease-in-out infinite;
+    }
+
+    /* Las estrellas ya no ocupan espacio al lado de Camila */
+
+    .garden-name > span {
+        position: absolute;
+
+        top: 45%;
+
+        z-index: 2;
+
+        color: #bd9b60;
+
+        font-size: 9px;
+
+        pointer-events: none;
+    }
+
+    .garden-name > span:first-child {
+        left: 2%;
+    }
+
+    .garden-name > span:last-child {
+        right: 2%;
+    }
+
+    /* FECHA */
+
+    .garden-date {
+        margin: 4px auto 17px;
+
+        gap: 7px;
+    }
+
+    .garden-date span,
+    .garden-date strong {
+        font-size: 7px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .garden-date i {
+        width: 14px;
+    }
+
+    /* MENSAJE */
+
+    .garden-message {
+        max-width: 300px;
+
+        margin: auto;
+
+        font-size: 17px;
+
+        line-height: 1.5;
+    }
+
+    .garden-invitation {
+        max-width: 280px;
+
+        margin: 10px auto 19px;
+
+        font-size: 14px;
+    }
+
+    /* BOTÓN */
+
+    .garden-open-button {
+        width: min(300px, 90%);
+
+        min-width: 0;
+
+        padding: 13px 12px;
+
+        gap: 9px;
+    }
+
+    .garden-open-button strong {
+        font-size: 8px;
+
+        letter-spacing: 1.5px;
+    }
+
+    /* TOCA PARA ENTRAR */
+
+    .garden-enter {
+        margin-top: 14px;
+    }
+
+    .garden-enter p {
+        font-size: 6px;
+
+        letter-spacing: 3px;
+    }
+
+    /* FLORES */
+
+    .garden-flower-decoration {
+        width: 150px;
+        height: 140px;
+
+        opacity: .62;
+    }
+
+    .flower-decoration-left {
+        left: -35px;
+    }
+
+    .flower-decoration-right {
+        right: -35px;
+    }
+
+    .flower-big {
+        left: 25px;
+        bottom: 15px;
+
+        font-size: 55px;
+    }
+
+    .flower-medium {
+        left: 75px;
+        bottom: 50px;
+
+        font-size: 37px;
+    }
+
+    .flower-small {
+        left: 105px;
+        bottom: 15px;
+
+        font-size: 29px;
+    }
+
+    .garden-leaf {
+        width: 30px;
+        height: 12px;
+    }
+
+    /* MARIPOSAS */
+
+    .garden-butterfly {
+        width: 31px;
+        height: 24px;
+
+        opacity: .68;
+    }
+
+    .garden-wing {
+        width: 16px;
+        height: 20px;
+    }
+
+    .garden-butterfly-body {
+        height: 18px;
+    }
+
+    .butterfly-garden-left {
+        left: 2%;
+        top: 27%;
+    }
+
+    .butterfly-garden-right {
+        right: 2%;
+        top: 65%;
+    }
+
+    /* PÉTALOS */
+
+    .garden-petal {
+        width: 9px;
+        height: 14px;
+
+        opacity: .6;
+    }
+}
+
+
+/* =========================================================
+   TELÉFONOS PEQUEÑOS
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .garden-content {
+        width: 100%;
+
+        padding-left: 4px;
+        padding-right: 4px;
+
+        /*
+           IMPORTANTE:
+           no usamos transform: scale(.90)
+           porque hacía pequeña toda la portada.
+        */
+        transform: none;
+    }
+
+    .garden-name {
+        width: 100%;
+
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .garden-name h1 {
+        /*
+           Sigue siendo grande pero cabe en
+           teléfonos de aproximadamente 360px.
+        */
+        font-size: clamp(103px, 31vw, 125px);
+
+        padding-left: 22px;
+        padding-right: 14px;
+    }
+
+    .garden-name > span:first-child {
+        left: 1%;
+    }
+
+    .garden-name > span:last-child {
+        right: 1%;
+    }
+
+    .garden-message {
+        font-size: 16px;
+    }
+
+    .garden-invitation {
+        font-size: 13px;
+    }
+
+    .garden-open-button {
+        width: min(285px, 90%);
+    }
+
+    .garden-arch {
+        width: 92%;
+        height: 82%;
+    }
+
+    .garden-flower-decoration {
+        opacity: .48;
+    }
+}
+
+
+/* =========================================================
+   TELÉFONOS CON POCA ALTURA
+========================================================= */
+
+@media (max-width: 700px) and (max-height: 700px) {
+
+    .garden-content {
+        /*
+           NO reducir toda la portada con scale()
+        */
+        transform: none;
+
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .garden-crown {
+        font-size: 32px;
+
+        margin-bottom: 5px;
+    }
+
+    .garden-xv {
+        margin-bottom: 8px;
+    }
+
+    .garden-divider {
+        margin-bottom: 3px;
+    }
+
+    .garden-name {
+        margin-bottom: 1px;
+
+        padding-top: 2px;
+        padding-bottom: 5px;
+    }
+
+    .garden-name h1 {
+        font-size: clamp(95px, 29vw, 120px);
+
+        line-height: 1;
+    }
+
+    .garden-date {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    .garden-message {
+        font-size: 15px;
+    }
+
+    .garden-invitation {
+        margin-top: 6px;
+        margin-bottom: 12px;
+
+        font-size: 12px;
+    }
+
+    .garden-open-button {
+        padding-top: 11px;
+        padding-bottom: 11px;
+    }
+
+    .garden-enter {
+        margin-top: 8px;
+    }
+
+    .garden-flower-decoration {
+        opacity: .42;
+    }
 }
 
 /* =====================================================
@@ -15170,34 +15537,71 @@ select {
 .garden-name h1 {
     margin: 0;
 
-    padding:
-        0 14px 8px;
+    padding: 0 22px 10px;
 
-    font-size:
-        clamp(
-            105px,
-            31vw,
-            135px
-        );
+    font-family:
+        "Great Vibes",
+        cursive;
 
-    line-height: 1.05;
+    font-size: clamp(125px, 13vw, 180px);
+
+    font-weight: 400;
+
+    line-height: 1.08;
 
     white-space: nowrap;
 
     overflow: visible;
+
+    background:
+        linear-gradient(
+            180deg,
+            #a47b83 0%,
+            #bd919c 48%,
+            #9a7684 100%
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    filter:
+        drop-shadow(
+            0 6px 12px
+            rgba(136, 98, 112, .12)
+        );
+
+    animation:
+        gardenNameGlow
+        4s ease-in-out infinite;
 }
 
-.garden-name > span {
+.garden-name {
+    width: 100%;
+    max-width: 720px;
+
+    margin: 0 auto 8px;
+
+    padding: 10px 40px 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    overflow: visible;
+}
+
+
+   .garden-name > span {
     flex-shrink: 0;
 
-    font-size: 25px;
-}     white-space: nowrap;
-    }
+    color: #bd9b60;
 
-
-    .garden-name > span {
-        font-size: 8px;
-    }
+    font-size: 12px;
+}
 
 
     /* FECHA */
