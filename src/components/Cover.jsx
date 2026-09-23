@@ -1,89 +1,58 @@
 import { motion } from "framer-motion";
 
-const stars = [
-    { left: "6%", top: "12%", delay: 0.2, size: 8 },
-    { left: "14%", top: "32%", delay: 1.1, size: 5 },
-    { left: "22%", top: "15%", delay: 2.2, size: 7 },
-    { left: "31%", top: "7%", delay: 0.7, size: 5 },
-    { left: "40%", top: "22%", delay: 1.8, size: 8 },
-    { left: "52%", top: "9%", delay: 0.4, size: 5 },
-    { left: "63%", top: "18%", delay: 2.5, size: 7 },
-    { left: "72%", top: "8%", delay: 1.3, size: 5 },
-    { left: "82%", top: "25%", delay: 0.9, size: 8 },
-    { left: "91%", top: "13%", delay: 2.1, size: 5 },
-    { left: "9%", top: "62%", delay: 1.7, size: 6 },
-    { left: "18%", top: "76%", delay: 0.5, size: 8 },
-    { left: "78%", top: "70%", delay: 2.3, size: 6 },
-    { left: "91%", top: "62%", delay: 1.2, size: 8 },
-    { left: "96%", top: "79%", delay: 0.4, size: 5 }
+const sparkles = [
+    { left: "6%", top: "12%", delay: 0 },
+    { left: "15%", top: "28%", delay: 1.2 },
+    { left: "25%", top: "10%", delay: 2 },
+    { left: "35%", top: "20%", delay: 0.7 },
+    { left: "65%", top: "13%", delay: 1.6 },
+    { left: "76%", top: "25%", delay: 0.4 },
+    { left: "88%", top: "12%", delay: 2.3 },
+    { left: "94%", top: "40%", delay: 1 },
+    { left: "8%", top: "65%", delay: 1.8 },
+    { left: "18%", top: "80%", delay: 0.5 },
+    { left: "82%", top: "73%", delay: 2.1 },
+    { left: "93%", top: "84%", delay: 1.4 },
 ];
+
+const petals = Array.from({ length: 12 });
 
 export default function Cover({ onOpen }) {
     return (
-        <section className="cover">
+        <section className="garden-cover">
 
-            {/* FONDO */}
-            <div className="cover-background"></div>
+            {/* FONDOS */}
+            <div className="garden-bg" />
+            <div className="garden-light garden-light-left" />
+            <div className="garden-light garden-light-right" />
 
-            {/* RESPLANDOR CENTRAL */}
-            <div className="cover-glow"></div>
+            {/* MARCO */}
+            <div className="garden-frame">
+                <span className="garden-corner corner-1">✦</span>
+                <span className="garden-corner corner-2">✦</span>
+                <span className="garden-corner corner-3">✦</span>
+                <span className="garden-corner corner-4">✦</span>
+            </div>
 
-            {/* LUNA */}
-           <motion.div
-                className="cover-moon"
-                initial={{
-                    opacity: 0,
-                    scale: 0.6
-                }}
-                animate={{
-                    opacity: [0.7, 1, 0.82, 1],
-                    scale: [1, 1.035, 1, 1.02],
-                    boxShadow: [
-                        "0 0 30px rgba(255,228,160,.35)",
-                        "0 0 80px rgba(255,228,160,.55)",
-                        "0 0 45px rgba(255,228,160,.40)",
-                        "0 0 80px rgba(255,228,160,.55)"
-                    ]
-                }}
-                transition={{
-                    opacity: {
-                        duration: 6,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    },
-                    scale: {
-                        duration: 6,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    },
-                    boxShadow: {
-                        duration: 6,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }
-                }}
-            />
-
-            {/* ESTRELLAS */}
-            <div className="stars">
-                {stars.map((star, index) => (
+            {/* DESTELLOS */}
+            <div className="garden-sparkles">
+                {sparkles.map((item, index) => (
                     <motion.span
                         key={index}
-                        className="star"
                         style={{
-                            left: star.left,
-                            top: star.top,
-                            fontSize: `${star.size}px`
+                            left: item.left,
+                            top: item.top,
                         }}
                         animate={{
-                            opacity: [0.25, 1, 0.25],
-                            scale: [0.7, 1.35, 0.7]
+                            opacity: [0.15, 0.9, 0.15],
+                            scale: [0.6, 1.35, 0.6],
+                            rotate: [0, 45, 0],
                         }}
                         transition={{
                             duration: 3 + (index % 3),
-                            delay: star.delay,
+                            delay: item.delay,
                             repeat: Infinity,
-                            ease: "easeInOut"
+                            ease: "easeInOut",
                         }}
                     >
                         ✦
@@ -91,414 +60,261 @@ export default function Cover({ onOpen }) {
                 ))}
             </div>
 
-            {/* MARIPOSAS */}
-            <motion.span
-                className="cover-butterfly cover-butterfly-one"
-                animate={{
-                    y: [0, -15, 0],
-                    x: [0, 8, 0],
-                    rotate: [-8, 8, -8]
-                }}
-                transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                }}
-            >
-                ♡
-            </motion.span>
+            {/* PÉTALOS FLOTANDO */}
+            <div className="garden-petals">
+                {petals.map((_, index) => (
+                    <motion.span
+                        key={index}
+                        className={`garden-petal petal-${index + 1}`}
+                        initial={{ y: "-15vh", opacity: 0 }}
+                        animate={{
+                            y: "115vh",
+                            x: [0, 25, -18, 12],
+                            rotate: [0, 120, 250, 360],
+                            opacity: [0, 0.55, 0.45, 0],
+                        }}
+                        transition={{
+                            duration: 11 + (index % 5),
+                            delay: index * 1.1,
+                            repeat: Infinity,
+                            ease: "linear",
+                        }}
+                    />
+                ))}
+            </div>
 
-            <motion.span
-                className="cover-butterfly cover-butterfly-two"
-                animate={{
-                    y: [0, -12, 0],
-                    x: [0, -7, 0],
-                    rotate: [8, -8, 8]
-                }}
-                transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                }}
-            >
-                ♡
-            </motion.span>
-
-            {/* MARCO EXTERIOR */}
-            <div className="royal-border"></div>
-
-            {/* CASTILLO DEL FONDO */}
+            {/* MARIPOSA IZQUIERDA */}
             <motion.div
-                className="cover-castle"
-                initial={{
-                    opacity: 0,
-                    y: 60
-                }}
+                className="garden-butterfly butterfly-garden-left"
                 animate={{
-                    opacity: 1,
-                    y: 0
+                    x: [0, 30, 15, 42, 0],
+                    y: [0, -22, -48, -20, 0],
+                    rotate: [-8, 10, -5, 8, -8],
                 }}
                 transition={{
-                    duration: 2,
-                    delay: 0.5
+                    duration: 9,
+                    repeat: Infinity,
+                    ease: "easeInOut",
                 }}
             >
-                <div className="cover-castle-tower tower-left">
-                    <div className="cover-tower-roof"></div>
-                    <div className="cover-window"></div>
-                </div>
-
-                <div className="cover-castle-main">
-                    <div className="cover-main-roof"></div>
-
-                    <div className="cover-window castle-window-left"></div>
-                    <div className="cover-window castle-window-right"></div>
-
-                    <div className="cover-door"></div>
-                </div>
-
-                <div className="cover-castle-tower tower-right">
-                    <div className="cover-tower-roof"></div>
-                    <div className="cover-window"></div>
-                </div>
+                <span className="garden-wing garden-wing-left" />
+                <span className="garden-butterfly-body" />
+                <span className="garden-wing garden-wing-right" />
             </motion.div>
 
-            {/* =========================================
-    ESTRELLAS FUGACES
-========================================= */}
-
-<div className="shooting-stars">
-    <span className="shooting-star shooting-star-1"></span>
-    <span className="shooting-star shooting-star-2"></span>
-    <span className="shooting-star shooting-star-3"></span>
-</div>
-
-
-{/* =========================================
-    PARTÍCULAS MÁGICAS
-========================================= */}
-
-<div className="magic-particles">
-
-    {Array.from({ length: 16 }).map((_, index) => (
-
-        <motion.span
-            key={index}
-
-            style={{
-                left: `${5 + ((index * 17) % 90)}%`,
-                bottom: `${5 + ((index * 13) % 45)}%`
-            }}
-
-            animate={{
-                y: [0, -60, -110],
-                x: [0, index % 2 === 0 ? 15 : -15, 0],
-                opacity: [0, 0.9, 0],
-                scale: [0.5, 1.2, 0.4]
-            }}
-
-            transition={{
-                duration: 5 + (index % 4),
-                delay: index * 0.4,
-                repeat: Infinity,
-                ease: "easeInOut"
-            }}
-        >
-            ✦
-        </motion.span>
-
-        ))}
-
-    </div>
-
-
-    {/* =========================================
-        MARIPOSAS LILA
-    ========================================= */}
-
-    <motion.div
-        className="magic-cover-butterfly butterfly-left"
-
-        animate={{
-            x: [0, 35, 10, 45, 0],
-            y: [0, -35, -60, -25, 0],
-            rotate: [-10, 12, -5, 10, -10]
-        }}
-
-        transition={{
-            duration: 9,
-            repeat: Infinity,
-            ease: "easeInOut"
-        }}
-    >
-        <span className="butterfly-wing wing-left"></span>
-        <span className="butterfly-body"></span>
-        <span className="butterfly-wing wing-right"></span>
-    </motion.div>
-
-
-    <motion.div
-        className="magic-cover-butterfly butterfly-right"
-
-        animate={{
-            x: [0, -30, -10, -45, 0],
-            y: [0, -25, -65, -35, 0],
-            rotate: [8, -12, 5, -8, 8]
-        }}
-
-        transition={{
-            duration: 11,
-            repeat: Infinity,
-            ease: "easeInOut"
-        }}
-    >
-        <span className="butterfly-wing wing-left"></span>
-        <span className="butterfly-body"></span>
-        <span className="butterfly-wing wing-right"></span>
-    </motion.div>
-
-            {/* CONTENIDO */}
+            {/* MARIPOSA DERECHA */}
             <motion.div
-                className="cover-content"
-                initial={{
-                    opacity: 0,
-                    y: 40
-                }}
+                className="garden-butterfly butterfly-garden-right"
                 animate={{
-                    opacity: 1,
-                    y: 0
+                    x: [0, -30, -12, -42, 0],
+                    y: [0, -28, -55, -25, 0],
+                    rotate: [8, -10, 5, -8, 8],
                 }}
                 transition={{
-                    duration: 1.2,
-                    ease: "easeOut"
+                    duration: 11,
+                    repeat: Infinity,
+                    ease: "easeInOut",
                 }}
             >
+                <span className="garden-wing garden-wing-left" />
+                <span className="garden-butterfly-body" />
+                <span className="garden-wing garden-wing-right" />
+            </motion.div>
 
-                {/* CORONA */}
+            {/* FLORES DECORATIVAS */}
+            <motion.div
+                className="garden-flower-decoration flower-decoration-left"
+                initial={{ opacity: 0, x: -60 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.5 }}
+            >
+                <span className="flower-big">❀</span>
+                <span className="flower-medium">✿</span>
+                <span className="flower-small">❀</span>
+                <i className="garden-leaf leaf-1" />
+                <i className="garden-leaf leaf-2" />
+                <i className="garden-leaf leaf-3" />
+            </motion.div>
+
+            <motion.div
+                className="garden-flower-decoration flower-decoration-right"
+                initial={{ opacity: 0, x: 60 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.5 }}
+            >
+                <span className="flower-big">❀</span>
+                <span className="flower-medium">✿</span>
+                <span className="flower-small">❀</span>
+                <i className="garden-leaf leaf-1" />
+                <i className="garden-leaf leaf-2" />
+                <i className="garden-leaf leaf-3" />
+            </motion.div>
+
+            {/* ARCO CENTRAL */}
+            <motion.div
+                className="garden-arch"
+                initial={{ opacity: 0, scale: 0.88 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1.6, ease: "easeOut" }}
+            >
+                <div className="garden-arch-inner" />
+            </motion.div>
+
+            {/* CONTENIDO */}
+            <div className="garden-content">
+
                 <motion.div
-                    className="crown"
-                    initial={{
-                        opacity: 0,
-                        scale: 0.4,
-                        y: -15
-                    }}
-                    animate={{
-                        opacity: 1,
-                        scale: 1,
-                        y: 0
-                    }}
-                    transition={{
-                        delay: 0.3,
-                        duration: 1
-                    }}
+                    className="garden-crown"
+                    initial={{ opacity: 0, y: -20, scale: 0.6 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ delay: 0.2, duration: 1 }}
                 >
                     ♕
                 </motion.div>
 
-                {/* SUBTÍTULO */}
                 <motion.p
-                    className="cover-subtitle"
-                    initial={{
-                        opacity: 0,
-                        letterSpacing: "2px"
-                    }}
-                    animate={{
-                        opacity: 1,
-                        letterSpacing: "7px"
-                    }}
-                    transition={{
-                        delay: 0.6,
-                        duration: 1.2
-                    }}
+                    className="garden-xv"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.45, duration: 0.9 }}
                 >
                     MIS XV AÑOS
                 </motion.p>
 
-                {/* DIVISOR */}
                 <motion.div
-                    className="gold-line"
-                    initial={{
-                        opacity: 0,
-                        scaleX: 0
-                    }}
-                    animate={{
-                        opacity: 1,
-                        scaleX: 1
-                    }}
-                    transition={{
-                        delay: 0.8,
-                        duration: 1
-                    }}
+                    className="garden-divider"
+                    initial={{ opacity: 0, scaleX: 0 }}
+                    animate={{ opacity: 1, scaleX: 1 }}
+                    transition={{ delay: 0.65, duration: 1 }}
                 >
+                    <div />
                     <span>✦</span>
-                    <div></div>
-                    <span>♕</span>
-                    <div></div>
-                    <span>✦</span>
+                    <div />
                 </motion.div>
 
-                {/* NOMBRE */}
                 <motion.div
-                    className="cover-name-container"
+                    className="garden-name"
                     initial={{
                         opacity: 0,
-                        scale: 0.85,
-                        y: 20
+                        scale: 0.82,
+                        y: 25,
                     }}
                     animate={{
                         opacity: 1,
                         scale: 1,
-                        y: 0
+                        y: 0,
                     }}
                     transition={{
-                        delay: 1,
-                        duration: 1.2,
-                        ease: "easeOut"
+                        delay: 0.8,
+                        duration: 1.3,
+                        ease: "easeOut",
                     }}
                 >
                     <motion.span
-                        className="cover-name-star star-left"
                         animate={{
                             opacity: [0.3, 1, 0.3],
-                            scale: [0.7, 1.3, 0.7]
+                            scale: [0.7, 1.3, 0.7],
                         }}
                         transition={{
                             duration: 2.5,
-                            repeat: Infinity
+                            repeat: Infinity,
                         }}
                     >
                         ✦
                     </motion.span>
 
-                    <br>
-
-                    </br>
-
-                    <h1>
-                        Camila
-                    </h1>
+                    <h1>Camila</h1>
 
                     <motion.span
-                        className="cover-name-star star-right"
                         animate={{
                             opacity: [1, 0.3, 1],
-                            scale: [1.2, 0.7, 1.2]
+                            scale: [1.3, 0.7, 1.3],
                         }}
                         transition={{
                             duration: 3,
-                            repeat: Infinity
+                            repeat: Infinity,
                         }}
                     >
                         ✦
                     </motion.span>
                 </motion.div>
 
-                {/* FRASE */}
+                {/* FECHA */}
+                <motion.div
+                    className="garden-date"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.05, duration: 1 }}
+                >
+                    <span>16</span>
+                    <i />
+                    <strong>NOVIEMBRE</strong>
+                    <i />
+                    <span>2026</span>
+                </motion.div>
+
                 <motion.p
-                    className="cover-description"
-                    initial={{
-                        opacity: 0,
-                        y: 15
-                    }}
-                    animate={{
-                        opacity: 1,
-                        y: 0
-                    }}
-                    transition={{
-                        delay: 1.25,
-                        duration: 1
-                    }}
+                    className="garden-message"
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.25, duration: 1 }}
                 >
                     Hay momentos que se convierten
                     <br />
-                    en recuerdos para toda la vida...
+                    en recuerdos para toda la vida.
                 </motion.p>
 
                 <motion.p
-                    className="cover-invitation"
-                    initial={{
-                        opacity: 0
-                    }}
-                    animate={{
-                        opacity: 1
-                    }}
-                    transition={{
-                        delay: 1.45,
-                        duration: 1
-                    }}
+                    className="garden-invitation"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.45, duration: 1 }}
                 >
-                    Te invito a celebrar conmigo
+                    Te invito a compartir conmigo
                     <br />
-                    el comienzo de un nuevo capítulo.
+                    este día tan especial.
                 </motion.p>
 
-                {/* BOTÓN */}
                 <motion.button
-                    className="open-button"
+                    type="button"
+                    className="garden-open-button"
                     onClick={onOpen}
-                    initial={{
-                        opacity: 0,
-                        y: 20
-                    }}
-                    animate={{
-                        opacity: 1,
-                        y: 0
-                    }}
-                    transition={{
-                        delay: 1.7,
-                        duration: 0.8
-                    }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.65, duration: 0.8 }}
                     whileHover={{
-                        scale: 1.04,
-                        y: -3
+                        scale: 1.045,
+                        y: -3,
                     }}
-                    whileTap={{
-                        scale: 0.97
-                    }}
+                    whileTap={{ scale: 0.96 }}
                 >
                     <span>✦</span>
-
-                    ABRIR INVITACIÓN
-
+                    <strong>ABRIR INVITACIÓN</strong>
                     <span>✦</span>
                 </motion.button>
 
-                {/* INDICACIÓN */}
                 <motion.div
-                    className="cover-enter"
-                    initial={{
-                        opacity: 0
-                    }}
-                    animate={{
-                        opacity: 1
-                    }}
-                    transition={{
-                        delay: 2,
-                        duration: 1
-                    }}
+                    className="garden-enter"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.9, duration: 1 }}
                 >
                     <motion.span
-                        animate={{
-                            y: [0, 6, 0]
-                        }}
+                        animate={{ y: [0, 6, 0] }}
                         transition={{
                             duration: 2,
-                            repeat: Infinity
+                            repeat: Infinity,
                         }}
                     >
                         ↓
                     </motion.span>
 
-                    <p className="touch-text">
-                        TOCA PARA ENTRAR
-                    </p>
+                    <p>TOCA PARA ENTRAR</p>
                 </motion.div>
+            </div>
 
-            </motion.div>
-
-            {/* NIEBLA / SUELO */}
-            <div className="cover-bottom-fog"></div>
-
+            {/* BRUMA INFERIOR */}
+            <div className="garden-bottom-glow" />
         </section>
     );
 }
