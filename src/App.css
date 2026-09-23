@@ -15485,7 +15485,8 @@ select {
     font-family: "Great Vibes", cursive;
 
     /* GRANDE EN CELULAR */
-    font-size: clamp(115px, 34vw, 145px);
+    font-size: 34vw;
+    max-font-size: 145px;
 
     font-weight: 400;
 
@@ -15876,3 +15877,249 @@ select {
         opacity: .48;
     }
 
+
+
+
+    /* =========================================================
+   CORRECCIÓN DEFINITIVA - NOMBRE CAMILA
+   PEGAR AL FINAL DE App.css
+========================================================= */
+
+/* Computadora */
+.garden-content {
+    overflow: visible !important;
+}
+
+.garden-name {
+    position: relative !important;
+
+    width: 100% !important;
+    max-width: 760px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    padding-left: 55px !important;
+    padding-right: 35px !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    overflow: visible !important;
+}
+
+.garden-name h1 {
+    display: inline-block !important;
+
+    margin: 0 !important;
+
+    /*
+      Great Vibes tiene un trazo largo en la C.
+      Este padding crea espacio REAL alrededor del glifo.
+    */
+    padding:
+        10px 25px
+        18px 45px !important;
+
+    font-family:
+        "Great Vibes",
+        cursive !important;
+
+    font-size:
+        clamp(
+            125px,
+            13vw,
+            180px
+        ) !important;
+
+    font-weight: 400 !important;
+
+    line-height: 1.15 !important;
+
+    white-space: nowrap !important;
+
+    overflow: visible !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #a47b83 0%,
+            #bd919c 48%,
+            #9a7684 100%
+        ) !important;
+
+    -webkit-background-clip:
+        text !important;
+
+    background-clip:
+        text !important;
+
+    -webkit-text-fill-color:
+        transparent !important;
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .garden-content {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        overflow: visible !important;
+
+        transform: none !important;
+    }
+
+
+    .garden-name {
+        position: relative !important;
+
+        /*
+          Le damos un poco más de ancho que la pantalla.
+          Esto permite que el trazo decorativo de la C
+          tenga espacio sin cortar el texto.
+        */
+        width: calc(100% + 50px) !important;
+
+        max-width: none !important;
+
+        margin-left: -25px !important;
+        margin-right: -25px !important;
+
+        padding:
+            5px 20px
+            12px 40px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        overflow: visible !important;
+
+        gap: 0 !important;
+    }
+
+
+    .garden-name h1 {
+        position: relative !important;
+
+        display: inline-block !important;
+
+        margin: 0 !important;
+
+        /*
+          Espacio especial para la C
+        */
+        padding:
+            8px 15px
+            15px 40px !important;
+
+        font-family:
+            "Great Vibes",
+            cursive !important;
+
+        font-size:
+            clamp(
+                112px,
+                32vw,
+                140px
+            ) !important;
+
+        font-weight: 400 !important;
+
+        line-height: 1.15 !important;
+
+        white-space: nowrap !important;
+
+        overflow: visible !important;
+
+        transform:
+            translateX(8px) !important;
+
+        background:
+            linear-gradient(
+                180deg,
+                #a47b83 0%,
+                #bd919c 48%,
+                #9a7684 100%
+            ) !important;
+
+        -webkit-background-clip:
+            text !important;
+
+        background-clip:
+            text !important;
+
+        -webkit-text-fill-color:
+            transparent !important;
+    }
+
+
+    /* Estrellas decorativas */
+
+    .garden-name > span {
+        position: absolute !important;
+
+        top: 45% !important;
+
+        z-index: 5 !important;
+
+        font-size: 9px !important;
+
+        color: #bd9b60 !important;
+
+        pointer-events: none !important;
+    }
+
+
+    .garden-name > span:first-child {
+        left: 22px !important;
+    }
+
+
+    .garden-name > span:last-child {
+        right: 22px !important;
+    }
+}
+
+
+/* =========================================================
+   CELULARES PEQUEÑOS
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .garden-name {
+        width: calc(100% + 40px) !important;
+
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+
+        padding-left: 30px !important;
+        padding-right: 15px !important;
+    }
+
+
+    .garden-name h1 {
+        font-size:
+            clamp(
+                105px,
+                31vw,
+                125px
+            ) !important;
+
+        padding-left: 38px !important;
+
+        transform:
+            translateX(6px) !important;
+    }
+}
