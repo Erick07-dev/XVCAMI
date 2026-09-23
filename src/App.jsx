@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import Cover from "./components/Cover";
 import MusicPlayer from "./components/MusicPlayer";
 import Hero from "./components/Hero";
+import MessageLetter from "./components/MessageLetter";
 import Countdown from "./components/Countdown";
 import Family from "./components/Family";
 import Litinerary from "./components/Litinerary";
@@ -15,7 +16,7 @@ import EventDetails from "./components/EventDetails";
 import { Gift } from "lucide-react";
 import Closing from "./components/Closing";
 import MagicDecorations from "./components/MagicDecorations";
-import MessageLetter from "./components/MessageLetter";
+
 
 
 
@@ -80,9 +81,6 @@ function App() {
                     <Closing />
 
                     <MagicDecorations /> 
-
-                    
-
                     
 
                 </main>
