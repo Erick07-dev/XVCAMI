@@ -1,38 +1,125 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ZoomIn } from "lucide-react";
+import {
+    X,
+    ZoomIn,
+    ChevronLeft,
+    ChevronRight
+} from "lucide-react";
 
 const photos = [
     {
         src: "/images/gallery/camila1.png",
-        alt: "Recuerdo de Camila"
+        alt: "Recuerdo de Camila",
+        className: "royal-photo-main"
     },
     {
         src: "/images/gallery/camila2.png",
-        alt: "Recuerdo de Camila"
+        alt: "Recuerdo de Camila",
+        className: "royal-photo-tall"
     },
     {
         src: "/images/gallery/camila3.png",
-        alt: "Recuerdo de Camila"
+        alt: "Recuerdo de Camila",
+        className: "royal-photo-small"
     },
     {
         src: "/images/gallery/camila4.png",
-        alt: "Recuerdo de Camila"
+        alt: "Recuerdo de Camila",
+        className: "royal-photo-small"
     },
     {
         src: "/images/gallery/camila5.png",
-        alt: "Recuerdo de Camila"
+        alt: "Recuerdo de Camila",
+        className: "royal-photo-wide"
     },
     {
         src: "/images/gallery/camila6.png",
-        alt: "Recuerdo de Camila"
+        alt: "Recuerdo de Camila",
+        className: "royal-photo-tall"
     }
 ];
 
 export default function Gallery() {
 
-    const [selectedPhoto, setSelectedPhoto] =
+    const [selectedIndex, setSelectedIndex] =
         useState(null);
+
+    const selectedPhoto =
+        selectedIndex !== null
+            ? photos[selectedIndex]
+            : null;
+
+
+    const openPhoto = (index) => {
+        setSelectedIndex(index);
+    };
+
+
+    const closePhoto = () => {
+        setSelectedIndex(null);
+    };
+
+
+    const nextPhoto = (event) => {
+
+        event?.stopPropagation();
+
+        setSelectedIndex((current) =>
+            current === photos.length - 1
+                ? 0
+                : current + 1
+        );
+    };
+
+
+    const previousPhoto = (event) => {
+
+        event?.stopPropagation();
+
+        setSelectedIndex((current) =>
+            current === 0
+                ? photos.length - 1
+                : current - 1
+        );
+    };
+
+
+    useEffect(() => {
+
+        if (selectedIndex === null) {
+            return;
+        }
+
+        const handleKeyDown = (event) => {
+
+            if (event.key === "Escape") {
+                closePhoto();
+            }
+
+            if (event.key === "ArrowRight") {
+                nextPhoto();
+            }
+
+            if (event.key === "ArrowLeft") {
+                previousPhoto();
+            }
+        };
+
+        document.addEventListener(
+            "keydown",
+            handleKeyDown
+        );
+
+        return () => {
+            document.removeEventListener(
+                "keydown",
+                handleKeyDown
+            );
+        };
+
+    }, [selectedIndex]);
+
 
     return (
         <>
@@ -42,7 +129,7 @@ export default function Gallery() {
                     className="gallery-content"
                     initial={{
                         opacity: 0,
-                        y: 50
+                        y: 40
                     }}
                     whileInView={{
                         opacity: 1,
@@ -57,17 +144,32 @@ export default function Gallery() {
                     }}
                 >
 
-                    <div className="gallery-crown">
+                    {/* CORONA */}
+
+                    <motion.div
+                        className="gallery-crown"
+                        animate={{
+                            y: [0, -5, 0]
+                        }}
+                        transition={{
+                            duration: 4,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                    >
                         ♕
-                    </div>
+                    </motion.div>
+
 
                     <p className="gallery-small">
                         MIS RECUERDOS
                     </p>
 
+
                     <h2>
                         Momentos especiales
                     </h2>
+
 
                     <div className="gallery-divider">
 
@@ -75,9 +177,14 @@ export default function Gallery() {
 
                         <div></div>
 
+                        <span>♕</span>
+
+                        <div></div>
+
                         <span>✦</span>
 
                     </div>
+
 
                     <p className="gallery-message">
                         Cada fotografía guarda una historia,
@@ -86,55 +193,134 @@ export default function Gallery() {
                     </p>
 
 
-                    {/* GALERÍA */}
+                    {/* =====================================
+                        ÁLBUM REAL
+                    ===================================== */}
 
-                    <div className="gallery-grid">
+                    <div className="royal-gallery">
+
+                        {/* Adornos */}
+
+                        <motion.span
+                            className="gallery-decoration gallery-decoration-1"
+                            animate={{
+                                rotate: [-8, 8, -8],
+                                scale: [1, 1.15, 1]
+                            }}
+                            transition={{
+                                duration: 5,
+                                repeat: Infinity
+                            }}
+                        >
+                            ✦
+                        </motion.span>
+
+
+                        <motion.span
+                            className="gallery-decoration gallery-decoration-2"
+                            animate={{
+                                y: [0, -8, 0],
+                                rotate: [5, -5, 5]
+                            }}
+                            transition={{
+                                duration: 6,
+                                repeat: Infinity
+                            }}
+                        >
+                            ♕
+                        </motion.span>
+
 
                         {photos.map((photo, index) => (
 
                             <motion.button
-                                type="button"
-                                className={`gallery-item gallery-item-${index + 1}`}
                                 key={photo.src}
+                                type="button"
+
+                                className={`
+                                    royal-gallery-photo
+                                    ${photo.className}
+                                    royal-gallery-photo-${index + 1}
+                                `}
+
                                 onClick={() =>
-                                    setSelectedPhoto(photo)
+                                    openPhoto(index)
                                 }
+
                                 initial={{
                                     opacity: 0,
-                                    y: 40
+                                    y: 40,
+                                    scale: 0.96
                                 }}
+
                                 whileInView={{
                                     opacity: 1,
-                                    y: 0
+                                    y: 0,
+                                    scale: 1
                                 }}
+
                                 viewport={{
                                     once: true,
                                     amount: 0.15
                                 }}
+
                                 transition={{
-                                    duration: 0.6,
+                                    duration: 0.65,
                                     delay:
                                         (index % 3) * 0.1
                                 }}
+
                                 whileHover={{
-                                    y: -5
+                                    y: -7
                                 }}
                             >
 
-                                <img
-                                    src={photo.src}
-                                    alt={photo.alt}
-                                    loading="lazy"
-                                />
+                                {/* Marco */}
 
-                                <div className="gallery-overlay">
+                                <div className="royal-photo-frame">
 
-                                    <ZoomIn
-                                        size={25}
+                                    <img
+                                        src={photo.src}
+                                        alt={photo.alt}
+                                        loading="lazy"
                                     />
 
-                                    <span>
-                                        VER FOTO
+
+                                    {/* Overlay */}
+
+                                    <div className="royal-photo-overlay">
+
+                                        <div className="royal-photo-view">
+
+                                            <ZoomIn
+                                                size={23}
+                                            />
+
+                                            <span>
+                                                VER RECUERDO
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    {/* Esquinas */}
+
+                                    <span className="photo-corner corner-top-left">
+                                        ✦
+                                    </span>
+
+                                    <span className="photo-corner corner-top-right">
+                                        ✦
+                                    </span>
+
+                                    <span className="photo-corner corner-bottom-left">
+                                        ✦
+                                    </span>
+
+                                    <span className="photo-corner corner-bottom-right">
+                                        ✦
                                     </span>
 
                                 </div>
@@ -146,76 +332,161 @@ export default function Gallery() {
                     </div>
 
 
-                    <p className="gallery-final">
-                        ✦ Una historia que apenas comienza ✦
-                    </p>
+                    {/* FINAL */}
+
+                    <motion.div
+                        className="gallery-ending"
+                        initial={{
+                            opacity: 0
+                        }}
+                        whileInView={{
+                            opacity: 1
+                        }}
+                        viewport={{
+                            once: true
+                        }}
+                        transition={{
+                            duration: 1
+                        }}
+                    >
+
+                        <span>✦</span>
+
+                        <p>
+                            Una historia que apenas comienza
+                        </p>
+
+                        <span>✦</span>
+
+                    </motion.div>
 
                 </motion.div>
 
             </section>
 
 
-            {/* FOTO EN GRANDE */}
+            {/* =====================================
+                VISOR DE FOTOGRAFÍAS
+            ===================================== */}
 
             <AnimatePresence>
 
                 {selectedPhoto && (
 
                     <motion.div
-                        className="gallery-modal"
+                        className="royal-gallery-modal"
+
                         initial={{
                             opacity: 0
                         }}
+
                         animate={{
                             opacity: 1
                         }}
+
                         exit={{
                             opacity: 0
                         }}
-                        onClick={() =>
-                            setSelectedPhoto(null)
-                        }
+
+                        onClick={closePhoto}
                     >
+
+                        {/* CERRAR */}
 
                         <button
                             type="button"
-                            className="gallery-close"
-                            onClick={() =>
-                                setSelectedPhoto(null)
-                            }
+                            className="royal-gallery-close"
+                            onClick={closePhoto}
                             aria-label="Cerrar fotografía"
                         >
                             <X size={25} />
                         </button>
 
-                        <motion.img
-                            src={selectedPhoto.src}
-                            alt={selectedPhoto.alt}
+
+                        {/* ANTERIOR */}
+
+                        <button
+                            type="button"
+                            className="
+                                royal-gallery-arrow
+                                royal-gallery-previous
+                            "
+                            onClick={previousPhoto}
+                            aria-label="Fotografía anterior"
+                        >
+                            <ChevronLeft size={30} />
+                        </button>
+
+
+                        {/* FOTO */}
+
+                        <motion.div
+                            className="royal-modal-content"
+
                             initial={{
                                 opacity: 0,
-                                scale: 0.85
+                                scale: 0.85,
+                                y: 25
                             }}
+
                             animate={{
                                 opacity: 1,
-                                scale: 1
+                                scale: 1,
+                                y: 0
                             }}
+
                             exit={{
                                 opacity: 0,
                                 scale: 0.9
                             }}
+
                             transition={{
                                 duration: 0.35
                             }}
+
                             onClick={(event) =>
                                 event.stopPropagation()
                             }
-                        />
+                        >
+
+                            <span className="modal-crown">
+                                ♕
+                            </span>
+
+                            <img
+                                src={selectedPhoto.src}
+                                alt={selectedPhoto.alt}
+                            />
+
+                            <div className="modal-photo-number">
+                                {selectedIndex + 1}
+                                <span>/</span>
+                                {photos.length}
+                            </div>
+
+                        </motion.div>
+
+
+                        {/* SIGUIENTE */}
+
+                        <button
+                            type="button"
+                            className="
+                                royal-gallery-arrow
+                                royal-gallery-next
+                            "
+                            onClick={nextPhoto}
+                            aria-label="Siguiente fotografía"
+                        >
+                            <ChevronRight size={30} />
+                        </button>
 
                     </motion.div>
 
                 )}
 
             </AnimatePresence>
+
         </>
     );
 }
