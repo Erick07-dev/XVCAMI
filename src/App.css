@@ -10069,3 +10069,887 @@ select {
     }
 
 }
+
+/* =========================================================
+   NUEVA PORTADA XV CAMILA
+========================================================= */
+
+.cover {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    padding: 30px 20px;
+
+    background: #160813;
+}
+
+
+/* =========================================================
+   FONDO
+========================================================= */
+
+.cover-background {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 38%,
+            rgba(155, 83, 126, .36),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(114, 63, 120, .18),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 18% 65%,
+            rgba(105, 46, 88, .18),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #120711 0%,
+            #210b1c 35%,
+            #351329 68%,
+            #180914 100%
+        );
+
+    z-index: 0;
+}
+
+
+.cover-glow {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 650px;
+    height: 650px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(213, 153, 188, .16),
+            rgba(142, 76, 120, .06) 45%,
+            transparent 70%
+        );
+
+    filter: blur(20px);
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MARCO DORADO
+========================================================= */
+
+.royal-border {
+    position: absolute;
+
+    inset: 22px;
+
+    z-index: 20;
+
+    border:
+        1px solid rgba(215, 177, 91, .48);
+
+    border-radius: 32px;
+
+    pointer-events: none;
+}
+
+
+.royal-border::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 9px;
+
+    border:
+        1px solid rgba(215, 177, 91, .17);
+
+    border-radius: 24px;
+}
+
+
+/* =========================================================
+   LUNA
+========================================================= */
+
+.cover-moon {
+    position: absolute;
+
+    top: 8%;
+    right: 8%;
+
+    width: 125px;
+    height: 125px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fff9df,
+            #f1dca6 55%,
+            #c89e59
+        );
+
+    box-shadow:
+        0 0 25px rgba(255, 228, 160, .40),
+        0 0 70px rgba(255, 220, 145, .20),
+        0 0 140px rgba(222, 180, 111, .12);
+
+    opacity: .75;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   ESTRELLAS
+========================================================= */
+
+.stars {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 4;
+
+    pointer-events: none;
+}
+
+
+.star {
+    position: absolute;
+
+    color: #e5bd65;
+
+    text-shadow:
+        0 0 8px rgba(255, 220, 135, .8);
+}
+
+
+/* =========================================================
+   MARIPOSAS
+========================================================= */
+
+.cover-butterfly {
+    position: absolute;
+
+    z-index: 7;
+
+    color: rgba(229, 184, 226, .72);
+
+    font-size: 32px;
+
+    text-shadow:
+        0 0 14px rgba(225, 165, 220, .50);
+
+    pointer-events: none;
+}
+
+
+.cover-butterfly-one {
+    left: 11%;
+    top: 38%;
+}
+
+
+.cover-butterfly-two {
+    right: 12%;
+    top: 57%;
+}
+
+
+/* =========================================================
+   CASTILLO
+========================================================= */
+
+.cover-castle {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 500px;
+    height: 300px;
+
+    transform: translateX(-50%);
+
+    z-index: 2;
+
+    opacity: .20;
+
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(208, 151, 194, .16)
+        );
+}
+
+
+.cover-castle-main {
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+
+    width: 200px;
+    height: 185px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            180deg,
+            #522d50,
+            #1b0c19
+        );
+}
+
+
+.cover-main-roof {
+    position: absolute;
+
+    top: -85px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 0;
+    height: 0;
+
+    border-left: 120px solid transparent;
+    border-right: 120px solid transparent;
+
+    border-bottom:
+        90px solid #27101f;
+}
+
+
+.cover-castle-tower {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 100px;
+    height: 215px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #4d294b,
+            #190b17
+        );
+}
+
+
+.tower-left {
+    left: 30px;
+}
+
+
+.tower-right {
+    right: 30px;
+}
+
+
+.cover-tower-roof {
+    position: absolute;
+
+    top: -90px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 0;
+    height: 0;
+
+    border-left: 65px solid transparent;
+    border-right: 65px solid transparent;
+
+    border-bottom:
+        95px solid #25101e;
+}
+
+
+.cover-window {
+    position: absolute;
+
+    top: 65px;
+    left: 50%;
+
+    width: 16px;
+    height: 31px;
+
+    transform: translateX(-50%);
+
+    border-radius:
+        12px 12px 3px 3px;
+
+    background: #d6ad5a;
+
+    box-shadow:
+        0 0 12px
+        rgba(230, 188, 94, .45);
+}
+
+
+.cover-castle-main .cover-window {
+    top: 60px;
+}
+
+
+.castle-window-left {
+    left: 30%;
+}
+
+
+.castle-window-right {
+    left: 70%;
+}
+
+
+.cover-door {
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+
+    width: 48px;
+    height: 72px;
+
+    transform: translateX(-50%);
+
+    border-radius:
+        30px 30px 0 0;
+
+    background: #10070f;
+}
+
+
+/* =========================================================
+   CONTENIDO CENTRAL
+========================================================= */
+
+.cover-content {
+    position: relative;
+
+    z-index: 15;
+
+    width: min(680px, 92%);
+
+    padding:
+        55px 45px 48px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        rgba(218, 178, 92, .38);
+
+    border-radius: 36px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(101, 55, 79, .52),
+            rgba(74, 31, 57, .35)
+        );
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.32),
+        inset 0 1px 0 rgba(255,255,255,.10),
+        0 0 60px rgba(177, 100, 149, .08);
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* =========================================================
+   CORONA
+========================================================= */
+
+.crown {
+    margin-bottom: 13px;
+
+    color: #e5bd65;
+
+    font-size: 55px;
+
+    line-height: 1;
+
+    text-shadow:
+        0 0 14px rgba(229, 189, 101, .35);
+}
+
+
+/* =========================================================
+   MIS XV AÑOS
+========================================================= */
+
+.cover-subtitle {
+    margin:
+        20px 0 22px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 7px;
+
+    color: #f1ddb0;
+}
+
+
+/* =========================================================
+   DIVISOR
+========================================================= */
+
+.gold-line {
+    width: min(320px, 80%);
+
+    margin: 0 auto 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #e0b45b;
+}
+
+
+.gold-line div {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(224,180,91,.70),
+            transparent
+        );
+}
+
+
+.gold-line span {
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   CAMILA
+========================================================= */
+
+.cover-name-container {
+    position: relative;
+
+    width: fit-content;
+
+    margin:
+        5px auto 20px;
+
+    padding:
+        0 42px;
+}
+
+
+.cover-name-container h1 {
+    margin: 0;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size:
+        clamp(100px, 11vw, 155px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #f2cd78;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff1ba,
+            #e4b85e,
+            #f4d98c
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    filter:
+        drop-shadow(
+            0 5px 12px
+            rgba(0,0,0,.22)
+        );
+}
+
+
+.cover-name-star {
+    position: absolute;
+
+    top: 50%;
+
+    color: #e7bd62;
+
+    font-size: 14px;
+
+    transform: translateY(-50%);
+}
+
+
+.star-left {
+    left: 7px;
+}
+
+
+.star-right {
+    right: 7px;
+}
+
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
+.cover-description {
+    margin:
+        15px auto 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 22px;
+
+    font-weight: 500;
+
+    line-height: 1.55;
+
+    color: #fff3f7;
+}
+
+
+.cover-invitation {
+    margin:
+        16px auto 30px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 18px;
+
+    line-height: 1.55;
+
+    color:
+        rgba(255, 237, 245, .76);
+}
+
+
+/* =========================================================
+   BOTÓN
+========================================================= */
+
+.open-button {
+    position: relative;
+
+    min-width: 300px;
+
+    padding:
+        17px 28px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 17px;
+
+    border:
+        1px solid #e0b45b;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(192, 71, 124, .92),
+            rgba(156, 70, 129, .92)
+        );
+
+    color: #fff;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.25),
+        0 0 25px rgba(215, 163, 102, .10);
+
+    transition:
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+
+.open-button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #cf4d89,
+            #a9437c
+        );
+
+    box-shadow:
+        0 16px 45px rgba(0,0,0,.32),
+        0 0 30px rgba(224,180,91,.18);
+}
+
+
+.open-button span {
+    color: #f4cf77;
+}
+
+
+/* =========================================================
+   ENTRAR
+========================================================= */
+
+.cover-enter {
+    margin-top: 22px;
+
+    color:
+        rgba(244, 221, 232, .60);
+}
+
+
+.cover-enter > span {
+    display: block;
+
+    color: #dcb35c;
+
+    font-size: 16px;
+}
+
+
+.touch-text {
+    margin:
+        7px 0 0;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    color:
+        rgba(255, 235, 243, .55);
+}
+
+
+/* =========================================================
+   NIEBLA INFERIOR
+========================================================= */
+
+.cover-bottom-fog {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: -70px;
+
+    height: 230px;
+
+    z-index: 3;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(147, 84, 125, .20),
+            transparent 65%
+        );
+
+    filter: blur(25px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .cover {
+        padding:
+            18px 13px;
+    }
+
+
+    .royal-border {
+        inset: 10px;
+
+        border-radius:
+            24px;
+    }
+
+
+    .cover-content {
+        width: 94%;
+
+        padding:
+            42px 20px 37px;
+
+        border-radius:
+            28px;
+    }
+
+
+    .crown {
+        font-size:
+            44px;
+    }
+
+
+    .cover-subtitle {
+        font-size:
+            11px;
+
+        letter-spacing:
+            5px;
+    }
+
+
+    .cover-name-container {
+        padding:
+            0 25px;
+    }
+
+
+    .cover-name-container h1 {
+        font-size:
+            clamp(80px, 25vw, 115px);
+    }
+
+
+    .cover-description {
+        font-size:
+            19px;
+    }
+
+
+    .cover-invitation {
+        font-size:
+            16px;
+    }
+
+
+    .open-button {
+        min-width: 0;
+
+        width: min(310px, 95%);
+
+        padding:
+            15px 17px;
+
+        gap: 10px;
+
+        font-size:
+            10px;
+
+        letter-spacing:
+            1.5px;
+    }
+
+
+    .cover-moon {
+        top: 5%;
+        right: -20px;
+
+        width: 95px;
+        height: 95px;
+
+        opacity: .55;
+    }
+
+
+    .cover-castle {
+        width: 370px;
+
+        transform:
+            translateX(-50%)
+            scale(.76);
+
+        transform-origin:
+            bottom center;
+    }
+
+
+    .cover-butterfly-one {
+        left: 4%;
+    }
+
+
+    .cover-butterfly-two {
+        right: 4%;
+    }
+
+}
