@@ -11578,3 +11578,647 @@ select {
     }
 
 }
+
+/* =========================================================
+   PORTADA PREMIUM - TELÉFONO
+   PONER AL FINAL DE APP.CSS
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* PANTALLA COMPLETA */
+
+    .cover {
+        position: fixed;
+        inset: 0;
+
+        width: 100%;
+        height: 100dvh;
+        min-height: 100dvh;
+
+        padding:
+            14px 12px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        overflow: hidden;
+
+        background: #150912;
+    }
+
+
+    /* ==========================================
+       FONDO
+    ========================================== */
+
+    .cover-background {
+        background:
+            radial-gradient(
+                circle at 85% 15%,
+                rgba(222, 177, 211, .16),
+                transparent 23%
+            ),
+
+            radial-gradient(
+                circle at 50% 43%,
+                rgba(151, 76, 121, .34),
+                transparent 48%
+            ),
+
+            radial-gradient(
+                circle at 10% 80%,
+                rgba(101, 47, 88, .20),
+                transparent 32%
+            ),
+
+            linear-gradient(
+                180deg,
+                #160914 0%,
+                #2b1023 45%,
+                #1b0b18 100%
+            );
+    }
+
+
+    /* RESPLANDOR CENTRAL */
+
+    .cover-glow {
+        width: 430px;
+        height: 600px;
+
+        top: 46%;
+
+        opacity: .75;
+
+        filter: blur(35px);
+    }
+
+
+    /* ==========================================
+       MARCO EXTERIOR
+    ========================================== */
+
+    .royal-border {
+        inset: 8px;
+
+        border-radius: 25px;
+
+        border-color:
+            rgba(215, 177, 91, .38);
+    }
+
+
+    .royal-border::before {
+        inset: 7px;
+
+        border-radius: 20px;
+    }
+
+
+    /* ==========================================
+       TARJETA PRINCIPAL
+    ========================================== */
+
+    .cover-content {
+        position: relative;
+
+        width: calc(100% - 18px);
+        max-width: 410px;
+
+        min-height: auto;
+
+        margin: 0;
+
+        padding:
+            36px 19px
+            30px;
+
+        border-radius: 28px;
+
+        border:
+            1px solid
+            rgba(218, 178, 92, .38);
+
+        background:
+            linear-gradient(
+                160deg,
+                rgba(104, 54, 82, .64),
+                rgba(72, 29, 56, .52)
+            );
+
+        box-shadow:
+            0 25px 70px
+            rgba(0, 0, 0, .28),
+
+            inset 0 1px 0
+            rgba(255,255,255,.09),
+
+            0 0 35px
+            rgba(185, 107, 160, .08);
+
+        backdrop-filter:
+            blur(12px);
+
+        -webkit-backdrop-filter:
+            blur(12px);
+    }
+
+
+    /* ==========================================
+       CORONA
+    ========================================== */
+
+    .crown {
+        margin-bottom: 10px;
+
+        font-size: 39px;
+    }
+
+
+    /* ==========================================
+       MIS XV AÑOS
+    ========================================== */
+
+    .cover-subtitle {
+        margin:
+            12px 0 17px;
+
+        font-size: 9px;
+
+        letter-spacing: 5px;
+    }
+
+
+    /* ==========================================
+       LÍNEA DORADA
+    ========================================== */
+
+    .gold-line {
+        width: 72%;
+
+        margin:
+            0 auto 25px;
+
+        gap: 7px;
+    }
+
+
+    .gold-line span {
+        font-size: 7px;
+    }
+
+
+    /* ==========================================
+       CAMILA
+    ========================================== */
+
+    .cover-name-container {
+        width: 100%;
+
+        margin:
+            3px auto 21px;
+
+        padding:
+            0 24px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .cover-name-container h1 {
+        max-width: 100%;
+
+        font-size:
+            clamp(
+                78px,
+                24vw,
+                105px
+            );
+
+        line-height: .95;
+
+        white-space: nowrap;
+    }
+
+
+    .cover-name-star {
+        font-size: 9px;
+    }
+
+
+    .star-left {
+        left: 8px;
+    }
+
+
+    .star-right {
+        right: 8px;
+    }
+
+
+    /* ==========================================
+       FRASE PRINCIPAL
+    ========================================== */
+
+    .cover-description {
+        max-width: 300px;
+
+        margin:
+            0 auto;
+
+        font-size: 17px;
+
+        line-height: 1.55;
+    }
+
+
+    /* ==========================================
+       INVITACIÓN
+    ========================================== */
+
+    .cover-invitation {
+        max-width: 285px;
+
+        margin:
+            14px auto 24px;
+
+        font-size: 14px;
+
+        line-height: 1.55;
+    }
+
+
+    /* ==========================================
+       BOTÓN
+    ========================================== */
+
+    .open-button {
+        width: 92%;
+        max-width: 300px;
+
+        min-width: 0;
+
+        padding:
+            14px 12px;
+
+        gap: 9px;
+
+        font-size: 9px;
+
+        letter-spacing:
+            1.6px;
+
+        box-shadow:
+            0 12px 30px
+            rgba(0,0,0,.24),
+
+            0 0 20px
+            rgba(224,180,91,.08);
+    }
+
+
+    .open-button span {
+        font-size: 8px;
+    }
+
+
+    /* ==========================================
+       TOCA PARA ENTRAR
+    ========================================== */
+
+    .cover-enter {
+        margin-top: 19px;
+    }
+
+
+    .cover-enter > span {
+        font-size: 13px;
+    }
+
+
+    .touch-text {
+        margin-top: 5px;
+
+        font-size: 6px;
+
+        letter-spacing: 3px;
+    }
+
+
+    /* ==========================================
+       LUNA
+    ========================================== */
+
+    .cover-moon {
+        top: 8%;
+        right: -25px;
+
+        width: 92px;
+        height: 92px;
+
+        opacity: .48;
+
+        z-index: 2;
+
+        filter:
+            blur(.2px);
+    }
+
+
+    .cover-moon::before {
+        inset: -20px;
+    }
+
+
+    .cover-moon::after {
+        inset: -35px;
+    }
+
+
+    /* ==========================================
+       CASTILLO
+
+       EN MÓVIL LO CENTRAMOS
+       ABAJO, NO A LA DERECHA
+    ========================================== */
+
+    .cover-castle {
+        left: 50%;
+        right: auto;
+
+        bottom: -72px;
+
+        width: 360px;
+        height: 240px;
+
+        opacity: .10;
+
+        transform:
+            translateX(-50%)
+            scale(.72);
+
+        transform-origin:
+            bottom center;
+
+        z-index: 2;
+    }
+
+
+    /* ==========================================
+       MARIPOSAS
+
+       LAS SACAMOS DEL CENTRO
+       PARA NO TAPAR EL TEXTO
+    ========================================== */
+
+    .magic-cover-butterfly {
+        z-index: 8;
+
+        width: 30px;
+        height: 23px;
+
+        opacity: .65;
+    }
+
+
+    .butterfly-wing {
+        width: 15px;
+        height: 20px;
+    }
+
+
+    .butterfly-body {
+        width: 2px;
+        height: 18px;
+    }
+
+
+    .butterfly-left {
+        top: 28%;
+        left: 2%;
+    }
+
+
+    .butterfly-right {
+        top: 66%;
+        right: 2%;
+
+        transform:
+            scale(.75);
+    }
+
+
+    /* ==========================================
+       PARTÍCULAS
+    ========================================== */
+
+    .magic-particles {
+        opacity: .60;
+    }
+
+
+    .magic-particles span {
+        font-size: 6px;
+    }
+
+
+    /* ==========================================
+       ESTRELLAS
+    ========================================== */
+
+    .stars {
+        opacity: .75;
+    }
+
+
+    /* ==========================================
+       ESTRELLAS FUGACES
+    ========================================== */
+
+    .shooting-stars {
+        opacity: .55;
+    }
+
+
+    .shooting-star {
+        width: 60px;
+    }
+
+
+    /* ==========================================
+       NIEBLA
+    ========================================== */
+
+    .cover-bottom-fog {
+        height: 160px;
+
+        bottom: -45px;
+
+        opacity: .65;
+    }
+
+}
+
+
+/* =========================================================
+   TELÉFONOS PEQUEÑOS
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .cover-content {
+        width:
+            calc(100% - 16px);
+
+        padding:
+            30px 16px
+            25px;
+    }
+
+
+    .crown {
+        font-size:
+            34px;
+    }
+
+
+    .cover-subtitle {
+        margin:
+            10px 0 14px;
+
+        font-size:
+            8px;
+    }
+
+
+    .gold-line {
+        margin-bottom:
+            20px;
+    }
+
+
+    .cover-name-container {
+        margin-bottom:
+            18px;
+    }
+
+
+    .cover-name-container h1 {
+        font-size:
+            clamp(
+                70px,
+                23vw,
+                92px
+            );
+    }
+
+
+    .cover-description {
+        font-size:
+            15px;
+    }
+
+
+    .cover-invitation {
+        margin-bottom:
+            20px;
+
+        font-size:
+            13px;
+    }
+
+
+    .open-button {
+        padding:
+            13px 10px;
+
+        font-size:
+            8px;
+    }
+
+
+    .cover-enter {
+        margin-top:
+            15px;
+    }
+
+}
+
+
+/* =========================================================
+   TELÉFONOS BAJITOS
+========================================================= */
+
+@media (max-height: 700px) and (max-width: 700px) {
+
+    .cover-content {
+        padding-top:
+            23px;
+
+        padding-bottom:
+            20px;
+    }
+
+
+    .crown {
+        font-size:
+            31px;
+    }
+
+
+    .cover-subtitle {
+        margin:
+            8px 0 11px;
+    }
+
+
+    .gold-line {
+        margin-bottom:
+            14px;
+    }
+
+
+    .cover-name-container {
+        margin-bottom:
+            13px;
+    }
+
+
+    .cover-name-container h1 {
+        font-size:
+            75px;
+    }
+
+
+    .cover-description {
+        font-size:
+            14px;
+    }
+
+
+    .cover-invitation {
+        margin:
+            9px auto 15px;
+
+        font-size:
+            12px;
+    }
+
+
+    .open-button {
+        padding:
+            11px 10px;
+    }
+
+
+    .cover-enter {
+        margin-top:
+            10px;
+    }
+
+}
