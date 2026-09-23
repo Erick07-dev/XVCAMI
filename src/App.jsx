@@ -59,6 +59,8 @@ function App() {
 
                     <Hero />
 
+                    <MessageLetter />
+
                     <Countdown />
 
                     <Family />
@@ -79,7 +81,7 @@ function App() {
 
                     <MagicDecorations /> 
 
-                    <MessageLetter />
+                    
 
                     
 
