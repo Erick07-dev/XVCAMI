@@ -1,36 +1,150 @@
 import { motion } from "framer-motion";
 
-const stars = Array.from({ length: 24 });
+const stars = [
+    { left: "6%", top: "12%", delay: 0.2, size: 8 },
+    { left: "14%", top: "32%", delay: 1.1, size: 5 },
+    { left: "22%", top: "15%", delay: 2.2, size: 7 },
+    { left: "31%", top: "7%", delay: 0.7, size: 5 },
+    { left: "40%", top: "22%", delay: 1.8, size: 8 },
+    { left: "52%", top: "9%", delay: 0.4, size: 5 },
+    { left: "63%", top: "18%", delay: 2.5, size: 7 },
+    { left: "72%", top: "8%", delay: 1.3, size: 5 },
+    { left: "82%", top: "25%", delay: 0.9, size: 8 },
+    { left: "91%", top: "13%", delay: 2.1, size: 5 },
+    { left: "9%", top: "62%", delay: 1.7, size: 6 },
+    { left: "18%", top: "76%", delay: 0.5, size: 8 },
+    { left: "78%", top: "70%", delay: 2.3, size: 6 },
+    { left: "91%", top: "62%", delay: 1.2, size: 8 },
+    { left: "96%", top: "79%", delay: 0.4, size: 5 }
+];
 
 export default function Cover({ onOpen }) {
     return (
         <section className="cover">
 
-            {/* Fondo oscuro */}
+            {/* FONDO */}
             <div className="cover-background"></div>
 
-            {/* Destellos */}
+            {/* RESPLANDOR CENTRAL */}
+            <div className="cover-glow"></div>
+
+            {/* LUNA */}
+            <motion.div
+                className="cover-moon"
+                initial={{
+                    opacity: 0,
+                    scale: 0.6
+                }}
+                animate={{
+                    opacity: 1,
+                    scale: 1
+                }}
+                transition={{
+                    duration: 1.8,
+                    delay: 0.2
+                }}
+            />
+
+            {/* ESTRELLAS */}
             <div className="stars">
-                {stars.map((_, index) => (
-                    <span
+                {stars.map((star, index) => (
+                    <motion.span
                         key={index}
                         className="star"
                         style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            animationDelay: `${Math.random() * 4}s`,
-                            animationDuration: `${3 + Math.random() * 4}s`
+                            left: star.left,
+                            top: star.top,
+                            fontSize: `${star.size}px`
+                        }}
+                        animate={{
+                            opacity: [0.25, 1, 0.25],
+                            scale: [0.7, 1.35, 0.7]
+                        }}
+                        transition={{
+                            duration: 3 + (index % 3),
+                            delay: star.delay,
+                            repeat: Infinity,
+                            ease: "easeInOut"
                         }}
                     >
                         ✦
-                    </span>
+                    </motion.span>
                 ))}
             </div>
 
-            {/* Marco exterior */}
+            {/* MARIPOSAS */}
+            <motion.span
+                className="cover-butterfly cover-butterfly-one"
+                animate={{
+                    y: [0, -15, 0],
+                    x: [0, 8, 0],
+                    rotate: [-8, 8, -8]
+                }}
+                transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                }}
+            >
+                ♡
+            </motion.span>
+
+            <motion.span
+                className="cover-butterfly cover-butterfly-two"
+                animate={{
+                    y: [0, -12, 0],
+                    x: [0, -7, 0],
+                    rotate: [8, -8, 8]
+                }}
+                transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                }}
+            >
+                ♡
+            </motion.span>
+
+            {/* MARCO EXTERIOR */}
             <div className="royal-border"></div>
 
-            {/* Contenido */}
+            {/* CASTILLO DEL FONDO */}
+            <motion.div
+                className="cover-castle"
+                initial={{
+                    opacity: 0,
+                    y: 60
+                }}
+                animate={{
+                    opacity: 1,
+                    y: 0
+                }}
+                transition={{
+                    duration: 2,
+                    delay: 0.5
+                }}
+            >
+                <div className="cover-castle-tower tower-left">
+                    <div className="cover-tower-roof"></div>
+                    <div className="cover-window"></div>
+                </div>
+
+                <div className="cover-castle-main">
+                    <div className="cover-main-roof"></div>
+
+                    <div className="cover-window castle-window-left"></div>
+                    <div className="cover-window castle-window-right"></div>
+
+                    <div className="cover-door"></div>
+                </div>
+
+                <div className="cover-castle-tower tower-right">
+                    <div className="cover-tower-roof"></div>
+                    <div className="cover-window"></div>
+                </div>
+            </motion.div>
+
+            {/* CONTENIDO */}
             <motion.div
                 className="cover-content"
                 initial={{
@@ -42,41 +156,149 @@ export default function Cover({ onOpen }) {
                     y: 0
                 }}
                 transition={{
-                    duration: 1.5,
+                    duration: 1.2,
                     ease: "easeOut"
                 }}
             >
 
-                {/* Corona */}
+                {/* CORONA */}
                 <motion.div
                     className="crown"
                     initial={{
                         opacity: 0,
-                        scale: 0.5
+                        scale: 0.4,
+                        y: -15
                     }}
                     animate={{
                         opacity: 1,
-                        scale: 1
+                        scale: 1,
+                        y: 0
                     }}
                     transition={{
-                        delay: 0.5,
+                        delay: 0.3,
                         duration: 1
                     }}
                 >
                     ♕
                 </motion.div>
 
-                <p className="cover-subtitle">
+                {/* SUBTÍTULO */}
+                <motion.p
+                    className="cover-subtitle"
+                    initial={{
+                        opacity: 0,
+                        letterSpacing: "2px"
+                    }}
+                    animate={{
+                        opacity: 1,
+                        letterSpacing: "7px"
+                    }}
+                    transition={{
+                        delay: 0.6,
+                        duration: 1.2
+                    }}
+                >
                     MIS XV AÑOS
-                </p>
+                </motion.p>
 
-                <div className="gold-line">
+                {/* DIVISOR */}
+                <motion.div
+                    className="gold-line"
+                    initial={{
+                        opacity: 0,
+                        scaleX: 0
+                    }}
+                    animate={{
+                        opacity: 1,
+                        scaleX: 1
+                    }}
+                    transition={{
+                        delay: 0.8,
+                        duration: 1
+                    }}
+                >
                     <span>✦</span>
                     <div></div>
+                    <span>♕</span>
+                    <div></div>
                     <span>✦</span>
-                </div>
+                </motion.div>
 
-                <motion.h1
+                {/* NOMBRE */}
+                <motion.div
+                    className="cover-name-container"
+                    initial={{
+                        opacity: 0,
+                        scale: 0.85,
+                        y: 20
+                    }}
+                    animate={{
+                        opacity: 1,
+                        scale: 1,
+                        y: 0
+                    }}
+                    transition={{
+                        delay: 1,
+                        duration: 1.2,
+                        ease: "easeOut"
+                    }}
+                >
+                    <motion.span
+                        className="cover-name-star star-left"
+                        animate={{
+                            opacity: [0.3, 1, 0.3],
+                            scale: [0.7, 1.3, 0.7]
+                        }}
+                        transition={{
+                            duration: 2.5,
+                            repeat: Infinity
+                        }}
+                    >
+                        ✦
+                    </motion.span>
+
+                    <h1>
+                        Camila
+                    </h1>
+
+                    <motion.span
+                        className="cover-name-star star-right"
+                        animate={{
+                            opacity: [1, 0.3, 1],
+                            scale: [1.2, 0.7, 1.2]
+                        }}
+                        transition={{
+                            duration: 3,
+                            repeat: Infinity
+                        }}
+                    >
+                        ✦
+                    </motion.span>
+                </motion.div>
+
+                {/* FRASE */}
+                <motion.p
+                    className="cover-description"
+                    initial={{
+                        opacity: 0,
+                        y: 15
+                    }}
+                    animate={{
+                        opacity: 1,
+                        y: 0
+                    }}
+                    transition={{
+                        delay: 1.25,
+                        duration: 1
+                    }}
+                >
+                    Hay momentos que se convierten
+                    <br />
+                    en recuerdos para toda la vida...
+                </motion.p>
+
+                <motion.p
+                    className="cover-invitation"
                     initial={{
                         opacity: 0
                     }}
@@ -84,43 +306,81 @@ export default function Cover({ onOpen }) {
                         opacity: 1
                     }}
                     transition={{
-                        delay: 0.8,
+                        delay: 1.45,
                         duration: 1
                     }}
                 >
-                    Camila
-                </motion.h1>
-
-                <p className="cover-description">
-                    Hay momentos que se convierten
-                    en recuerdos para toda la vida...
-                </p>
-
-                <p className="cover-invitation">
                     Te invito a celebrar conmigo
+                    <br />
                     el comienzo de un nuevo capítulo.
-                </p>
+                </motion.p>
 
+                {/* BOTÓN */}
                 <motion.button
                     className="open-button"
                     onClick={onOpen}
+                    initial={{
+                        opacity: 0,
+                        y: 20
+                    }}
+                    animate={{
+                        opacity: 1,
+                        y: 0
+                    }}
+                    transition={{
+                        delay: 1.7,
+                        duration: 0.8
+                    }}
                     whileHover={{
-                        scale: 1.05
+                        scale: 1.04,
+                        y: -3
                     }}
                     whileTap={{
-                        scale: 0.95
+                        scale: 0.97
                     }}
                 >
                     <span>✦</span>
+
                     ABRIR INVITACIÓN
+
                     <span>✦</span>
                 </motion.button>
 
-                <p className="touch-text">
-                    Toca para entrar
-                </p>
+                {/* INDICACIÓN */}
+                <motion.div
+                    className="cover-enter"
+                    initial={{
+                        opacity: 0
+                    }}
+                    animate={{
+                        opacity: 1
+                    }}
+                    transition={{
+                        delay: 2,
+                        duration: 1
+                    }}
+                >
+                    <motion.span
+                        animate={{
+                            y: [0, 6, 0]
+                        }}
+                        transition={{
+                            duration: 2,
+                            repeat: Infinity
+                        }}
+                    >
+                        ↓
+                    </motion.span>
+
+                    <p className="touch-text">
+                        TOCA PARA ENTRAR
+                    </p>
+                </motion.div>
 
             </motion.div>
+
+            {/* NIEBLA / SUELO */}
+            <div className="cover-bottom-fog"></div>
 
         </section>
     );
