@@ -224,7 +224,7 @@ export default function Cover({ onOpen }) {
                     </motion.span>
 
                     <h1 >
-                        <br></br>
+                        
                     </h1>
 
                 
