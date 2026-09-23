@@ -79,7 +79,7 @@ export default function Closing() {
                 <div className="closing-date">
 
                     <span>
-                        19
+                        16
                     </span>
 
                     <div>

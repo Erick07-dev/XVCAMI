@@ -1,6 +1,7 @@
 /* =========================================
    CONFIGURACIÓN GENERAL
 ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
     --royal-lilac: #8d5aa6;
@@ -7017,6 +7018,562 @@ body {
     .floating-crown {
         animation:
             none !important;
+    }
+
+}
+
+/* =========================================================
+   TIPOGRAFÍA PREMIUM - XV CAMILA
+========================================================= */
+
+
+/* =========================================================
+   TEXTO GENERAL
+========================================================= */
+
+body,
+button,
+input,
+textarea,
+select {
+    font-family:
+        "Montserrat",
+        Arial,
+        sans-serif;
+}
+
+
+/* =========================================================
+   TÍTULOS ELEGANTES
+========================================================= */
+
+.countdown-section h2,
+.family-section h2,
+.events-section h2,
+.itinerary-header h2,
+.dress-section h2,
+.gallery-section h2,
+.gifts-section h2,
+.rsvp-section h2,
+.closing-section h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif !important;
+
+    font-weight:
+        500 !important;
+
+    font-style:
+        italic;
+
+    letter-spacing:
+        .5px;
+
+    color:
+        #713452 !important;
+}
+
+
+/* =========================================================
+   SUBTÍTULOS PEQUEÑOS
+========================================================= */
+
+.hero-small,
+.countdown-small,
+.family-small,
+.events-small,
+.itinerary-small,
+.dress-small,
+.gallery-small,
+.gifts-small,
+.rsvp-small,
+.closing-small {
+
+    font-family:
+        "Montserrat",
+        sans-serif !important;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        4px;
+
+    text-transform:
+        uppercase;
+
+    color:
+        #a57630 !important;
+}
+
+
+/* =========================================================
+   TEXTOS
+========================================================= */
+
+.hero-message,
+.countdown-description,
+.family-message,
+.events-message,
+.itinerary-intro,
+.dress-message,
+.gallery-message {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        18px;
+
+    font-weight:
+        400;
+
+    line-height:
+        1.8;
+
+    color:
+        #76566f;
+}
+
+
+/* =========================================================
+   NOMBRES DE FAMILIA / PADRINOS
+========================================================= */
+
+.family-name-card h3 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif !important;
+
+    font-size:
+        27px;
+
+    font-weight:
+        600;
+
+    color:
+        #713452;
+}
+
+
+/* =========================================================
+   EVENTOS
+========================================================= */
+
+.event-card h3 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif !important;
+
+    font-size:
+        30px;
+
+    font-weight:
+        600;
+
+    color:
+        #713452;
+}
+
+
+/* =========================================================
+   ITINERARIO
+========================================================= */
+
+.timeline-content h3 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif !important;
+
+    font-size:
+        29px;
+
+    font-weight:
+        600;
+
+    color:
+        #713452;
+}
+
+
+.timeline-time {
+
+    font-family:
+        "Montserrat",
+        sans-serif !important;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+    color:
+        #a57630 !important;
+}
+
+
+/* =========================================================
+   FECHAS
+========================================================= */
+
+.event-day,
+.countdown-number {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif !important;
+
+    font-weight:
+        600 !important;
+}
+
+
+.event-date-info span,
+.event-date-info strong,
+.countdown-label {
+
+    font-family:
+        "Montserrat",
+        sans-serif !important;
+
+    letter-spacing:
+        2px;
+}
+
+
+/* =========================================================
+   BOTONES
+========================================================= */
+
+.open-button,
+.map-button,
+.countdown-calendar-button {
+
+    font-family:
+        "Montserrat",
+        sans-serif !important;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        2px;
+}
+
+
+/* =========================================================
+   CAMILA
+   ELEMENTO PRINCIPAL DE TODA LA INVITACIÓN
+========================================================= */
+
+.hero-section h1 {
+
+    position:
+        relative;
+
+    display:
+        inline-block;
+
+    margin:
+        12px 0 20px;
+
+    font-family:
+        "Great Vibes",
+        cursive !important;
+
+    font-size:
+        clamp(90px, 13vw, 165px) !important;
+
+    font-weight:
+        400 !important;
+
+    line-height:
+        .95;
+
+    letter-spacing:
+        1px;
+
+    color:
+        #81446f !important;
+
+    text-shadow:
+
+        0 2px 0
+        rgba(255,255,255,.70),
+
+        0 5px 15px
+        rgba(112,52,82,.18),
+
+        0 0 28px
+        rgba(192,137,211,.30),
+
+        0 0 55px
+        rgba(201,154,61,.13);
+
+    filter:
+        drop-shadow(
+            0 8px 14px
+            rgba(88,44,92,.10)
+        );
+}
+
+
+/* Línea dorada debajo del nombre */
+
+.hero-section h1::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    bottom:
+        -10px;
+
+    width:
+        70%;
+
+    max-width:
+        300px;
+
+    height:
+        1px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #c99a3d,
+            #e1bf75,
+            #c99a3d,
+            transparent
+        );
+}
+
+
+/* Brillo izquierdo */
+
+.hero-section h1::before {
+
+    content:
+        "✦";
+
+    position:
+        absolute;
+
+    left:
+        -28px;
+
+    top:
+        20%;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        16px;
+
+    color:
+        #c99a3d;
+
+    text-shadow:
+        0 0 12px
+        rgba(225,190,110,.70);
+
+    animation:
+        camilaNameSparkle
+        2.5s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes camilaNameSparkle {
+
+    0%,
+    100% {
+        opacity:
+            .30;
+
+        transform:
+            scale(.7)
+            rotate(0deg);
+    }
+
+    50% {
+        opacity:
+            1;
+
+        transform:
+            scale(1.25)
+            rotate(45deg);
+    }
+
+}
+
+
+/* =========================================================
+   "MIS XV AÑOS" ENCIMA DE CAMILA
+========================================================= */
+
+.hero-small {
+
+    font-size:
+        11px !important;
+
+    letter-spacing:
+        6px !important;
+
+    color:
+        #a57630 !important;
+}
+
+
+/* =========================================================
+   NOMBRE EN EL CIERRE
+========================================================= */
+
+.closing-content h3 {
+
+    font-family:
+        "Great Vibes",
+        cursive !important;
+
+    font-size:
+        clamp(65px, 9vw, 105px);
+
+    font-weight:
+        400;
+
+    line-height:
+        1;
+
+    color:
+        #81446f;
+
+    text-shadow:
+        0 4px 18px
+        rgba(112,52,82,.18),
+
+        0 0 25px
+        rgba(201,154,61,.15);
+}
+
+
+/* =========================================================
+   FRASES DE CUENTO
+========================================================= */
+
+.fairytale-phrase {
+
+    font-family:
+        "Great Vibes",
+        cursive !important;
+
+    font-size:
+        27px;
+
+    color:
+        rgba(113,52,82,.48);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero-section h1 {
+
+        font-size:
+            clamp(82px, 25vw, 125px) !important;
+
+        margin:
+            10px 0 20px;
+    }
+
+
+    .hero-section h1::before {
+
+        left:
+            -15px;
+
+        font-size:
+            12px;
+    }
+
+
+    .countdown-section h2,
+    .family-section h2,
+    .events-section h2,
+    .itinerary-header h2,
+    .dress-section h2,
+    .gallery-section h2,
+    .gifts-section h2,
+    .rsvp-section h2,
+    .closing-section h2 {
+
+        font-size:
+            42px;
+    }
+
+
+    .hero-message,
+    .countdown-description,
+    .family-message,
+    .events-message,
+    .itinerary-intro,
+    .dress-message,
+    .gallery-message {
+
+        font-size:
+            17px;
+    }
+
+
+    .closing-content h3 {
+
+        font-size:
+            75px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .hero-section h1 {
+
+        font-size:
+            82px !important;
+    }
+
+
+    .hero-small {
+
+        letter-spacing:
+            4px !important;
     }
 
 }
