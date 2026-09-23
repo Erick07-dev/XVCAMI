@@ -15,7 +15,7 @@ import EventDetails from "./components/EventDetails";
 import { Gift } from "lucide-react";
 import Closing from "./components/Closing";
 import MagicDecorations from "./components/MagicDecorations";
-
+import MessageLetter from "./components/MessageLetter";
 
 
 
@@ -78,6 +78,8 @@ function App() {
                     <Closing />
 
                     <MagicDecorations /> 
+
+                    <MessageLetter />
 
                     
 
