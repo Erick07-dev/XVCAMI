@@ -14750,32 +14750,40 @@ select {
 ========================================================= */
 
 .garden-name {
-    width: fit-content;
+    width: 100%;
+    max-width: 720px;
 
-    margin:
-        0 auto 8px;
+    margin: 0 auto 8px;
 
     display: flex;
-
     align-items: center;
+    justify-content: center;
 
-    gap: 20px;
+    gap: 18px;
+
+    /* espacio extra para los trazos de Great Vibes */
+    padding: 12px 45px 18px;
+
+    overflow: visible;
 }
-
 
 .garden-name h1 {
     margin: 0;
 
-    font-family:
-        "Great Vibes",
-        cursive;
+    /* espacio lateral evita cortar la C y la última letra */
+    padding: 0 22px 10px;
 
-    font-size:
-        clamp(110px, 12vw, 165px);
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(125px, 13vw, 180px);
 
     font-weight: 400;
 
-    line-height: 1;
+    line-height: 1.08;
+
+    white-space: nowrap;
+
+    overflow: visible;
 
     background:
         linear-gradient(
@@ -14788,8 +14796,7 @@ select {
     -webkit-background-clip: text;
     background-clip: text;
 
-    -webkit-text-fill-color:
-        transparent;
+    -webkit-text-fill-color: transparent;
 
     filter:
         drop-shadow(
@@ -14802,38 +14809,13 @@ select {
         4s ease-in-out infinite;
 }
 
-
 .garden-name > span {
+    flex-shrink: 0;
+
     color: #bd9b60;
 
     font-size: 12px;
 }
-
-
-@keyframes gardenNameGlow {
-
-    0%,
-    100% {
-        filter:
-            drop-shadow(
-                0 6px 12px
-                rgba(136,98,112,.10)
-            );
-    }
-
-    50% {
-        filter:
-            drop-shadow(
-                0 6px 12px
-                rgba(136,98,112,.10)
-            )
-            drop-shadow(
-                0 0 13px
-                rgba(196,155,171,.25)
-            );
-    }
-}
-
 
 /* =========================================================
    FECHA
@@ -15166,22 +15148,50 @@ select {
 
     /* CAMILA */
 
-    .garden-name {
-        max-width: 100%;
+    /* ==========================================
+   CAMILA - CELULAR
+========================================== */
 
-        gap: 8px;
-    }
+.garden-name {
+    width: 100%;
+    max-width: 100%;
 
+    margin: 2px auto 10px;
 
-    .garden-name h1 {
-        font-size:
-            clamp(
-                80px,
-                25vw,
-                108px
-            );
+    padding: 8px 18px 14px;
 
-        white-space: nowrap;
+    gap: 5px;
+
+    justify-content: center;
+
+    overflow: visible;
+}
+
+.garden-name h1 {
+    margin: 0;
+
+    padding:
+        0 14px 8px;
+
+    font-size:
+        clamp(
+            105px,
+            31vw,
+            135px
+        );
+
+    line-height: 1.05;
+
+    white-space: nowrap;
+
+    overflow: visible;
+}
+
+.garden-name > span {
+    flex-shrink: 0;
+
+    font-size: 8px;
+}  white-space: nowrap;
     }
 
 
