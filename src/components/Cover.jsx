@@ -223,7 +223,6 @@ export default function Cover({ onOpen }) {
                         ✦
                     </motion.span>
 
-
                     <h1>Camila</h1>
 
                     <motion.span
