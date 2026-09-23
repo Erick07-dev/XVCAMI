@@ -10953,3 +10953,628 @@ select {
     }
 
 }
+
+/* =========================================================
+   MAGIA EXTRA - PORTADA
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   ESTRELLAS FUGACES
+--------------------------------------------------------- */
+
+.shooting-stars {
+    position: absolute;
+    inset: 0;
+
+    z-index: 8;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+.shooting-star {
+    position: absolute;
+
+    width: 130px;
+    height: 1px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 224, 145, .95),
+            transparent
+        );
+
+    opacity: 0;
+
+    transform: rotate(-28deg);
+
+    filter:
+        drop-shadow(
+            0 0 5px
+            rgba(255, 215, 120, .8)
+        );
+}
+
+
+.shooting-star::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 50%;
+
+    width: 5px;
+    height: 5px;
+
+    transform:
+        translateY(-50%);
+
+    border-radius: 50%;
+
+    background: #fff1bb;
+
+    box-shadow:
+        0 0 10px #f5cf70;
+}
+
+
+.shooting-star-1 {
+    top: 16%;
+    left: -15%;
+
+    animation:
+        shootingStar 8s
+        1s
+        infinite;
+}
+
+
+.shooting-star-2 {
+    top: 35%;
+    left: -20%;
+
+    animation:
+        shootingStar 11s
+        5s
+        infinite;
+}
+
+
+.shooting-star-3 {
+    top: 60%;
+    left: -20%;
+
+    animation:
+        shootingStar 13s
+        8s
+        infinite;
+}
+
+
+@keyframes shootingStar {
+
+    0% {
+        transform:
+            translateX(0)
+            translateY(0)
+            rotate(-28deg);
+
+        opacity: 0;
+    }
+
+    3% {
+        opacity: 1;
+    }
+
+    14% {
+        opacity: 1;
+    }
+
+    22% {
+        transform:
+            translateX(125vw)
+            translateY(320px)
+            rotate(-28deg);
+
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   PARTÍCULAS MÁGICAS
+--------------------------------------------------------- */
+
+.magic-particles {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 6;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+.magic-particles span {
+    position: absolute;
+
+    color: #e5b957;
+
+    font-size: 8px;
+
+    text-shadow:
+        0 0 6px #e9be60,
+        0 0 15px rgba(233,190,96,.6);
+}
+
+
+/* ---------------------------------------------------------
+   MARIPOSAS
+--------------------------------------------------------- */
+
+.magic-cover-butterfly {
+    position: absolute;
+
+    z-index: 12;
+
+    width: 44px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: none;
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(221, 172, 230, .65)
+        );
+}
+
+
+.butterfly-left {
+    top: 38%;
+    left: 8%;
+}
+
+
+.butterfly-right {
+    top: 54%;
+    right: 9%;
+
+    transform: scale(.8);
+}
+
+
+.butterfly-wing {
+    position: absolute;
+
+    width: 21px;
+    height: 27px;
+
+    border:
+        1px solid
+        rgba(235, 199, 240, .85);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(218, 168, 229, .70),
+            rgba(159, 102, 185, .22)
+        );
+
+    box-shadow:
+        inset 0 0 8px
+        rgba(255,255,255,.18);
+}
+
+
+.wing-left {
+    left: 2px;
+
+    border-radius:
+        80% 25% 70% 30%;
+
+    transform-origin:
+        right center;
+
+    animation:
+        wingLeft .7s
+        ease-in-out
+        infinite alternate;
+}
+
+
+.wing-right {
+    right: 2px;
+
+    border-radius:
+        25% 80% 30% 70%;
+
+    transform-origin:
+        left center;
+
+    animation:
+        wingRight .7s
+        ease-in-out
+        infinite alternate;
+}
+
+
+.butterfly-body {
+    position: absolute;
+
+    z-index: 3;
+
+    width: 3px;
+    height: 24px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            #e8c8e8,
+            #a96eae
+        );
+}
+
+
+@keyframes wingLeft {
+
+    from {
+        transform:
+            perspective(80px)
+            rotateY(10deg);
+    }
+
+    to {
+        transform:
+            perspective(80px)
+            rotateY(65deg);
+    }
+
+}
+
+
+@keyframes wingRight {
+
+    from {
+        transform:
+            perspective(80px)
+            rotateY(-10deg);
+    }
+
+    to {
+        transform:
+            perspective(80px)
+            rotateY(-65deg);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   LUZ DE LA LUNA
+--------------------------------------------------------- */
+
+.cover-moon::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -35px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255, 229, 166, .12);
+
+    animation:
+        moonRing 5s
+        ease-in-out
+        infinite;
+}
+
+
+.cover-moon::after {
+    content: "";
+
+    position: absolute;
+
+    inset: -65px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 226, 156, .10),
+            transparent 70%
+        );
+
+    animation:
+        moonAura 6s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes moonRing {
+
+    0%,
+    100% {
+        transform: scale(.85);
+        opacity: .2;
+    }
+
+    50% {
+        transform: scale(1.12);
+        opacity: .65;
+    }
+
+}
+
+
+@keyframes moonAura {
+
+    0%,
+    100% {
+        transform: scale(.9);
+        opacity: .4;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   BRILLO QUE RECORRE EL BOTÓN
+--------------------------------------------------------- */
+
+.open-button {
+    overflow: hidden;
+}
+
+
+.open-button::before {
+    content: "";
+
+    position: absolute;
+
+    top: -100%;
+    left: -50%;
+
+    width: 35%;
+    height: 300%;
+
+    transform:
+        rotate(25deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.45),
+            transparent
+        );
+
+    animation:
+        buttonShine 4s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes buttonShine {
+
+    0% {
+        left: -70%;
+    }
+
+    35% {
+        left: 140%;
+    }
+
+    100% {
+        left: 140%;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   CORONA FLOTANDO
+--------------------------------------------------------- */
+
+.crown {
+    animation:
+        crownFloat 4s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes crownFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-7px);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   CAMILA - BRILLO MUY SUAVE
+--------------------------------------------------------- */
+
+.cover-name-container h1 {
+    animation:
+        camilaGlow 4s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes camilaGlow {
+
+    0%,
+    100% {
+        filter:
+            drop-shadow(
+                0 5px 12px
+                rgba(0,0,0,.22)
+            );
+    }
+
+    50% {
+        filter:
+            drop-shadow(
+                0 5px 12px
+                rgba(0,0,0,.22)
+            )
+            drop-shadow(
+                0 0 14px
+                rgba(240,196,102,.28)
+            );
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   VENTANAS DEL CASTILLO
+--------------------------------------------------------- */
+
+.cover-window {
+    animation:
+        castleLight 4s
+        ease-in-out
+        infinite;
+}
+
+
+.castle-window-right {
+    animation-delay:
+        1.3s;
+}
+
+
+@keyframes castleLight {
+
+    0%,
+    100% {
+        opacity: .55;
+
+        box-shadow:
+            0 0 7px
+            rgba(230,188,94,.35);
+    }
+
+    50% {
+        opacity: 1;
+
+        box-shadow:
+            0 0 20px
+            rgba(244,199,98,.90);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   MARCO DORADO RESPIRANDO
+--------------------------------------------------------- */
+
+.royal-border {
+    animation:
+        royalBorderGlow 6s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes royalBorderGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            inset 0 0 10px
+            rgba(215,177,91,.03);
+    }
+
+    50% {
+        box-shadow:
+            inset 0 0 25px
+            rgba(215,177,91,.10),
+            0 0 15px
+            rgba(215,177,91,.05);
+    }
+
+}
+
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .magic-cover-butterfly {
+        width: 34px;
+        height: 26px;
+    }
+
+
+    .butterfly-wing {
+        width: 17px;
+        height: 22px;
+    }
+
+
+    .butterfly-left {
+        left: 3%;
+        top: 30%;
+    }
+
+
+    .butterfly-right {
+        right: 4%;
+        top: 67%;
+    }
+
+
+    .shooting-star {
+        width: 80px;
+    }
+
+}

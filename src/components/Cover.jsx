@@ -29,19 +29,38 @@ export default function Cover({ onOpen }) {
             <div className="cover-glow"></div>
 
             {/* LUNA */}
-            <motion.div
+           <motion.div
                 className="cover-moon"
                 initial={{
                     opacity: 0,
                     scale: 0.6
                 }}
                 animate={{
-                    opacity: 1,
-                    scale: 1
+                    opacity: [0.7, 1, 0.82, 1],
+                    scale: [1, 1.035, 1, 1.02],
+                    boxShadow: [
+                        "0 0 30px rgba(255,228,160,.35)",
+                        "0 0 80px rgba(255,228,160,.55)",
+                        "0 0 45px rgba(255,228,160,.40)",
+                        "0 0 80px rgba(255,228,160,.55)"
+                    ]
                 }}
                 transition={{
-                    duration: 1.8,
-                    delay: 0.2
+                    opacity: {
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    },
+                    scale: {
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    },
+                    boxShadow: {
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }
                 }}
             />
 
@@ -143,6 +162,100 @@ export default function Cover({ onOpen }) {
                     <div className="cover-window"></div>
                 </div>
             </motion.div>
+
+            {/* =========================================
+    ESTRELLAS FUGACES
+========================================= */}
+
+<div className="shooting-stars">
+    <span className="shooting-star shooting-star-1"></span>
+    <span className="shooting-star shooting-star-2"></span>
+    <span className="shooting-star shooting-star-3"></span>
+</div>
+
+
+{/* =========================================
+    PARTÍCULAS MÁGICAS
+========================================= */}
+
+<div className="magic-particles">
+
+    {Array.from({ length: 16 }).map((_, index) => (
+
+        <motion.span
+            key={index}
+
+            style={{
+                left: `${5 + ((index * 17) % 90)}%`,
+                bottom: `${5 + ((index * 13) % 45)}%`
+            }}
+
+            animate={{
+                y: [0, -60, -110],
+                x: [0, index % 2 === 0 ? 15 : -15, 0],
+                opacity: [0, 0.9, 0],
+                scale: [0.5, 1.2, 0.4]
+            }}
+
+            transition={{
+                duration: 5 + (index % 4),
+                delay: index * 0.4,
+                repeat: Infinity,
+                ease: "easeInOut"
+            }}
+        >
+            ✦
+        </motion.span>
+
+        ))}
+
+    </div>
+
+
+    {/* =========================================
+        MARIPOSAS LILA
+    ========================================= */}
+
+    <motion.div
+        className="magic-cover-butterfly butterfly-left"
+
+        animate={{
+            x: [0, 35, 10, 45, 0],
+            y: [0, -35, -60, -25, 0],
+            rotate: [-10, 12, -5, 10, -10]
+        }}
+
+        transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: "easeInOut"
+        }}
+    >
+        <span className="butterfly-wing wing-left"></span>
+        <span className="butterfly-body"></span>
+        <span className="butterfly-wing wing-right"></span>
+    </motion.div>
+
+
+    <motion.div
+        className="magic-cover-butterfly butterfly-right"
+
+        animate={{
+            x: [0, -30, -10, -45, 0],
+            y: [0, -25, -65, -35, 0],
+            rotate: [8, -12, 5, -8, 8]
+        }}
+
+        transition={{
+            duration: 11,
+            repeat: Infinity,
+            ease: "easeInOut"
+        }}
+    >
+        <span className="butterfly-wing wing-left"></span>
+        <span className="butterfly-body"></span>
+        <span className="butterfly-wing wing-right"></span>
+    </motion.div>
 
             {/* CONTENIDO */}
             <motion.div
