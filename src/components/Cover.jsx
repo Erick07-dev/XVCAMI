@@ -370,7 +370,9 @@ export default function Cover({ onOpen }) {
                         ✦
                     </motion.span>
 
-                    <br/>
+                    <br>
+
+                    </br>
 
                     <h1>
                         Camila
