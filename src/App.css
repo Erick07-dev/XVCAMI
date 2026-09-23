@@ -16101,8 +16101,8 @@ select {
     .garden-name {
         width: calc(100% + 40px) !important;
 
-        margin-left: -10px !important;
-        margin-right: -20px !important;
+        margin-left: -20px !important;
+        margin-right: -10px !important;
 
         padding-left: 30px !important;
         padding-right: 15px !important;
