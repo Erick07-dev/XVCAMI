@@ -1,6 +1,15 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+    X,
+    ChevronLeft,
+    ChevronRight,
+    Heart,
+    Sparkles
+} from "lucide-react";
+
+import "./GalleryPremium.css";
+
 
 const photos = [
     {
@@ -29,6 +38,10 @@ const photos = [
     }
 ];
 
+
+const rotations = [-4, 3, -2, 4, -3, 2];
+
+
 export default function Gallery() {
 
     const [selectedIndex, setSelectedIndex] = useState(null);
@@ -40,16 +53,19 @@ export default function Gallery() {
 
 
     const openPhoto = (index) => {
+
         setSelectedIndex(index);
 
         setTimeout(() => {
+
             document
-                .querySelector(".gallery-featured")
+                .querySelector(".xv-album-open")
                 ?.scrollIntoView({
                     behavior: "smooth",
                     block: "center"
                 });
-        }, 100);
+
+        }, 120);
     };
 
 
@@ -67,6 +83,7 @@ export default function Gallery() {
             return current === 0
                 ? photos.length - 1
                 : current - 1;
+
         });
     };
 
@@ -80,83 +97,136 @@ export default function Gallery() {
             return current === photos.length - 1
                 ? 0
                 : current + 1;
+
         });
     };
 
 
     return (
-        <section className="gallery-section">
 
-            <motion.div
-                className="gallery-content"
-                initial={{
-                    opacity: 0,
-                    y: 40
-                }}
-                whileInView={{
-                    opacity: 1,
-                    y: 0
-                }}
-                viewport={{
-                    once: true,
-                    amount: 0.1
-                }}
-                transition={{
-                    duration: 0.9
-                }}
+        <section className="xv-gallery-section">
+
+            {/* Fondos */}
+
+            <div className="xv-gallery-glow xv-gallery-glow-1" />
+            <div className="xv-gallery-glow xv-gallery-glow-2" />
+
+
+            {/* PÉTALOS DE FONDO */}
+
+            <div
+                className="xv-gallery-background-petals"
+                aria-hidden="true"
             >
 
-                {/* CORONA */}
+                {[...Array(8)].map((_, index) => (
 
-                <motion.div
-                    className="gallery-crown"
-                    animate={{
-                        y: [0, -5, 0]
-                    }}
-                    transition={{
-                        duration: 4,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }}
-                >
-                    ♕
-                </motion.div>
+                    <motion.span
+                        key={index}
+                        className={`xv-gallery-petal petal-${index + 1}`}
 
+                        animate={{
+                            y: [0, -10, 0],
+                            rotate: [
+                                index * 10,
+                                index * 10 + 12,
+                                index * 10
+                            ]
+                        }}
 
-                <p className="gallery-small">
-                    MIS RECUERDOS
-                </p>
+                        transition={{
+                            duration: 5 + (index % 3),
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: index * 0.25
+                        }}
+                    />
 
+                ))}
 
-                <h2>
-                    Momentos especiales
-                </h2>
-
-
-                <div className="gallery-divider">
-
-                    <span>✦</span>
-
-                    <div></div>
-
-                    <span>♕</span>
-
-                    <div></div>
-
-                    <span>✦</span>
-
-                </div>
+            </div>
 
 
-                <p className="gallery-message">
-                    Cada fotografía guarda una historia,
-                    una sonrisa y un momento que siempre
-                    vivirá en mi corazón.
-                </p>
+            <div className="xv-gallery-content">
 
 
                 {/* =========================================
-                    FOTO SELECCIONADA
+                    ENCABEZADO
+                ========================================= */}
+
+                <motion.div
+                    className="xv-gallery-header"
+
+                    initial={{
+                        opacity: 0,
+                        y: 35
+                    }}
+
+                    whileInView={{
+                        opacity: 1,
+                        y: 0
+                    }}
+
+                    viewport={{
+                        once: false,
+                        amount: 0.25
+                    }}
+
+                    transition={{
+                        duration: 0.8
+                    }}
+                >
+
+                    <motion.div
+                        className="xv-gallery-crown"
+
+                        animate={{
+                            y: [0, -5, 0]
+                        }}
+
+                        transition={{
+                            duration: 4,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                    >
+                        ♕
+                    </motion.div>
+
+
+                    <p className="xv-gallery-small">
+                        MIS RECUERDOS
+                    </p>
+
+
+                    <h2>
+                        Momentos especiales
+                    </h2>
+
+
+                    <div className="xv-gallery-divider">
+
+                        <span />
+
+                        <i>✦</i>
+
+                        <span />
+
+                    </div>
+
+
+                    <p className="xv-gallery-message">
+                        Cada fotografía guarda una historia,
+                        una sonrisa y un momento que siempre
+                        vivirá en mi corazón.
+                    </p>
+
+                </motion.div>
+
+
+
+                {/* =========================================
+                    ÁLBUM ABIERTO
                 ========================================= */}
 
                 <AnimatePresence mode="wait">
@@ -164,131 +234,254 @@ export default function Gallery() {
                     {selectedPhoto && (
 
                         <motion.div
-                            className="gallery-featured"
-
-                            key={selectedPhoto.src}
+                            className="xv-album-open"
 
                             initial={{
                                 opacity: 0,
-                                y: 25,
-                                scale: 0.97
+                                rotateY: -40,
+                                scale: 0.92,
+                                y: 30
                             }}
 
                             animate={{
                                 opacity: 1,
-                                y: 0,
-                                scale: 1
+                                rotateY: 0,
+                                scale: 1,
+                                y: 0
                             }}
 
                             exit={{
                                 opacity: 0,
-                                y: -15,
-                                scale: 0.97
+                                rotateY: 35,
+                                scale: 0.94,
+                                y: -20
                             }}
 
                             transition={{
-                                duration: 0.4
+                                duration: 0.65,
+                                ease: [0.22, 1, 0.36, 1]
                             }}
                         >
 
-                            {/* CORONA SUPERIOR */}
 
-                            <motion.div
-                                className="featured-crown"
-                                animate={{
-                                    y: [0, -4, 0]
-                                }}
-                                transition={{
-                                    duration: 3,
-                                    repeat: Infinity
-                                }}
-                            >
-                                ♕
-                            </motion.div>
+                            {/* ESQUINAS */}
+
+                            <span className="xv-album-corner xv-album-tl">
+                                ✦
+                            </span>
+
+                            <span className="xv-album-corner xv-album-tr">
+                                ✦
+                            </span>
+
+                            <span className="xv-album-corner xv-album-bl">
+                                ✦
+                            </span>
+
+                            <span className="xv-album-corner xv-album-br">
+                                ✦
+                            </span>
 
 
                             {/* CERRAR */}
 
-                            <button
+                            <motion.button
                                 type="button"
-                                className="featured-close"
+                                className="xv-album-close"
+
                                 onClick={closePhoto}
+
+                                whileHover={{
+                                    rotate: 90,
+                                    scale: 1.08
+                                }}
+
+                                whileTap={{
+                                    scale: 0.9
+                                }}
+
                                 aria-label="Cerrar fotografía"
                             >
-                                <X size={20} />
-                            </button>
+                                <X size={19} />
+                            </motion.button>
 
 
-                            {/* FOTO */}
+                            {/* DECORACIÓN SUPERIOR */}
 
-                            <div className="featured-photo-container">
+                            <div className="xv-album-heading">
 
-                                <button
+                                <span />
+
+                                <p>
+                                    RECUERDOS DE MIS XV
+                                </p>
+
+                                <span />
+
+                            </div>
+
+
+                            {/* FOTO PRINCIPAL */}
+
+                            <div className="xv-album-photo-area">
+
+
+                                <motion.button
                                     type="button"
-                                    className="featured-arrow featured-previous"
+                                    className="xv-album-arrow xv-album-prev"
+
                                     onClick={previousPhoto}
+
+                                    whileTap={{
+                                        scale: 0.9
+                                    }}
+
                                     aria-label="Fotografía anterior"
                                 >
-                                    <ChevronLeft size={28} />
-                                </button>
+                                    <ChevronLeft size={23} />
+                                </motion.button>
 
 
-                                <motion.img
-                                    key={selectedPhoto.src}
-                                    src={selectedPhoto.src}
-                                    alt={selectedPhoto.alt}
+                                <div className="xv-album-gold-frame">
 
-                                    initial={{
-                                        opacity: 0,
-                                        scale: 0.96
-                                    }}
+                                    <div className="xv-album-inner-frame">
 
-                                    animate={{
-                                        opacity: 1,
-                                        scale: 1
-                                    }}
+                                        <AnimatePresence mode="wait">
 
-                                    transition={{
-                                        duration: 0.4
-                                    }}
-                                />
+                                            <motion.img
+                                                key={selectedPhoto.src}
+
+                                                src={selectedPhoto.src}
+                                                alt={selectedPhoto.alt}
+
+                                                initial={{
+                                                    opacity: 0,
+                                                    scale: 1.05
+                                                }}
+
+                                                animate={{
+                                                    opacity: 1,
+                                                    scale: 1
+                                                }}
+
+                                                exit={{
+                                                    opacity: 0,
+                                                    scale: 0.97
+                                                }}
+
+                                                transition={{
+                                                    duration: 0.45
+                                                }}
+                                            />
+
+                                        </AnimatePresence>
 
 
-                                <button
+                                        <div className="xv-album-photo-shine" />
+
+                                    </div>
+
+                                </div>
+
+
+                                <motion.button
                                     type="button"
-                                    className="featured-arrow featured-next"
+                                    className="xv-album-arrow xv-album-next"
+
                                     onClick={nextPhoto}
+
+                                    whileTap={{
+                                        scale: 0.9
+                                    }}
+
                                     aria-label="Siguiente fotografía"
                                 >
-                                    <ChevronRight size={28} />
-                                </button>
+                                    <ChevronRight size={23} />
+                                </motion.button>
+
+                            </div>
+
+
+                            {/* PÉTALOS */}
+
+                            <motion.span
+                                className="xv-album-petal xv-album-petal-1"
+
+                                animate={{
+                                    y: [0, -8, 0],
+                                    rotate: [25, 38, 25]
+                                }}
+
+                                transition={{
+                                    duration: 4,
+                                    repeat: Infinity
+                                }}
+                            />
+
+                            <motion.span
+                                className="xv-album-petal xv-album-petal-2"
+
+                                animate={{
+                                    y: [0, 7, 0],
+                                    rotate: [-30, -15, -30]
+                                }}
+
+                                transition={{
+                                    duration: 5,
+                                    repeat: Infinity
+                                }}
+                            />
+
+                            <motion.span
+                                className="xv-album-petal xv-album-petal-3"
+
+                                animate={{
+                                    scale: [1, 1.15, 1],
+                                    rotate: [45, 55, 45]
+                                }}
+
+                                transition={{
+                                    duration: 4.5,
+                                    repeat: Infinity
+                                }}
+                            />
+
+
+                            {/* TEXTO */}
+
+                            <div className="xv-album-caption">
+
+                                <Heart
+                                    size={14}
+                                    strokeWidth={1.3}
+                                />
+
+                                <p>
+                                    Un recuerdo para siempre
+                                </p>
+
+                                <Heart
+                                    size={14}
+                                    strokeWidth={1.3}
+                                />
 
                             </div>
 
 
                             {/* CONTADOR */}
 
-                            <div className="featured-counter">
+                            <div className="xv-album-counter">
 
                                 <span>
-                                    {selectedIndex + 1}
+                                    {String(selectedIndex + 1).padStart(2, "0")}
                                 </span>
 
-                                <i>/</i>
+                                <i />
 
                                 <span>
-                                    {photos.length}
+                                    {String(photos.length).padStart(2, "0")}
                                 </span>
 
-                            </div>
-
-
-                            <div className="featured-decoration">
-                                <span>✦</span>
-                                <div></div>
-                                <span>♕</span>
-                                <div></div>
-                                <span>✦</span>
                             </div>
 
                         </motion.div>
@@ -298,11 +491,12 @@ export default function Gallery() {
                 </AnimatePresence>
 
 
+
                 {/* =========================================
-                    GALERÍA
+                    POLAROIDS
                 ========================================= */}
 
-                <div className="royal-gallery">
+                <div className="xv-polaroid-gallery">
 
                     {photos.map((photo, index) => (
 
@@ -312,11 +506,10 @@ export default function Gallery() {
                             type="button"
 
                             className={`
-                                royal-gallery-photo
-                                royal-gallery-photo-${index + 1}
+                                xv-polaroid
                                 ${
                                     selectedIndex === index
-                                        ? "photo-selected"
+                                        ? "xv-polaroid-selected"
                                         : ""
                                 }
                             `}
@@ -327,30 +520,41 @@ export default function Gallery() {
 
                             initial={{
                                 opacity: 0,
-                                y: 35
+                                y: 45,
+                                rotate: rotations[index]
                             }}
 
                             whileInView={{
                                 opacity: 1,
-                                y: 0
+                                y: 0,
+                                rotate: rotations[index]
                             }}
 
                             viewport={{
-                                once: true,
-                                amount: 0.1
+                                once: false,
+                                amount: 0.15
                             }}
 
                             transition={{
-                                duration: 0.6,
-                                delay: (index % 3) * 0.08
+                                duration: 0.65,
+                                delay: index * 0.07
                             }}
 
                             whileHover={{
-                                y: -5
+                                y: -12,
+                                rotate: 0,
+                                scale: 1.035
+                            }}
+
+                            whileTap={{
+                                scale: 0.97
                             }}
                         >
 
-                            <div className="royal-photo-frame">
+                            <span className="xv-polaroid-tape" />
+
+
+                            <div className="xv-polaroid-photo">
 
                                 <img
                                     src={photo.src}
@@ -358,29 +562,33 @@ export default function Gallery() {
                                     loading="lazy"
                                 />
 
+                                <div className="xv-polaroid-overlay">
 
-                                <div className="royal-photo-overlay">
+                                    <Sparkles
+                                        size={17}
+                                        strokeWidth={1.3}
+                                    />
 
                                     <span>
-                                        VER FOTO
+                                        VER RECUERDO
                                     </span>
 
                                 </div>
 
+                            </div>
 
-                                <span className="photo-corner corner-top-left">
+
+                            <div className="xv-polaroid-bottom">
+
+                                <span>
                                     ✦
                                 </span>
 
-                                <span className="photo-corner corner-top-right">
-                                    ✦
-                                </span>
+                                <p>
+                                    Camila
+                                </p>
 
-                                <span className="photo-corner corner-bottom-left">
-                                    ✦
-                                </span>
-
-                                <span className="photo-corner corner-bottom-right">
+                                <span>
                                     ✦
                                 </span>
 
@@ -393,40 +601,45 @@ export default function Gallery() {
                 </div>
 
 
-                {/* FINAL */}
+
+                {/* =========================================
+                    FINAL
+                ========================================= */}
 
                 <motion.div
-                    className="gallery-ending"
+                    className="xv-gallery-ending"
 
                     initial={{
-                        opacity: 0
+                        opacity: 0,
+                        y: 15
                     }}
 
                     whileInView={{
-                        opacity: 1
+                        opacity: 1,
+                        y: 0
                     }}
 
                     viewport={{
-    once: false,
-    amount: 0.2
-}}
+                        once: false,
+                        amount: 0.2
+                    }}
 
                     transition={{
-                        duration: 1
+                        duration: 0.8
                     }}
                 >
 
                     <span>✦</span>
 
                     <p>
-                        Una historia que apenas comienza
+                        UNA HISTORIA QUE APENAS COMIENZA
                     </p>
 
                     <span>✦</span>
 
                 </motion.div>
 
-            </motion.div>
+            </div>
 
         </section>
     );
