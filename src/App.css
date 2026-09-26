@@ -16218,3 +16218,240 @@ select {
         opacity,
         transform;
 }
+
+/* =========================================================
+   TRANSICIÓN CINEMATOGRÁFICA
+========================================================= */
+
+.opening-transition {
+    position: fixed;
+    inset: 0;
+
+    z-index: 20000;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fffafc 0%,
+            #f9eef6 35%,
+            #f1e3ef 70%,
+            #ead9e9 100%
+        );
+}
+
+
+/* LUZ CENTRAL */
+
+.opening-light {
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 245, 218, .8) 25%,
+            rgba(233, 206, 232, .45) 55%,
+            transparent 75%
+        );
+
+    filter: blur(10px);
+}
+
+
+/* ANILLO */
+
+.opening-ring {
+    position: absolute;
+
+    width: 210px;
+    height: 210px;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(189, 155, 96, .65);
+
+    box-shadow:
+        0 0 25px rgba(189, 155, 96, .15),
+        inset 0 0 20px rgba(255, 255, 255, .6);
+}
+
+
+/* CORONA */
+
+.opening-crown {
+    position: absolute;
+
+    top: calc(50% - 115px);
+
+    color: #bd9b60;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 52px;
+
+    text-shadow:
+        0 5px 18px rgba(189, 155, 96, .25);
+}
+
+
+/* CAMILA */
+
+.opening-name {
+    position: relative;
+
+    z-index: 3;
+
+    padding: 20px 35px;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(95px, 15vw, 155px);
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    color: #ad7e91;
+
+    text-shadow:
+        0 6px 20px rgba(144, 101, 119, .15);
+}
+
+
+/* DESTELLOS */
+
+.opening-sparkles {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+.opening-sparkles span {
+    position: absolute;
+
+    left: calc(
+        10% + (var(--i) * 4.7%)
+    );
+
+    top: calc(
+        25% + ((var(--i) % 6) * 10%)
+    );
+
+    color: #c8a664;
+
+    font-size: 12px;
+
+    text-shadow:
+        0 0 10px rgba(255, 221, 150, .8);
+}
+
+
+/* PÉTALOS */
+
+.opening-petals {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 1px;
+    height: 1px;
+
+    pointer-events: none;
+}
+
+.opening-petal {
+    position: absolute;
+
+    width: 13px;
+    height: 19px;
+
+    border-radius:
+        80% 20%
+        70% 30%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e8c9df,
+            #cfa9ce
+        );
+
+    box-shadow:
+        0 3px 8px
+        rgba(153, 105, 145, .15);
+}
+
+
+/* Variación pétalos */
+
+.opening-petal:nth-child(3n) {
+    background:
+        linear-gradient(
+            145deg,
+            #f3d9e5,
+            #deb7d0
+        );
+}
+
+.opening-petal:nth-child(4n) {
+    background:
+        linear-gradient(
+            145deg,
+            #eee3c9,
+            #d2b777
+        );
+}
+
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+
+    .opening-name {
+        font-size:
+            clamp(
+                90px,
+                29vw,
+                125px
+            );
+
+        padding:
+            20px 30px 25px;
+    }
+
+    .opening-crown {
+        top:
+            calc(50% - 105px);
+
+        font-size: 43px;
+    }
+
+    .opening-light {
+        width: 170px;
+        height: 170px;
+    }
+
+    .opening-ring {
+        width: 170px;
+        height: 170px;
+    }
+}

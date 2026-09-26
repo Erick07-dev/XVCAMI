@@ -17,6 +17,7 @@ import { Gift } from "lucide-react";
 import Closing from "./components/Closing";
 import MagicDecorations from "./components/MagicDecorations";
 import ScrollReveal from "./components/ScrollReveal";
+import OpeningTrasition from "./components/OpeningTransition";
 
 
 
@@ -26,34 +27,50 @@ function App() {
     const [opened, setOpened] =
         useState(false);
 
+    const [opening, setOpening] = useState(false);
+
     const musicRef =
         useRef(null);
 
     const handleOpen = async () => {
+    if (opening) return;
 
-        await musicRef.current
-            ?.playMusic();
+    setOpening(true);
 
+    // Iniciar música inmediatamente después del toque del usuario
+    try {
+        await musicRef.current?.playMusic();
+    } catch (error) {
+        console.log("No se pudo iniciar la música:", error);
+    }
+
+    // Esperar la animación cinematográfica
+    setTimeout(() => {
         setOpened(true);
+        setOpening(false);
 
-    };
+        window.scrollTo({
+            top: 0,
+            behavior: "instant"
+        });
+    }, 1800);
+};
 
     return (
         <>
 
-            {!opened && (
+            {!opened && !opening && (
+            <Cover onOpen={handleOpen} />
+        )}
 
-                <Cover
-                    onOpen={
-                        handleOpen
-                    }
-                />
-
-            )}
 
             <MusicPlayer
                 ref={musicRef}
             />
+
+            {opening && (
+            <OpeningTransition />
+        )}
 
             {opened && (
 
@@ -106,6 +123,10 @@ function App() {
                     
                     <ScrollReveal>
                         <MagicDecorations />
+                    </ScrollReveal>
+
+                    <ScrollReveal>
+                        <OpeningTrasition />
                     </ScrollReveal>
                      
 
