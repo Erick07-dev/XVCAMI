@@ -46,12 +46,14 @@ export default function GeneradorInvitacion() {
     }
   };
 
-  const enviarWhatsApp = () => {
+const enviarWhatsApp = () => {
   if (!enlace) return;
 
   const invitado = nombre.trim();
 
-  const mensaje = `💜 Hola, ${invitado} 💜
+  const mensaje = `${enlace}
+
+💜 Hola, ${invitado} 💜
 
 Con mucha alegría queremos compartir con ustedes un momento muy especial. ✨
 
