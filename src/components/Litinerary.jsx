@@ -10,13 +10,13 @@ import {
 
 const events = [
   {
-    time: "18:00 HRS",
+    time: "2:00 P.M HRS",
     title: "Ceremonia Religiosa",
     description: "Acompáñame a recibir la bendición en este día tan especial.",
     icon: Church,
   },
   {
-    time: "19:30 HRS",
+    time: "4:00 P.M HRS",
     title: "Recepción",
     description: "Es momento de reunirnos y comenzar la celebración.",
     icon: Martini,
@@ -95,7 +95,7 @@ export default function Itinerary() {
                 x: 0,
               }}
               viewport={{
-                once: true,
+                once: false,
                 amount: 0.25,
               }}
               transition={{
