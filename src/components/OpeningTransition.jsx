@@ -8,6 +8,7 @@ export default function OpeningTransition() {
         <motion.div
             className="opening-transition"
             initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
             {/* Luz central */}
@@ -65,16 +66,18 @@ export default function OpeningTransition() {
                 ♕
             </motion.div>
 
-            {/* Texto */}
+            {/* Nombre */}
             <motion.div
                 className="opening-name"
                 initial={{
                     opacity: 0,
-                    y: 25
+                    y: 25,
+                    scale: 0.9
                 }}
                 animate={{
                     opacity: [0, 1, 1, 0],
-                    y: [25, 0, 0, -15]
+                    y: [25, 0, 0, -15],
+                    scale: [0.9, 1, 1, 1.05]
                 }}
                 transition={{
                     duration: 1.8,
@@ -90,7 +93,8 @@ export default function OpeningTransition() {
                     <motion.span
                         key={index}
                         style={{
-                            "--i": index
+                            left: `${8 + index * 5}%`,
+                            top: `${25 + (index % 6) * 10}%`
                         }}
                         initial={{
                             opacity: 0,
@@ -99,11 +103,13 @@ export default function OpeningTransition() {
                         animate={{
                             opacity: [0, 1, 0],
                             scale: [0, 1.4, 0],
-                            y: [0, -40 - (index % 5) * 15]
+                            y: [0, -40 - (index % 5) * 15],
+                            rotate: [0, 90, 180]
                         }}
                         transition={{
                             duration: 1.3,
-                            delay: 0.15 + index * 0.025
+                            delay: 0.15 + index * 0.025,
+                            ease: "easeOut"
                         }}
                     >
                         ✦
@@ -116,7 +122,7 @@ export default function OpeningTransition() {
                 {petals.map((_, index) => (
                     <motion.span
                         key={index}
-                        className={`opening-petal opening-petal-${index + 1}`}
+                        className="opening-petal"
                         initial={{
                             opacity: 0,
                             x: 0,
