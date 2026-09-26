@@ -407,8 +407,9 @@ export default function Gallery() {
                     }}
 
                     viewport={{
-                        once: true
-                    }}
+    once: false,
+    amount: 0.2
+}}
 
                     transition={{
                         duration: 1

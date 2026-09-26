@@ -13,8 +13,8 @@ export default function AddToCalendar() {
             "METHOD:PUBLISH",
             "BEGIN:VEVENT",
 
-            // 19 de noviembre de 2026
-            // 6:00 PM a 11:59 PM
+            // 16 de noviembre de 2026
+            // 2:00 PM a 11:59 PM
             "DTSTART:20261119T180000",
             "DTEND:20261119T235900",
 
@@ -46,7 +46,7 @@ export default function AddToCalendar() {
         link.href = url;
 
         link.download =
-            "XV-Camila-19-Noviembre-2026.ics";
+            "XV-Camila-16-Noviembre-2026.ics";
 
         document.body.appendChild(link);
 
@@ -72,8 +72,8 @@ export default function AddToCalendar() {
                     y: 0
                 }}
                 viewport={{
-                    once: true,
-                    amount: 0.3
+                    once: false,
+                    amount: 0.2
                 }}
                 transition={{
                     duration: 0.8
@@ -90,7 +90,7 @@ export default function AddToCalendar() {
                         scale: 1,
                         opacity: 1
                     }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{
                         duration: 0.6
                     }}

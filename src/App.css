@@ -16203,3 +16203,18 @@ select {
         right: 8% !important;
     }
 }
+
+/* ==========================================
+   ANIMACIONES AL HACER SCROLL
+========================================== */
+
+.scroll-reveal {
+    position: relative;
+    width: 100%;
+
+    overflow: visible;
+
+    will-change:
+        opacity,
+        transform;
+}

@@ -11,9 +11,9 @@ export default function DressCode() {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{
-                    once: true,
-                    amount: 0.2
-                }}
+    once: false,
+    amount: 0.2
+}}
                 transition={{
                     duration: 0.9
                 }}
@@ -31,7 +31,7 @@ export default function DressCode() {
                         opacity: 1,
                         scale: 1
                     }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{
                         duration: 0.6
                     }}
@@ -83,7 +83,7 @@ export default function DressCode() {
                             opacity: 1,
                             x: 0
                         }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.2 }}
                         transition={{
                             duration: 0.7
                         }}
@@ -114,7 +114,7 @@ export default function DressCode() {
                             opacity: 1,
                             x: 0
                         }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.2 }}
                         transition={{
                             duration: 0.7
                         }}
@@ -149,7 +149,7 @@ export default function DressCode() {
                         opacity: 1,
                         y: 0
                     }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{
                         duration: 0.7
                     }}

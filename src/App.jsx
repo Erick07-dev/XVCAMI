@@ -16,6 +16,7 @@ import EventDetails from "./components/EventDetails";
 import { Gift } from "lucide-react";
 import Closing from "./components/Closing";
 import MagicDecorations from "./components/MagicDecorations";
+import ScrollReveal from "./components/ScrollReveal";
 
 
 
@@ -57,30 +58,58 @@ function App() {
             {opened && (
 
                 <main className="invitation">
+                    
+                    <ScrollReveal>
+                        <Hero />
+                    </ScrollReveal>
+                    
 
-                    <Hero />
+                    <ScrollReveal>
+                        <MessageLetter />
+                    </ScrollReveal>
+                    
+                    <ScrollReveal>
+                        <Countdown />
+                    </ScrollReveal>
+                    
+                    <ScrollReveal>
+                        <Family />
+                    </ScrollReveal>
+                    
+                    <ScrollReveal>
+                        <EventDetails />
+                    </ScrollReveal>
+                    
+                    <ScrollReveal>
+                        <Litinerary />
+                    </ScrollReveal>
+                    
+                    <ScrollReveal>
+                        <DressCode />
+                    </ScrollReveal>
+                    
+                    <ScrollReveal>
+                        <Gallery />
+                    </ScrollReveal>
+                    
+                    <ScrollReveal>
+                        <Gifts />
+                    </ScrollReveal>
+                    
+                    <ScrollReveal>
+                        <RSVP />
+                    </ScrollReveal>
+                    
+                    <ScrollReveal>
+                        <Closing />
+                    </ScrollReveal>
+                    
+                    <ScrollReveal>
+                        <MagicDecorations />
+                    </ScrollReveal>
+                     
 
-                    <MessageLetter />
-
-                    <Countdown />
-
-                    <Family />
-
-                    <EventDetails />
-
-                    <Litinerary />
-
-                    <DressCode />
-
-                    <Gallery />
-
-                    <Gifts />
-
-                    <RSVP />
-
-                    <Closing />
-
-                    <MagicDecorations /> 
+                    
                     
 
                 </main>

@@ -10,7 +10,10 @@ export default function Family() {
                 className="family-content"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{
+    once: false,
+    amount: 0.2
+}}
                 transition={{ duration: 0.9 }}
             >
 
@@ -18,7 +21,7 @@ export default function Family() {
                     className="family-icon"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{
                         duration: 0.6,
                         type: "spring"
@@ -62,7 +65,7 @@ export default function Family() {
                             className="family-name-card"
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                             transition={{ duration: 0.7 }}
                         >
                             <span>✦</span>
@@ -81,7 +84,7 @@ export default function Family() {
                             className="family-name-card"
                             initial={{ opacity: 0, x: 30 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                             transition={{ duration: 0.7 }}
                         >
                             <span>✦</span>
@@ -115,7 +118,7 @@ export default function Family() {
                             className="family-name-card"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                             transition={{
                                 duration: 0.7,
                                 delay: 0.15

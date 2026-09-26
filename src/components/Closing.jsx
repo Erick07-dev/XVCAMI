@@ -25,7 +25,7 @@ export default function Closing() {
                 className="closing-moon"
                 initial={{ opacity: 0, scale: 0.6 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 1.8 }}
             />
 
@@ -92,7 +92,10 @@ export default function Closing() {
                 className="closing-content"
                 initial={{ opacity: 0, y: 55 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
+               viewport={{
+    once: false,
+    amount: 0.2
+}}
                 transition={{
                     duration: 1.2,
                     ease: "easeOut"
@@ -103,7 +106,7 @@ export default function Closing() {
                     className="closing-crown"
                     initial={{ opacity: 0, scale: 0.4 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{
                         duration: 1,
                         delay: 0.2
@@ -116,7 +119,7 @@ export default function Closing() {
                     className="closing-small"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{
                         delay: 0.5,
                         duration: 1
@@ -128,7 +131,7 @@ export default function Closing() {
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{
                         delay: 0.65,
                         duration: 1
@@ -160,7 +163,7 @@ export default function Closing() {
                         scale: 1,
                         y: 0
                     }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{
                         delay: 0.9,
                         duration: 1.4,
@@ -174,7 +177,7 @@ export default function Closing() {
                     className="closing-date-new"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{
                         delay: 1.15,
                         duration: 1
@@ -191,7 +194,7 @@ export default function Closing() {
                     className="closing-message-new"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{
                         delay: 1.3,
                         duration: 1
@@ -223,7 +226,7 @@ export default function Closing() {
                 className="closing-castle"
                 initial={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.2 }}
                 transition={{
                     duration: 1.7,
                     delay: 0.4

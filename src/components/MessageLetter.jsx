@@ -69,7 +69,7 @@ export default function MessageLetter() {
                         opacity: 1,
                         scale: 1
                     }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{
                         delay: 0.2,
                         duration: 0.8
@@ -144,7 +144,7 @@ export default function MessageLetter() {
                             rotate: [0, -5, 5, 0],
                             scale: [0.9, 1.05, 1]
                         }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.2 }}
                         transition={{
                             delay: 0.7,
                             duration: 1
@@ -207,7 +207,7 @@ export default function MessageLetter() {
             opacity: 1,
             y: 0
         }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.2 }}
         transition={{
             delay: 0.8,
             duration: 1

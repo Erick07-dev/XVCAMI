@@ -30,9 +30,9 @@ export default function Gifts() {
                     y: 0
                 }}
                 viewport={{
-                    once: true,
-                    amount: 0.2
-                }}
+    once: false,
+    amount: 0.2
+}}
                 transition={{
                     duration: 0.9
                 }}
@@ -82,7 +82,7 @@ export default function Gifts() {
                             opacity: 1,
                             x: 0
                         }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.2 }}
                         transition={{
                             duration: 0.7
                         }}
@@ -125,7 +125,7 @@ export default function Gifts() {
                             opacity: 1,
                             x: 0
                         }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.2 }}
                         transition={{
                             duration: 0.7
                         }}
