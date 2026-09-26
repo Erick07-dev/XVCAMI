@@ -1,0 +1,1096 @@
+/* =========================================================
+   XV CAMILA
+   ITINERARIO INTERACTIVO
+========================================================= */
+
+.xv-itinerary {
+    position: relative;
+    width: 100%;
+    padding: 85px 20px 90px;
+    overflow: hidden;
+
+    /*
+       No crea otro fondo.
+       Toma el color de la invitación.
+    */
+    background: transparent;
+
+    color: #7d6671;
+}
+
+
+/* =========================================================
+   DECORACIONES
+========================================================= */
+
+.xv-itinerary-decoration {
+    display: none;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+========================================================= */
+
+.xv-itinerary-header {
+    position: relative;
+    z-index: 5;
+
+    width: min(700px, 100%);
+    margin: 0 auto 42px;
+
+    text-align: center;
+}
+
+
+.xv-itinerary-crown {
+    margin-bottom: 12px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+
+    color: #bd9656;
+}
+
+
+.xv-itinerary-small {
+    margin: 0 0 10px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+
+    letter-spacing: 5px;
+
+    color: #a07c8e;
+}
+
+
+.xv-itinerary-header h2 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(52px, 8vw, 76px);
+
+    font-weight: 400;
+    line-height: 1;
+
+    color: #856a78;
+}
+
+
+/* =========================================================
+   DIVISOR
+========================================================= */
+
+.xv-itinerary-divider {
+    width: min(300px, 70%);
+
+    margin: 22px auto 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.xv-itinerary-divider span {
+    flex: 1;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(190, 151, 85, 0.65),
+            transparent
+        );
+}
+
+
+.xv-itinerary-divider i {
+    color: #bd9656;
+
+    font-size: 10px;
+    font-style: normal;
+}
+
+
+.xv-itinerary-intro {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 19px;
+    font-style: italic;
+
+    line-height: 1.5;
+
+    color: #967b87;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.xv-timeline {
+    position: relative;
+    z-index: 5;
+
+    width: min(900px, 100%);
+
+    margin: 0 auto;
+
+    padding: 5px 0 20px;
+}
+
+
+/* =========================================================
+   LÍNEA BASE
+========================================================= */
+
+.xv-timeline-line-background {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 50%;
+
+    width: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        rgba(188, 151, 89, 0.16);
+}
+
+
+/* =========================================================
+   LÍNEA DORADA ANIMADA
+========================================================= */
+
+.xv-timeline-line-progress {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 50%;
+
+    width: 2px;
+
+    transform: translateX(-50%);
+
+    transform-origin: top;
+
+    background:
+        linear-gradient(
+            180deg,
+            #e0c48c 0%,
+            #bd9656 45%,
+            #d8b979 75%,
+            #b98e4e 100%
+        );
+
+    box-shadow:
+        0 0 8px
+        rgba(190, 151, 85, 0.16);
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   EVENTO
+========================================================= */
+
+.xv-timeline-item {
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+    min-height: 105px;
+
+    display: grid;
+    grid-template-columns: 1fr 76px 1fr;
+    align-items: center;
+
+    margin-bottom: 4px;
+}
+
+/* =========================================================
+   TARJETA IZQUIERDA
+========================================================= */
+
+.xv-timeline-left .xv-timeline-card {
+    grid-column: 1;
+
+    justify-self: end;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   TARJETA DERECHA
+========================================================= */
+
+.xv-timeline-right .xv-timeline-card {
+    grid-column: 3;
+
+    justify-self: start;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   NODO CENTRAL
+========================================================= */
+
+.xv-timeline-node {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 5;
+
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    border:
+        1px solid
+        rgba(190, 151, 85, 0.55);
+
+    box-shadow:
+        0 7px 20px
+        rgba(123, 83, 105, 0.07);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+
+.xv-timeline-node::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 5px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(190, 151, 85, 0.16);
+}
+
+
+.xv-timeline-node-inner {
+    position: relative;
+    z-index: 2;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #a27089;
+
+    background:
+        rgba(255, 255, 255, 0.45);
+}
+
+
+/* =========================================================
+   TARJETA
+========================================================= */
+
+.xv-timeline-card {
+    position: relative;
+
+    width: min(315px, 100%);
+
+    padding: 16px 20px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.32);
+
+    border:
+        1px solid
+        rgba(190, 151, 85, 0.26);
+
+    box-shadow:
+        0 8px 25px
+        rgba(118, 80, 101, 0.045);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+
+/* =========================================================
+   HORARIO
+========================================================= */
+
+.xv-timeline-time {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color: #bd9656;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.xv-timeline-card h3 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 27px;
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    color: #876c79;
+}
+
+
+/* =========================================================
+   DIVISOR DE TARJETA
+========================================================= */
+
+.xv-timeline-card-divider {
+    margin: 7px 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+.xv-timeline-left
+.xv-timeline-card-divider {
+    justify-content: flex-end;
+}
+
+
+.xv-timeline-card-divider span {
+    width: 36px;
+    height: 1px;
+
+    background:
+        rgba(190, 151, 85, 0.45);
+}
+
+
+.xv-timeline-card-divider i {
+    font-size: 7px;
+    font-style: normal;
+
+    color: #bd9656;
+}
+
+
+/* =========================================================
+   DESCRIPCIÓN
+========================================================= */
+
+.xv-timeline-card p {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 15.5px;
+
+    line-height: 1.3;
+
+    color: #8c7881;
+}
+
+
+/* =========================================================
+   PUNTO FINAL
+========================================================= */
+
+.xv-timeline-final-point {
+    position: relative;
+    z-index: 6;
+
+    width: 32px;
+    height: 32px;
+
+    margin: 2px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    border:
+        1px solid
+        rgba(190, 151, 85, 0.50);
+
+    color: #bd9656;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.xv-itinerary-ending {
+    position: relative;
+    z-index: 5;
+
+    margin: 32px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+}
+
+
+.xv-itinerary-ending span {
+    color: #bd9656;
+
+    font-size: 8px;
+}
+
+
+.xv-itinerary-ending p {
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 8px;
+    font-weight: 500;
+
+    letter-spacing: 3px;
+
+    color: #997a89;
+}
+
+
+/* =========================================================
+   TABLET / CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .xv-itinerary {
+        padding: 65px 14px 70px;
+
+        background: transparent;
+    }
+
+
+    .xv-itinerary-header {
+        margin-bottom: 35px;
+    }
+
+
+    .xv-itinerary-header h2 {
+        font-size: 54px;
+    }
+
+
+    .xv-itinerary-intro {
+        max-width: 310px;
+
+        margin: 0 auto;
+
+        font-size: 17px;
+    }
+
+
+    /* Línea a la izquierda */
+
+    .xv-timeline-line-background,
+    .xv-timeline-line-progress {
+        left: 29px;
+    }
+
+
+    /* Evento */
+
+    .xv-timeline-item {
+        display: block;
+
+        min-height: 0;
+
+        margin-bottom: 14px;
+
+        padding-left: 65px;
+    }
+
+
+    /* Todos a la derecha */
+
+    .xv-timeline-left .xv-timeline-card,
+    .xv-timeline-right .xv-timeline-card {
+        width: 100%;
+
+        text-align: left;
+
+        justify-self: auto;
+    }
+
+
+    /* Nodo */
+
+    .xv-timeline-node {
+        left: 29px;
+
+        top: 50%;
+
+        width: 48px;
+        height: 48px;
+    }
+
+
+    .xv-timeline-node-inner {
+        width: 34px;
+        height: 34px;
+    }
+
+
+    /* Tarjeta */
+
+    .xv-timeline-card {
+        width: 100%;
+
+        padding: 15px 17px;
+
+        border-radius: 18px;
+    }
+
+
+    .xv-timeline-card h3 {
+        font-size: 24px;
+    }
+
+
+    .xv-timeline-card p {
+        font-size: 15px;
+
+        line-height: 1.3;
+    }
+
+
+    .xv-timeline-left
+    .xv-timeline-card-divider {
+        justify-content: flex-start;
+    }
+
+
+    .xv-timeline-final-point {
+        margin-left: 13px;
+    }
+
+
+    .xv-itinerary-ending {
+        margin-top: 30px;
+
+        gap: 8px;
+    }
+
+
+    .xv-itinerary-ending p {
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES PEQUEÑOS
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .xv-itinerary {
+        padding:
+            58px 10px
+            65px;
+    }
+
+
+    .xv-timeline-line-background,
+    .xv-timeline-line-progress {
+        left: 25px;
+    }
+
+
+    .xv-timeline-item {
+        padding-left: 57px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .xv-timeline-node {
+        left: 25px;
+
+        width: 44px;
+        height: 44px;
+    }
+
+
+    .xv-timeline-node-inner {
+        width: 31px;
+        height: 31px;
+    }
+
+
+    .xv-timeline-card {
+        padding:
+            14px 15px;
+    }
+
+
+    .xv-timeline-card h3 {
+        font-size: 23px;
+    }
+
+
+    .xv-timeline-card p {
+        font-size: 14.5px;
+    }
+
+
+    .xv-timeline-final-point {
+        margin-left: 9px;
+    }
+
+}
+
+/* =========================================================
+   DECORACIÓN PREMIUM PARA ESPACIOS VACÍOS
+========================================================= */
+
+.xv-timeline-decorations {
+    position: absolute;
+    inset: 0;
+
+    z-index: 0;
+
+    overflow: hidden;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ELEMENTOS GENERALES
+========================================================= */
+
+.xv-floating-decoration {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: none;
+    user-select: none;
+}
+
+
+/* =========================================================
+   CORAZÓN DECORATIVO
+========================================================= */
+
+.xv-deco-butterfly-1 {
+    top: 26%;
+    left: 7%;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 70px;
+
+    color: rgba(170, 107, 145, 0.13);
+
+    text-shadow:
+        0 0 25px
+        rgba(186, 128, 162, 0.08);
+}
+
+
+/* =========================================================
+   CORONA GRANDE
+========================================================= */
+
+.xv-deco-crown {
+    top: 7%;
+    right: 5%;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 82px;
+
+    color: rgba(190, 147, 76, 0.18);
+
+    text-shadow:
+        0 0 28px
+        rgba(190, 147, 76, 0.08);
+}
+
+
+/* =========================================================
+   DESTELLO DERECHO
+========================================================= */
+
+.xv-deco-sparkle-1 {
+    top: 40%;
+    right: 11%;
+
+    font-size: 37px;
+
+    color:
+        rgba(190, 147, 76, 0.22);
+}
+
+
+/* =========================================================
+   DESTELLO IZQUIERDO
+========================================================= */
+
+.xv-deco-sparkle-2 {
+    top: 65%;
+    left: 10%;
+
+    font-size: 42px;
+
+    color:
+        rgba(166, 106, 143, 0.14);
+}
+
+
+/* =========================================================
+   PÉTALOS MÁS VISIBLES
+========================================================= */
+
+.xv-deco-petal-1,
+.xv-deco-petal-2 {
+    width: 27px;
+    height: 42px;
+
+    border-radius:
+        80% 20%
+        75% 25%;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(195, 137, 174, 0.17),
+            rgba(229, 190, 215, 0.08)
+        );
+
+    filter: blur(0.3px);
+}
+
+
+.xv-deco-petal-1 {
+    top: 52%;
+    left: 15%;
+
+    transform: rotate(35deg);
+}
+
+
+.xv-deco-petal-2 {
+    top: 82%;
+    right: 13%;
+
+    transform: rotate(-25deg);
+}
+
+
+/* =========================================================
+   CONSTELACIÓN IZQUIERDA
+========================================================= */
+
+.xv-fairy-stars {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    pointer-events: none;
+}
+
+
+.xv-stars-left {
+    top: 73%;
+    left: 4%;
+
+    font-size: 22px;
+
+    color:
+        rgba(190, 147, 76, 0.20);
+
+    transform: rotate(-12deg);
+}
+
+
+/* =========================================================
+   CONSTELACIÓN DERECHA
+========================================================= */
+
+.xv-stars-right {
+    top: 35%;
+    right: 4%;
+
+    font-size: 20px;
+
+    color:
+        rgba(190, 147, 76, 0.19);
+
+    transform: rotate(10deg);
+}
+
+
+/* =========================================================
+   GRANDES CÍRCULOS ORNAMENTALES
+========================================================= */
+
+.xv-timeline::before,
+.xv-timeline::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: 0;
+
+    width: 310px;
+    height: 310px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    border:
+        1px solid
+        rgba(188, 145, 79, 0.10);
+
+    box-shadow:
+        inset 0 0 45px
+        rgba(189, 141, 171, 0.025);
+}
+
+
+.xv-timeline::before {
+    top: 28%;
+    right: -75px;
+}
+
+
+.xv-timeline::after {
+    top: 64%;
+    left: -80px;
+}
+
+
+/* Segundo círculo interior */
+
+.xv-timeline-decorations::before,
+.xv-timeline-decorations::after {
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(190, 151, 85, 0.07);
+
+    pointer-events: none;
+}
+
+
+.xv-timeline-decorations::before {
+    top: 30.5%;
+    right: -15px;
+}
+
+
+.xv-timeline-decorations::after {
+    top: 66.5%;
+    left: -15px;
+}
+
+
+/* =========================================================
+   RAMA DECORATIVA IZQUIERDA
+========================================================= */
+
+.xv-timeline-decorations {
+    background-image:
+
+        radial-gradient(
+            ellipse at 9% 18%,
+            rgba(190, 137, 170, 0.07) 0 4px,
+            transparent 5px
+        ),
+
+        radial-gradient(
+            ellipse at 14% 20%,
+            rgba(190, 137, 170, 0.06) 0 6px,
+            transparent 7px
+        ),
+
+        radial-gradient(
+            ellipse at 8% 45%,
+            rgba(190, 151, 85, 0.08) 0 3px,
+            transparent 4px
+        ),
+
+        radial-gradient(
+            ellipse at 91% 57%,
+            rgba(190, 137, 170, 0.07) 0 5px,
+            transparent 6px
+        );
+}
+
+
+/* =========================================================
+   CONTENIDO SIEMPRE POR ENCIMA
+========================================================= */
+
+.xv-timeline-item {
+    position: relative;
+    z-index: 3;
+}
+
+
+.xv-timeline-line-background {
+    z-index: 1;
+}
+
+
+.xv-timeline-line-progress {
+    z-index: 2;
+}
+
+
+.xv-timeline-node {
+    z-index: 6;
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /*
+       En celular no existen huecos laterales tan grandes,
+       por eso reducimos bastante la decoración.
+    */
+
+    .xv-deco-crown {
+        top: 8%;
+        right: 1%;
+
+        font-size: 43px;
+    }
+
+
+    .xv-deco-butterfly-1 {
+        top: 35%;
+        left: auto;
+        right: 2%;
+
+        font-size: 38px;
+    }
+
+
+    .xv-deco-sparkle-1 {
+        top: 57%;
+        right: 3%;
+
+        font-size: 23px;
+    }
+
+
+    .xv-deco-sparkle-2 {
+        display: none;
+    }
+
+
+    .xv-deco-petal-1,
+    .xv-deco-petal-2 {
+        display: none;
+    }
+
+
+    .xv-fairy-stars {
+        display: none;
+    }
+
+
+    .xv-timeline::before,
+    .xv-timeline::after {
+        width: 150px;
+        height: 150px;
+
+        opacity: 0.55;
+    }
+
+
+    .xv-timeline-decorations::before,
+    .xv-timeline-decorations::after {
+        display: none;
+    }
+
+}
