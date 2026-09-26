@@ -27,9 +27,9 @@ export default function Gifts() {
     ===================================================== */
 
     const bankData = {
-        bank: "NOMBRE DEL BANCO",
-        beneficiary: "NOMBRE DEL BENEFICIARIO",
-        clabe: "TU CLABE AQUÍ"
+        bank: "AZTECA",
+        beneficiary: "ARIANA LIZBETH",
+        clabe: "0123456789"
     };
 
 
