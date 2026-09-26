@@ -18015,4 +18015,119 @@ select {
         letter-spacing: 1.4px;
     }
 
+
+}
+
+/* =========================================
+   INVITACIÓN PERSONALIZADA
+========================================= */
+
+.xv-personal-invite {
+    position: relative;
+    z-index: 5;
+
+    width: min(390px, 90%);
+
+    margin: 22px auto 18px;
+
+    text-align: center;
+}
+
+.xv-personal-label {
+    margin: 0 0 9px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 7px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    color: #a47d91;
+}
+
+.xv-personal-name {
+    margin: 0;
+
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(31px, 6vw, 43px);
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    color: #93667f;
+}
+
+.xv-personal-divider {
+    width: 150px;
+
+    margin: 13px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+}
+
+.xv-personal-divider span {
+    flex: 1;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(190, 151, 85, 0.55),
+            transparent
+        );
+}
+
+.xv-personal-divider b {
+    font-family: Georgia, serif;
+
+    font-size: 10px;
+    font-weight: 400;
+
+    color: #bd9756;
+}
+
+.xv-personal-message {
+    max-width: 310px;
+
+    margin: 0 auto;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 14px;
+    font-style: italic;
+
+    line-height: 1.5;
+
+    color: #826c78;
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 600px) {
+
+    .xv-personal-invite {
+        width: 94%;
+
+        margin-top: 18px;
+        margin-bottom: 15px;
+    }
+
+    .xv-personal-label {
+        font-size: 6px;
+        letter-spacing: 2.4px;
+    }
+
+    .xv-personal-name {
+        font-size: 34px;
+    }
+
+    .xv-personal-message {
+        max-width: 270px;
+        font-size: 13px;
+    }
 }

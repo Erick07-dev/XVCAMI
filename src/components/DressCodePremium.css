@@ -1,0 +1,1180 @@
+/* =========================================================
+   XV CAMILA
+   CÓDIGO DE VESTIMENTA
+   DISEÑO LIMPIO SIN RECUADRO BLANCO
+========================================================= */
+
+
+/* =========================================================
+   SECCIÓN
+========================================================= */
+
+.xv-dress-section {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+
+    padding: 75px 20px 95px;
+
+    overflow: hidden;
+
+    /*
+        IMPORTANTE:
+        No tiene color propio.
+        Continúa con el fondo general de la invitación.
+    */
+    background: transparent;
+}
+
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+========================================================= */
+
+.xv-dress-content {
+    position: relative;
+    z-index: 3;
+
+    width: min(720px, 100%);
+
+    margin: 0 auto;
+
+    padding: 20px 40px 35px;
+
+    text-align: center;
+
+    /*
+        NO HAY TARJETA
+        NO HAY RECUADRO
+    */
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   LUZ AMBIENTAL
+========================================================= */
+
+.xv-dress-content::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: -1;
+
+    width: 700px;
+    height: 600px;
+
+    top: 43%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255, 255, 255, 0.09) 0%,
+            rgba(213, 181, 228, 0.05) 40%,
+            transparent 72%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DECORACIÓN SUPERIOR
+========================================================= */
+
+.xv-dress-top-decoration {
+    width: 190px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 11px;
+
+    color: #bd9857;
+}
+
+
+.xv-dress-top-decoration span {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(190, 151, 85, 0.55),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   CORONA
+========================================================= */
+
+.xv-dress-crown {
+    margin-bottom: 9px;
+
+    font-family: Georgia, serif;
+
+    font-size: 27px;
+
+    line-height: 1;
+
+    color: #bd9857;
+
+    text-shadow:
+        0 0 16px
+        rgba(190, 151, 85, 0.18);
+}
+
+
+/* =========================================================
+   CÓDIGO DE
+========================================================= */
+
+.xv-dress-eyebrow {
+    margin: 0 0 7px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 4.5px;
+
+    color: #9e7589;
+}
+
+
+/* =========================================================
+   VESTIMENTA
+========================================================= */
+
+.xv-dress-title {
+    margin: 0;
+
+    padding: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(
+            45px,
+            7vw,
+            68px
+        );
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: 2px;
+
+    color: #815d70;
+}
+
+
+/* =========================================================
+   DIVISOR DEL TÍTULO
+========================================================= */
+
+.xv-dress-title-divider {
+    width: 215px;
+
+    margin: 22px auto 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 11px;
+
+    color: #bd9857;
+}
+
+
+.xv-dress-title-divider span {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(190, 151, 85, 0.55),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   FORMAL
+========================================================= */
+
+.xv-dress-formal {
+    margin: 0;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 39px;
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    color: #a17189;
+}
+
+
+/* =========================================================
+   DESCRIPCIÓN
+========================================================= */
+
+.xv-dress-description {
+    max-width: 400px;
+
+    margin: 13px auto 0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    color: #8e7481;
+}
+
+
+/* =========================================================
+   DAMAS Y CABALLEROS
+========================================================= */
+
+.xv-dress-options {
+    width: min(520px, 100%);
+
+    margin: 45px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        45px
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+/* =========================================================
+   OPCIÓN
+========================================================= */
+
+.xv-dress-option {
+    min-width: 0;
+
+    text-align: center;
+
+    /*
+        TAMPOCO USAMOS TARJETAS BLANCAS
+    */
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   CÍRCULO DE EMOJI
+========================================================= */
+
+.xv-dress-icon-circle {
+    position: relative;
+
+    width: 88px;
+    height: 88px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 45px;
+
+    line-height: 1;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(227, 205, 237, 0.75),
+            rgba(216, 185, 229, 0.35)
+        );
+
+    border:
+        1px solid
+        rgba(190, 151, 85, 0.28);
+
+    box-shadow:
+        0 8px 25px
+        rgba(115, 78, 99, 0.08),
+        inset
+        0 0 20px
+        rgba(255, 255, 255, 0.18);
+}
+
+
+/* BRILLO */
+
+.xv-dress-icon-circle::before {
+    content: "";
+
+    position: absolute;
+
+    width: 44px;
+    height: 20px;
+
+    top: 12px;
+    left: 17px;
+
+    border-radius: 50%;
+
+    transform: rotate(-20deg);
+
+    background:
+        rgba(255, 255, 255, 0.16);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DAMAS / CABALLEROS
+========================================================= */
+
+.xv-dress-option-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+    letter-spacing: 2.7px;
+
+    color: #b18b51;
+}
+
+
+/* =========================================================
+   NOMBRE DE VESTIMENTA
+========================================================= */
+
+.xv-dress-option h3 {
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 22px;
+
+    font-weight: 500;
+
+    line-height: 1.2;
+
+    color: #795f6c;
+}
+
+
+.xv-dress-option p {
+    margin: 6px 0 0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 14px;
+
+    font-style: italic;
+
+    color: #9a828e;
+}
+
+
+/* =========================================================
+   SEPARADOR ENTRE DAMAS Y CABALLEROS
+========================================================= */
+
+.xv-dress-middle {
+    height: 150px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    color: #bc9655;
+}
+
+
+.xv-dress-middle span {
+    width: 1px;
+
+    flex: 1;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(190, 151, 85, 0.48),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   SEPARADOR CENTRAL
+========================================================= */
+
+.xv-dress-section-divider {
+    width: min(430px, 80%);
+
+    margin: 50px auto 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    color: #bd9857;
+}
+
+
+.xv-dress-section-divider span {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(190, 151, 85, 0.45),
+            transparent
+        );
+}
+
+
+.xv-dress-section-divider div {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   COLOR RESERVADO
+========================================================= */
+
+.xv-reserved-area {
+    position: relative;
+
+    width: min(470px, 100%);
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    /*
+        SIN RECUADRO BLANCO
+    */
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   ICONO COLOR RESERVADO
+========================================================= */
+
+.xv-reserved-icon {
+    margin-bottom: 10px;
+
+    color: #bc9655;
+}
+
+
+/* =========================================================
+   CON MUCHO CARIÑO
+========================================================= */
+
+.xv-reserved-small {
+    margin: 0 0 6px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+    letter-spacing: 3.3px;
+
+    color: #a27b8f;
+}
+
+
+/* =========================================================
+   TÍTULO COLOR RESERVADO
+========================================================= */
+
+.xv-reserved-title {
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 35px;
+
+    font-weight: 500;
+
+    line-height: 1.1;
+
+    color: #7f6070;
+}
+
+
+/* =========================================================
+   TEXTO COLOR RESERVADO
+========================================================= */
+
+.xv-reserved-text {
+    max-width: 330px;
+
+    margin: 12px auto 24px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 16px;
+
+    line-height: 1.45;
+
+    color: #917985;
+}
+
+
+/* =========================================================
+   MUESTRA LILA
+========================================================= */
+
+.xv-lilac-color {
+    width: min(280px, 100%);
+
+    margin: 0 auto;
+
+    padding: 10px 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    border-radius: 999px;
+
+    /*
+        ESTE ES EL ÚNICO ELEMENTO TIPO CÁPSULA.
+        ES TRANSLÚCIDO, NO BLANCO.
+    */
+    background:
+        rgba(190, 151, 207, 0.12);
+
+    border:
+        1px solid
+        rgba(190, 151, 85, 0.25);
+
+    box-shadow:
+        0 7px 20px
+        rgba(106, 71, 90, 0.04);
+}
+
+
+/* =========================================================
+   CÍRCULO LILA
+========================================================= */
+
+.xv-lilac-swatch {
+    position: relative;
+
+    width: 52px;
+    height: 52px;
+
+    flex: 0 0 52px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    border:
+        3px solid
+        rgba(255, 255, 255, 0.45);
+
+    background:
+        linear-gradient(
+            145deg,
+            #e1caeb 0%,
+            #c79fd7 36%,
+            #ad80c1 67%,
+            #9063a7 100%
+        );
+}
+
+
+/* BRILLO DEL COLOR */
+
+.xv-lilac-swatch span {
+    position: absolute;
+
+    width: 27px;
+    height: 14px;
+
+    top: 6px;
+    left: 7px;
+
+    border-radius: 50%;
+
+    transform: rotate(-25deg);
+
+    background:
+        rgba(255, 255, 255, 0.30);
+}
+
+
+/* =========================================================
+   TEXTO LILA
+========================================================= */
+
+.xv-lilac-info {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    text-align: left;
+}
+
+
+.xv-lilac-info strong {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color: #89609f;
+}
+
+
+.xv-lilac-info small {
+    margin-top: 1px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 12px;
+
+    font-style: italic;
+
+    color: #9d8491;
+}
+
+
+/* =========================================================
+   ADVERTENCIA
+========================================================= */
+
+.xv-reserved-warning {
+    max-width: 355px;
+
+    margin: 25px auto 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+}
+
+
+.xv-reserved-warning span {
+    flex: 0 0 auto;
+
+    font-family: Georgia, serif;
+
+    font-size: 12px;
+
+    color: #bc9655;
+}
+
+
+.xv-reserved-warning p {
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 14px;
+
+    font-style: italic;
+
+    line-height: 1.45;
+
+    color: #927a86;
+}
+
+
+/* =========================================================
+   DIVISOR FINAL
+========================================================= */
+
+.xv-dress-bottom-divider {
+    width: 175px;
+
+    margin: 45px auto 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #bc9655;
+}
+
+
+.xv-dress-bottom-divider span {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(190, 151, 85, 0.45),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   AGRADECIMIENTO
+========================================================= */
+
+.xv-dress-thanks {
+    max-width: 315px;
+
+    margin: 0 auto;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 16px;
+
+    font-style: italic;
+
+    line-height: 1.45;
+
+    color: #927a86;
+}
+
+
+/* =========================================================
+   ESTRELLA FINAL
+========================================================= */
+
+.xv-dress-last-sparkle {
+    margin-top: 15px;
+
+    font-size: 12px;
+
+    color: #bc9655;
+}
+
+
+/* =========================================================
+   DECORACIONES FLOTANTES
+========================================================= */
+
+.xv-dress-floating {
+    position: absolute;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+.xv-floating-one {
+    top: 13%;
+    left: 8%;
+
+    font-size: 15px;
+
+    color: #c39c59;
+}
+
+
+.xv-floating-two {
+    top: 46%;
+    right: 8%;
+
+    font-size: 18px;
+
+    color: #a97dbc;
+}
+
+
+.xv-floating-three {
+    left: 11%;
+    bottom: 17%;
+
+    font-size: 13px;
+
+    color: #ad82c0;
+}
+
+
+.xv-floating-four {
+    right: 13%;
+    bottom: 9%;
+
+    font-size: 11px;
+
+    color: #c39c59;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .xv-dress-section {
+        padding:
+            65px 15px
+            85px;
+    }
+
+
+    .xv-dress-content {
+        padding:
+            15px 20px
+            30px;
+    }
+
+}
+
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .xv-dress-section {
+        padding:
+            55px 10px
+            75px;
+
+        background: transparent;
+    }
+
+
+    .xv-dress-content {
+        width: 100%;
+
+        padding:
+            10px 5px
+            25px;
+
+        background: transparent;
+
+        border: none;
+
+        box-shadow: none;
+    }
+
+
+    /* TÍTULO */
+
+    .xv-dress-title {
+        font-size: 43px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .xv-dress-eyebrow {
+        font-size: 7px;
+
+        letter-spacing: 3.4px;
+    }
+
+
+    .xv-dress-formal {
+        font-size: 34px;
+    }
+
+
+    .xv-dress-description {
+        max-width: 285px;
+
+        font-size: 15px;
+    }
+
+
+    /* DAMAS / CABALLEROS */
+
+    .xv-dress-options {
+        width: 100%;
+
+        margin-top: 38px;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            25px
+            minmax(0, 1fr);
+
+        gap: 5px;
+    }
+
+
+    .xv-dress-icon-circle {
+        width: 68px;
+        height: 68px;
+
+        margin-bottom: 14px;
+
+        font-size: 36px;
+    }
+
+
+    .xv-dress-icon-circle::before {
+        width: 34px;
+        height: 14px;
+
+        top: 9px;
+        left: 12px;
+    }
+
+
+    .xv-dress-option-label {
+        font-size: 6px;
+
+        letter-spacing: 1.8px;
+    }
+
+
+    .xv-dress-option h3 {
+        font-size: 18px;
+    }
+
+
+    .xv-dress-option p {
+        font-size: 12px;
+    }
+
+
+    .xv-dress-middle {
+        height: 130px;
+    }
+
+
+    /* SEPARADOR */
+
+    .xv-dress-section-divider {
+        margin:
+            42px auto
+            34px;
+    }
+
+
+    /* COLOR RESERVADO */
+
+    .xv-reserved-title {
+        font-size: 30px;
+    }
+
+
+    .xv-reserved-text {
+        max-width: 275px;
+
+        font-size: 15px;
+    }
+
+
+    .xv-lilac-color {
+        width: min(245px, 95%);
+
+        padding:
+            9px 12px;
+
+        gap: 12px;
+    }
+
+
+    .xv-lilac-swatch {
+        width: 46px;
+        height: 46px;
+
+        flex-basis: 46px;
+    }
+
+
+    .xv-lilac-info strong {
+        font-size: 20px;
+    }
+
+
+    .xv-lilac-info small {
+        font-size: 11px;
+    }
+
+
+    .xv-reserved-warning {
+        max-width: 285px;
+
+        gap: 6px;
+    }
+
+
+    .xv-reserved-warning p {
+        font-size: 13px;
+    }
+
+
+    /* DECORACIONES */
+
+    .xv-floating-one {
+        left: 4%;
+    }
+
+
+    .xv-floating-two {
+        right: 4%;
+    }
+
+
+    .xv-floating-three {
+        left: 5%;
+    }
+
+
+    .xv-floating-four {
+        right: 5%;
+    }
+
+}
+
+
+/* =========================================================
+   PANTALLAS PEQUEÑAS
+========================================================= */
+
+@media (max-width: 370px) {
+
+    .xv-dress-title {
+        font-size: 38px;
+    }
+
+
+    .xv-dress-options {
+        grid-template-columns:
+            minmax(0, 1fr)
+            20px
+            minmax(0, 1fr);
+    }
+
+
+    .xv-dress-icon-circle {
+        width: 60px;
+        height: 60px;
+
+        font-size: 32px;
+    }
+
+
+    .xv-dress-option h3 {
+        font-size: 16px;
+    }
+
+
+    .xv-dress-option p {
+        font-size: 11px;
+    }
+
+
+    .xv-lilac-color {
+        width: 225px;
+    }
+
+}

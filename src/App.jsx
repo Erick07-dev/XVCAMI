@@ -16,7 +16,7 @@ import Closing from "./components/Closing";
 import MagicDecorations from "./components/MagicDecorations";
 import ScrollReveal from "./components/ScrollReveal";
 import OpeningTransition from "./components/OpeningTransition";
-
+import GeneradorInvitacion from "./components/GeneradorInvitacion";
 
 import "./App.css";
 
@@ -28,6 +28,13 @@ function App() {
     const [opening, setOpening] = useState(false);
 
     const musicRef = useRef(null);
+
+    const esGenerador =
+  window.location.pathname === "/generar-invitacion";
+
+if (esGenerador) {
+  return <GeneradorInvitacion />;
+}
 
 
     const handleOpen = async () => {
@@ -186,6 +193,9 @@ function App() {
                         <Gallery />
 
                     </ScrollReveal>
+
+
+                    
 
 
                     {/* REGALOS */}

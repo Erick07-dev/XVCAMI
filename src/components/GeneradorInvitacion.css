@@ -1,0 +1,481 @@
+.generator-page {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  padding: 35px 18px;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(236, 207, 226, 0.55),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(218, 207, 242, 0.55),
+      transparent 38%
+    ),
+    linear-gradient(
+      145deg,
+      #fff9fc 0%,
+      #f9edf5 50%,
+      #f2edf9 100%
+    );
+
+  box-sizing: border-box;
+}
+
+.generator-card {
+  width: min(520px, 100%);
+
+  position: relative;
+  z-index: 2;
+
+  padding: 45px 45px 35px;
+
+  text-align: center;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(190, 151, 85, 0.3);
+
+  background: rgba(255, 252, 254, 0.86);
+
+  box-shadow:
+    0 30px 80px rgba(112, 77, 101, 0.13),
+    inset 0 0 0 7px rgba(255, 255, 255, 0.4);
+
+  backdrop-filter: blur(15px);
+}
+
+.generator-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 10px;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(190, 151, 85, 0.13);
+
+  pointer-events: none;
+}
+
+.generator-crown {
+  width: 55px;
+  height: 55px;
+
+  margin: 0 auto 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #bd9756;
+
+  background: rgba(190, 151, 85, 0.07);
+
+  border: 1px solid rgba(190, 151, 85, 0.18);
+}
+
+.generator-eyebrow {
+  margin: 0 0 13px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 4px;
+
+  color: #a47d91;
+}
+
+.generator-card h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(34px, 6vw, 47px);
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #68525f;
+}
+
+.generator-card h1 span {
+  display: block;
+
+  margin-top: 6px;
+
+  font-family: "Great Vibes", cursive;
+  font-size: 54px;
+  font-weight: 400;
+
+  color: #a46f8a;
+}
+
+.generator-divider {
+  width: 180px;
+
+  margin: 20px auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #bd9756;
+}
+
+.generator-divider span {
+  height: 1px;
+  flex: 1;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(190, 151, 85, 0.6),
+    transparent
+  );
+}
+
+.generator-description {
+  max-width: 370px;
+
+  margin: 0 auto 30px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+
+  line-height: 1.55;
+
+  color: #88727f;
+}
+
+.generator-form {
+  text-align: left;
+}
+
+.generator-form label {
+  display: block;
+
+  margin: 0 0 9px 4px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  color: #987789;
+}
+
+.generator-form input {
+  width: 100%;
+  height: 55px;
+
+  box-sizing: border-box;
+
+  padding: 0 18px;
+
+  outline: none;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(164, 111, 138, 0.22);
+
+  background: rgba(255, 255, 255, 0.75);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+
+  color: #684f5e;
+
+  transition: 0.3s ease;
+}
+
+.generator-form input::placeholder {
+  color: #b8a4af;
+}
+
+.generator-form input:focus {
+  border-color: rgba(190, 151, 85, 0.65);
+
+  box-shadow:
+    0 0 0 4px rgba(190, 151, 85, 0.07);
+}
+
+.generator-main-button {
+  width: 100%;
+  height: 53px;
+
+  margin-top: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(190, 151, 85, 0.6);
+
+  background:
+    linear-gradient(
+      135deg,
+      #a87790,
+      #94667f
+    );
+
+  color: white;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  box-shadow:
+    0 12px 28px rgba(137, 88, 115, 0.2);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.generator-main-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 16px 35px rgba(137, 88, 115, 0.27);
+}
+
+/* RESULTADO */
+
+.generator-result {
+  margin-top: 28px;
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(190, 151, 85, 0.18);
+}
+
+.generator-result-title {
+  margin: 0 0 16px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  color: #b38b55;
+}
+
+.generator-guest {
+  margin-bottom: 17px;
+}
+
+.generator-guest span {
+  display: block;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 14px;
+
+  color: #9a8490;
+}
+
+.generator-guest strong {
+  display: block;
+
+  margin-top: 3px;
+
+  font-family: "Great Vibes", cursive;
+  font-size: 34px;
+  font-weight: 400;
+
+  color: #9c6c85;
+}
+
+.generator-link-box {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  box-sizing: border-box;
+
+  padding: 13px 14px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(164, 111, 138, 0.16);
+
+  background: rgba(246, 236, 243, 0.65);
+
+  color: #a3748d;
+
+  text-align: left;
+}
+
+.generator-link-box p {
+  margin: 0;
+
+  flex: 1;
+
+  overflow-wrap: anywhere;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+
+  line-height: 1.5;
+
+  color: #7d6673;
+}
+
+.generator-actions {
+  margin-top: 13px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+}
+
+.generator-actions button {
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  cursor: pointer;
+
+  border-radius: 999px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  transition: 0.25s ease;
+}
+
+.generator-copy {
+  border: 1px solid rgba(164, 111, 138, 0.3);
+
+  background: white;
+
+  color: #91667c;
+}
+
+.generator-whatsapp {
+  border: 1px solid #d6c097;
+
+  background: #f7f0e4;
+
+  color: #80683f;
+}
+
+.generator-actions button:hover {
+  transform: translateY(-2px);
+}
+
+.generator-note {
+  margin: 25px auto 0;
+
+  max-width: 330px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 13px;
+  font-style: italic;
+
+  line-height: 1.5;
+
+  color: #a18c97;
+}
+
+/* DECORACIÓN */
+
+.generator-decoration {
+  position: absolute;
+
+  font-family: Georgia, serif;
+
+  color: rgba(190, 151, 85, 0.35);
+
+  pointer-events: none;
+}
+
+.decoration-one {
+  top: 10%;
+  left: 10%;
+
+  font-size: 28px;
+}
+
+.decoration-two {
+  right: 11%;
+  bottom: 12%;
+
+  font-size: 34px;
+}
+
+.decoration-three {
+  right: 16%;
+  top: 13%;
+
+  font-size: 21px;
+  color: rgba(164, 111, 138, 0.22);
+}
+
+/* MÓVIL */
+
+@media (max-width: 600px) {
+
+  .generator-page {
+    align-items: flex-start;
+
+    padding: 22px 12px;
+
+    overflow-y: auto;
+  }
+
+  .generator-card {
+    padding: 35px 20px 28px;
+
+    border-radius: 22px;
+  }
+
+  .generator-card h1 {
+    font-size: 31px;
+  }
+
+  .generator-card h1 span {
+    font-size: 45px;
+  }
+
+  .generator-description {
+    font-size: 15px;
+  }
+
+  .generator-actions {
+    grid-template-columns: 1fr;
+  }
+}

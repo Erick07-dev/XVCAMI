@@ -548,67 +548,131 @@ export default function Closing() {
             {/* ==========================================
                 MARIPOSA FINAL
             ========================================== */}
+{/* ==========================================
+    MARIPOSA FINAL CINEMATOGRÁFICA
+========================================== */}
 
-            <motion.div
-                className="xv-final-butterfly"
+<motion.div
+    className="xv-final-butterfly-flight"
 
-                initial={{
-                    left: "-15%",
-                    bottom: "30%",
-                    opacity: 0,
-                    rotate: -18,
-                    scale: 0.7
-                }}
+    initial={{
+        x: "-20vw",
+        y: 80,
+        opacity: 0
+    }}
 
-                whileInView={{
-                    left: "115%",
-                    bottom: "67%",
-                    opacity: [
-                        0,
-                        1,
-                        1,
-                        1,
-                        0
-                    ],
+    whileInView={{
+        x: "120vw",
+        y: [80, 20, 55, -20, 10, -70],
+        opacity: [0, 1, 1, 1, 1, 0]
+    }}
 
-                    rotate: [
-                        -18,
-                        8,
-                        -6,
-                        12
-                    ],
+    viewport={{
+        once: true,
+        amount: 0.15
+    }}
 
-                    scale: [
-                        0.7,
-                        1,
-                        0.9,
-                        1.05
-                    ]
-                }}
+    transition={{
+        duration: 9,
+        delay: 3.8,
+        ease: "easeInOut"
+    }}
+>
+    <motion.div
+        className="xv-final-butterfly-real"
 
-                viewport={{
-                    once: true,
-                    amount: 0.3
-                }}
+        animate={{
+            rotate: [-8, 5, -4, 7, 0]
+        }}
 
-                transition={{
-                    duration: 7,
-                    delay: 4,
-                    ease: "easeInOut"
-                }}
-            >
+        transition={{
+            duration: 2.5,
+            repeat: Infinity,
+            ease: "easeInOut"
+        }}
+    >
 
-                <div className="xv-butterfly-wing xv-wing-left">
-                    ♡
-                </div>
+        {/* ALA IZQUIERDA */}
+        <motion.div
+            className="xv-final-wing xv-final-wing-left"
 
-                <div className="xv-butterfly-body" />
+            animate={{
+                rotateY: [0, 65, 5, 55, 0]
+            }}
 
-                <div className="xv-butterfly-wing xv-wing-right">
-                    ♡
-                </div>
+            transition={{
+                duration: 0.55,
+                repeat: Infinity,
+                ease: "easeInOut"
+            }}
+        >
+            <span className="xv-wing-detail">✦</span>
+        </motion.div>
 
-            </motion.div>
+
+        {/* CUERPO */}
+        <div className="xv-final-butterfly-center">
+
+            <span className="xv-final-antenna xv-antenna-left" />
+            <span className="xv-final-antenna xv-antenna-right" />
+
+            <div className="xv-final-butterfly-head" />
+
+            <div className="xv-final-butterfly-body" />
+
+        </div>
+
+
+        {/* ALA DERECHA */}
+        <motion.div
+            className="xv-final-wing xv-final-wing-right"
+
+            animate={{
+                rotateY: [0, -65, -5, -55, 0]
+            }}
+
+            transition={{
+                duration: 0.55,
+                repeat: Infinity,
+                ease: "easeInOut"
+            }}
+        >
+            <span className="xv-wing-detail">✦</span>
+        </motion.div>
+
+
+        {/* BRILLO */}
+        <motion.span
+            className="xv-butterfly-magic xv-magic-one"
+            animate={{
+                opacity: [0, 1, 0],
+                scale: [0.4, 1, 0.4]
+            }}
+            transition={{
+                duration: 1.2,
+                repeat: Infinity
+            }}
+        >
+            ✦
+        </motion.span>
+
+        <motion.span
+            className="xv-butterfly-magic xv-magic-two"
+            animate={{
+                opacity: [0, 1, 0],
+                scale: [0.3, 1, 0.3]
+            }}
+            transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                delay: 0.4
+            }}
+        >
+            ✧
+        </motion.span>
+
+    </motion.div>
+</motion.div>
 
 
             {/* ==========================================

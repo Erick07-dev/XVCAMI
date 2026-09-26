@@ -15,6 +15,9 @@ const sparkles = [
     { left: "93%", top: "84%", delay: 1.4 },
 ];
 
+const params = new URLSearchParams(window.location.search);
+const invitado = params.get("para");
+
 const petals = Array.from({ length: 12 });
 
 export default function Cover({ onOpen }) {
@@ -224,6 +227,30 @@ export default function Cover({ onOpen }) {
                     </motion.span>
 
                     <h1>Camila</h1>
+
+                    {invitado && (
+  <div className="xv-personal-invite">
+
+    <p className="xv-personal-label">
+      INVITACIÓN ESPECIAL PARA
+    </p>
+
+    <h3 className="xv-personal-name">
+      {invitado}
+    </h3>
+
+    <div className="xv-personal-divider">
+      <span />
+      <b>♡</b>
+      <span />
+    </div>
+
+    <p className="xv-personal-message">
+      Será un honor compartir este día tan especial contigo
+    </p>
+
+  </div>
+)}
 
                     <motion.span
                         animate={{

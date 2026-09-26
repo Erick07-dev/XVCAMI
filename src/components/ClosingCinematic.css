@@ -476,77 +476,305 @@
 
 
 /* =========================================================
-   MARIPOSA FINAL
+   MARIPOSA FINAL CINEMATOGRÁFICA
 ========================================================= */
 
-.xv-final-butterfly {
+.xv-final-butterfly-flight {
     position: absolute;
 
-    z-index: 35;
+    z-index: 100;
 
-    width: 60px;
-    height: 45px;
+    left: 0;
+    bottom: 30%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 85px;
+    height: 70px;
 
     pointer-events: none;
+
+    perspective: 500px;
+}
+
+
+/* MARIPOSA COMPLETA */
+
+.xv-final-butterfly-real {
+    position: relative;
+
+    width: 85px;
+    height: 65px;
+
+    transform-style: preserve-3d;
 
     filter:
         drop-shadow(
             0 0 8px
-            rgba(225, 191, 110, 0.32)
+            rgba(234, 202, 125, 0.55)
+        )
+        drop-shadow(
+            0 0 18px
+            rgba(205, 151, 205, 0.25)
         );
 }
 
-.xv-butterfly-wing {
+
+/* =========================================================
+   ALAS
+========================================================= */
+
+.xv-final-wing {
     position: absolute;
 
-    top: 7px;
+    top: 9px;
 
-    font-family:
-        Georgia,
-        serif;
+    width: 38px;
+    height: 46px;
 
-    font-size: 31px;
+    overflow: hidden;
 
-    line-height: 1;
-
-    color: #e3c273;
-}
-
-.xv-wing-left {
-    left: 0;
-
-    transform:
-        rotate(-35deg)
-        scaleX(1.2);
-}
-
-.xv-wing-right {
-    right: 0;
-
-    transform:
-        rotate(35deg)
-        scaleX(-1.2);
-}
-
-.xv-butterfly-body {
-    position: absolute;
-
-    z-index: 2;
-
-    width: 3px;
-    height: 24px;
-
-    border-radius: 999px;
+    border:
+        1px solid
+        rgba(255, 231, 167, 0.8);
 
     background:
         linear-gradient(
-            #e5c477,
-            #a77e3f
+            145deg,
+            rgba(237, 202, 235, 0.95),
+            rgba(203, 151, 201, 0.9) 45%,
+            rgba(223, 190, 113, 0.95)
         );
+
+    box-shadow:
+        inset 0 0 12px
+        rgba(255, 255, 255, 0.28);
+
+    backface-visibility: visible;
+}
+
+
+/* ALA IZQUIERDA */
+
+.xv-final-wing-left {
+    left: 5px;
+
+    border-radius:
+        85% 35%
+        75% 30%;
+
+    transform-origin:
+        right center;
+}
+
+
+/* ALA DERECHA */
+
+.xv-final-wing-right {
+    right: 5px;
+
+    border-radius:
+        35% 85%
+        30% 75%;
+
+    transform-origin:
+        left center;
+}
+
+
+/* =========================================================
+   DETALLE DE ALAS
+========================================================= */
+
+.xv-wing-detail {
+    position: absolute;
+
+    top: 13px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    font-size: 10px;
+
+    color:
+        rgba(255, 244, 204, 0.9);
+
+    text-shadow:
+        0 0 5px
+        rgba(255, 228, 156, 0.7);
+}
+
+
+/* =========================================================
+   CENTRO
+========================================================= */
+
+.xv-final-butterfly-center {
+    position: absolute;
+
+    z-index: 10;
+
+    top: 5px;
+    left: 50%;
+
+    width: 12px;
+    height: 55px;
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* CABEZA */
+
+.xv-final-butterfly-head {
+    position: absolute;
+
+    top: 7px;
+    left: 50%;
+
+    width: 8px;
+    height: 8px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f0d18b,
+            #a77a39
+        );
+
+    box-shadow:
+        0 0 6px
+        rgba(238, 205, 131, 0.5);
+}
+
+
+/* CUERPO */
+
+.xv-final-butterfly-body {
+    position: absolute;
+
+    top: 14px;
+    left: 50%;
+
+    width: 5px;
+    height: 35px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50% 50%
+        70% 70%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #e7c578,
+            #a4773b
+        );
+}
+
+
+/* =========================================================
+   ANTENAS
+========================================================= */
+
+.xv-final-antenna {
+    position: absolute;
+
+    z-index: 20;
+
+    width: 1px;
+    height: 17px;
+
+    top: -5px;
+
+    background:
+        linear-gradient(
+            to top,
+            #d3ad5f,
+            #f1d995
+        );
+
+    transform-origin:
+        bottom center;
+}
+
+
+.xv-antenna-left {
+    left: 4px;
+
+    transform:
+        rotate(-28deg);
+}
+
+
+.xv-antenna-right {
+    right: 4px;
+
+    transform:
+        rotate(28deg);
+}
+
+
+/* =========================================================
+   PARTÍCULAS DE LA MARIPOSA
+========================================================= */
+
+.xv-butterfly-magic {
+    position: absolute;
+
+    color: #f0d591;
+
+    text-shadow:
+        0 0 7px
+        rgba(239, 210, 139, 0.8);
+}
+
+
+.xv-magic-one {
+    left: -13px;
+    top: 35px;
+
+    font-size: 9px;
+}
+
+
+.xv-magic-two {
+    left: -26px;
+    top: 51px;
+
+    font-size: 6px;
+}
+
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .xv-final-butterfly-flight {
+        bottom: 27%;
+
+        width: 68px;
+        height: 55px;
+    }
+
+
+    .xv-final-butterfly-real {
+        transform:
+            scale(0.78);
+
+        transform-origin:
+            center;
+    }
+
 }
 
 
