@@ -16347,20 +16347,12 @@ select {
 .opening-sparkles span {
     position: absolute;
 
-    left: calc(
-        10% + (var(--i) * 4.7%)
-    );
-
-    top: calc(
-        25% + ((var(--i) % 6) * 10%)
-    );
-
     color: #c8a664;
 
     font-size: 12px;
 
     text-shadow:
-        0 0 10px rgba(255, 221, 150, .8);
+        0 0 10px rgba(255, 221, 150, 0.8);
 }
 
 
