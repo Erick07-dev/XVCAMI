@@ -47,7 +47,7 @@ export default function GeneradorInvitacion() {
   };
 
   const enviarWhatsApp = () => {
-  if (!enlace) return;
+  
 
   const invitado = nombre.trim();
 
