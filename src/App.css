@@ -18024,110 +18024,258 @@ select {
 
 .xv-personal-invite {
     position: relative;
-    z-index: 5;
+    z-index: 20;
 
-    width: min(390px, 90%);
+    width: min(420px, 88%);
+    max-width: 420px;
 
-    margin: 22px auto 18px;
+    margin: 5px auto 22px;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     text-align: center;
+
+    box-sizing: border-box;
 }
 
 .xv-personal-label {
-    margin: 0 0 9px;
+    margin: 0 0 7px;
 
     font-family: "Montserrat", sans-serif;
-    font-size: 7px;
+    font-size: 8px;
     font-weight: 600;
 
-    letter-spacing: 3px;
+    line-height: 1.3;
+    letter-spacing: 3.5px;
 
     color: #a47d91;
+
+    text-transform: uppercase;
 }
 
 .xv-personal-name {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
     margin: 0;
 
     font-family: "Great Vibes", cursive;
-    font-size: clamp(31px, 6vw, 43px);
+    font-size: clamp(34px, 5vw, 46px);
     font-weight: 400;
 
-    line-height: 1.1;
+    line-height: 1.15;
 
-    color: #93667f;
+    color: #95657e;
+
+    text-align: center;
+
+    overflow-wrap: break-word;
+    word-break: normal;
 }
 
 .xv-personal-divider {
     width: 150px;
 
-    margin: 13px auto;
+    margin: 10px auto 9px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    gap: 9px;
+    gap: 10px;
 }
 
 .xv-personal-divider span {
     flex: 1;
+
     height: 1px;
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(190, 151, 85, 0.55),
-            transparent
-        );
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(190, 151, 85, 0.75),
+        transparent
+    );
 }
 
 .xv-personal-divider b {
     font-family: Georgia, serif;
 
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 400;
 
     color: #bd9756;
 }
 
 .xv-personal-message {
-    max-width: 310px;
+    width: 100%;
+    max-width: 330px;
 
     margin: 0 auto;
 
     font-family: "Cormorant Garamond", serif;
+
     font-size: 14px;
     font-style: italic;
 
-    line-height: 1.5;
+    line-height: 1.45;
 
     color: #826c78;
+
+    text-align: center;
 }
 
 
 /* MÓVIL */
 
+@media (max-width: 768px) {
+
+    .xv-personal-invite {
+        width: calc(100% - 50px);
+        max-width: 350px;
+
+        margin: 5px auto 20px;
+
+        left: auto;
+        right: auto;
+
+        transform: none;
+    }
+
+     .xv-personal-label {
+        margin-bottom: 6px;
+
+        font-size: 7px;
+
+        letter-spacing: 2.8px;
+
+        text-align: center;
+    }
+
+     .xv-personal-name {
+        font-size: 38px;
+
+        line-height: 1.08;
+
+        text-align: center;
+    }
+
+      .xv-personal-divider {
+        width: 135px;
+
+        margin-top: 9px;
+        margin-bottom: 8px;
+    }
+
+     .xv-personal-message {
+        max-width: 280px;
+
+        font-size: 13.5px;
+
+        line-height: 1.4;
+    }
+
+}
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
 @media (max-width: 600px) {
 
     .xv-personal-invite {
-        width: 94%;
+        width: calc(100% - 44px);
+        max-width: 330px;
 
-        margin-top: 18px;
-        margin-bottom: 15px;
+        margin: 2px auto 18px;
+
+        padding: 0;
+
+        position: relative;
+
+        left: 0;
+        right: 0;
+
+        transform: none;
+    }
+
+    .xv-personal-label {
+        margin: 0 0 5px;
+
+        font-size: 6.5px;
+
+        letter-spacing: 2.3px;
+
+        white-space: nowrap;
+    }
+
+    .xv-personal-name {
+        width: 100%;
+
+        font-size: 35px;
+
+        line-height: 1.1;
+
+        text-align: center;
+    }
+
+    .xv-personal-divider {
+        width: 125px;
+
+        margin: 8px auto;
+    }
+
+    .xv-personal-message {
+        width: 100%;
+
+        max-width: 265px;
+
+        margin: 0 auto;
+
+        font-size: 13px;
+
+        line-height: 1.4;
+
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   CELULARES PEQUEÑOS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .xv-personal-invite {
+        width: calc(100% - 34px);
+
+        max-width: 300px;
     }
 
     .xv-personal-label {
         font-size: 6px;
-        letter-spacing: 2.4px;
+
+        letter-spacing: 1.8px;
     }
 
     .xv-personal-name {
-        font-size: 34px;
+        font-size: 32px;
+    }
+
+    .xv-personal-divider {
+        width: 115px;
     }
 
     .xv-personal-message {
-        max-width: 270px;
-        font-size: 13px;
+        max-width: 245px;
+
+        font-size: 12.5px;
     }
 }
