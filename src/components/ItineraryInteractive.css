@@ -514,79 +514,252 @@
 
 
 /* =========================================================
-   TABLET / CELULAR
+   ITINERARIO MÓVIL
+   LÍNEA EXACTAMENTE EN EL CENTRO
 ========================================================= */
 
 @media (max-width: 700px) {
 
     .xv-itinerary {
-        padding: 65px 14px 70px;
-
+        width: 100%;
+        padding: 65px 8px 75px;
+        overflow: hidden;
         background: transparent;
     }
 
 
-    .xv-itinerary-header {
-        margin-bottom: 35px;
-    }
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
+    .xv-itinerary-header {
+        width: 100%;
+        margin: 0 auto 42px;
+        padding: 0 15px;
+        text-align: center;
+    }
 
     .xv-itinerary-header h2 {
-        font-size: 54px;
+        font-size: 52px;
     }
-
 
     .xv-itinerary-intro {
         max-width: 310px;
-
         margin: 0 auto;
 
         font-size: 17px;
+        line-height: 1.45;
     }
 
 
-    /* Línea a la izquierda */
+    /* =====================================================
+       TIMELINE
+    ===================================================== */
+
+    .xv-timeline {
+        position: relative;
+
+        width: 100%;
+
+        margin: 0 auto;
+
+        padding: 5px 0 20px;
+    }
+
+
+    /* =====================================================
+       LÍNEA EXACTAMENTE EN MEDIO
+    ===================================================== */
 
     .xv-timeline-line-background,
     .xv-timeline-line-progress {
-        left: 29px;
+        left: 50% !important;
+
+        transform: translateX(-50%) !important;
     }
 
 
-    /* Evento */
+    /* =====================================================
+       EVENTOS
+    ===================================================== */
 
     .xv-timeline-item {
-        display: block;
+        position: relative;
 
-        min-height: 0;
+        width: 100%;
 
-        margin-bottom: 14px;
+        min-height: 155px;
 
-        padding-left: 65px;
+        display: grid;
+
+        grid-template-columns:
+            calc(50% - 27px)
+            54px
+            calc(50% - 27px);
+
+        align-items: center;
+
+        padding: 0;
+
+        margin: 0 0 14px;
+
+        z-index: 3;
     }
 
 
-    /* Todos a la derecha */
+    /* =====================================================
+       IZQUIERDA
+    ===================================================== */
 
-    .xv-timeline-left .xv-timeline-card,
-    .xv-timeline-right .xv-timeline-card {
+    .xv-timeline-left .xv-timeline-card {
+        grid-column: 1;
+
         width: 100%;
+
+        justify-self: end;
+
+        text-align: right;
+
+        margin: 0;
+    }
+
+
+    /* =====================================================
+       DERECHA
+    ===================================================== */
+
+    .xv-timeline-right .xv-timeline-card {
+        grid-column: 3;
+
+        width: 100%;
+
+        justify-self: start;
 
         text-align: left;
 
-        justify-self: auto;
+        margin: 0;
     }
 
 
-    /* Nodo */
+    /* =====================================================
+       TARJETAS COMPACTAS
+    ===================================================== */
+
+    .xv-timeline-card {
+        min-height: 0;
+        height: auto;
+
+        padding: 16px 11px;
+
+        border-radius: 17px;
+
+        background:
+            rgba(255, 255, 255, 0.34);
+
+        border:
+            1px solid
+            rgba(190, 151, 85, 0.27);
+
+        box-shadow:
+            0 7px 20px
+            rgba(118, 80, 101, 0.045);
+    }
+
+
+    /* =====================================================
+       HORARIO
+    ===================================================== */
+
+    .xv-timeline-time {
+        display: block;
+
+        margin-bottom: 6px;
+
+        font-size: 7px;
+
+        letter-spacing: 1.2px;
+
+        white-space: nowrap;
+    }
+
+
+    /* =====================================================
+       TÍTULO
+    ===================================================== */
+
+    .xv-timeline-card h3 {
+        margin: 0;
+
+        font-size: 22px;
+
+        line-height: 1.05;
+    }
+
+
+    /* =====================================================
+       DIVISOR
+    ===================================================== */
+
+    .xv-timeline-card-divider {
+        margin: 9px 0;
+
+        gap: 5px;
+    }
+
+
+    .xv-timeline-left .xv-timeline-card-divider {
+        justify-content: flex-end !important;
+    }
+
+
+    .xv-timeline-right .xv-timeline-card-divider {
+        justify-content: flex-start !important;
+    }
+
+
+    .xv-timeline-card-divider span {
+        width: 28px;
+    }
+
+
+    /* =====================================================
+       DESCRIPCIÓN
+    ===================================================== */
+
+    .xv-timeline-card p {
+        margin: 0;
+
+        font-size: 13.5px;
+
+        line-height: 1.3;
+    }
+
+
+    .xv-timeline-left .xv-timeline-card p {
+        text-align: right;
+    }
+
+
+    .xv-timeline-right .xv-timeline-card p {
+        text-align: left;
+    }
+
+
+    /* =====================================================
+       NODOS EXACTAMENTE SOBRE LA LÍNEA CENTRAL
+    ===================================================== */
 
     .xv-timeline-node {
-        left: 29px;
-
+        left: 50% !important;
         top: 50%;
 
         width: 48px;
         height: 48px;
+
+        transform:
+            translate(-50%, -50%) !important;
+
+        z-index: 7;
     }
 
 
@@ -596,39 +769,50 @@
     }
 
 
-    /* Tarjeta */
-
-    .xv-timeline-card {
-        width: 100%;
-
-        padding: 15px 17px;
-
-        border-radius: 18px;
+    .xv-timeline-node-inner svg {
+        width: 17px;
+        height: 17px;
     }
 
 
-    .xv-timeline-card h3 {
-        font-size: 24px;
-    }
-
-
-    .xv-timeline-card p {
-        font-size: 15px;
-
-        line-height: 1.3;
-    }
-
-
-    .xv-timeline-left
-    .xv-timeline-card-divider {
-        justify-content: flex-start;
-    }
-
+    /* =====================================================
+       PUNTO FINAL CENTRADO
+    ===================================================== */
 
     .xv-timeline-final-point {
-        margin-left: 13px;
+        width: 30px;
+        height: 30px;
+
+        margin: 4px auto 0 !important;
+
+        font-size: 8px;
     }
 
+
+    /* =====================================================
+       DECORACIONES
+       Quitamos las grandes en móvil porque ahora
+       tenemos dos columnas pequeñas.
+    ===================================================== */
+
+    .xv-deco-butterfly-1,
+    .xv-deco-crown,
+    .xv-deco-sparkle-1,
+    .xv-deco-sparkle-2,
+    .xv-deco-petal-1,
+    .xv-deco-petal-2,
+    .xv-fairy-stars,
+    .xv-timeline::before,
+    .xv-timeline::after,
+    .xv-timeline-decorations::before,
+    .xv-timeline-decorations::after {
+        display: none !important;
+    }
+
+
+    /* =====================================================
+       FINAL
+    ===================================================== */
 
     .xv-itinerary-ending {
         margin-top: 30px;
@@ -636,45 +820,37 @@
         gap: 8px;
     }
 
-
     .xv-itinerary-ending p {
         font-size: 7px;
 
-        letter-spacing: 2px;
+        letter-spacing: 1.7px;
     }
-
 }
 
 
 /* =========================================================
-   CELULARES PEQUEÑOS
+   TELÉFONOS MUY PEQUEÑOS
 ========================================================= */
 
 @media (max-width: 390px) {
 
     .xv-itinerary {
-        padding:
-            58px 10px
-            65px;
-    }
-
-
-    .xv-timeline-line-background,
-    .xv-timeline-line-progress {
-        left: 25px;
+        padding-left: 5px;
+        padding-right: 5px;
     }
 
 
     .xv-timeline-item {
-        padding-left: 57px;
+        grid-template-columns:
+            calc(50% - 24px)
+            48px
+            calc(50% - 24px);
 
-        margin-bottom: 12px;
+        min-height: 150px;
     }
 
 
     .xv-timeline-node {
-        left: 25px;
-
         width: 44px;
         height: 44px;
     }
@@ -687,26 +863,32 @@
 
 
     .xv-timeline-card {
-        padding:
-            14px 15px;
+        padding: 14px 8px;
+
+        border-radius: 15px;
     }
 
 
     .xv-timeline-card h3 {
-        font-size: 23px;
+        font-size: 20px;
     }
 
 
     .xv-timeline-card p {
-        font-size: 14.5px;
+        font-size: 12.5px;
     }
 
 
-    .xv-timeline-final-point {
-        margin-left: 9px;
-    }
+    .xv-timeline-time {
+        font-size: 6.5px;
 
+        letter-spacing: 0.8px;
+    }
 }
+
+
+
+
 
 /* =========================================================
    DECORACIÓN PREMIUM PARA ESPACIOS VACÍOS
