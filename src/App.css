@@ -17439,3 +17439,580 @@ select {
 
     outline: 0 !important;
 }
+
+/* =========================================================
+   RSVP PREMIUM SUCCESS
+========================================================= */
+
+.rsvp-premium-result {
+    position: relative;
+
+    min-height: 760px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 20px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TARJETA
+========================================================= */
+
+.rsvp-premium-card {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(600px, 100%);
+
+    padding:
+        65px 55px
+        55px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    border-radius: 36px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.78),
+            rgba(249, 235, 244, 0.72)
+        );
+
+    border:
+        1px solid
+        rgba(191, 151, 84, 0.42);
+
+    box-shadow:
+        0 25px 70px
+        rgba(113, 75, 97, 0.10),
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.90);
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* Marco interior */
+
+.rsvp-premium-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 9px;
+
+    border-radius: 28px;
+
+    border:
+        1px solid
+        rgba(191, 151, 84, 0.14);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   RESPLANDOR
+========================================================= */
+
+.rsvp-success-glow {
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    top: -110px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(244, 218, 235, 0.55),
+            rgba(244, 218, 235, 0.15) 45%,
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CHECK
+========================================================= */
+
+.rsvp-premium-check,
+.rsvp-premium-heart {
+    position: relative;
+
+    z-index: 3;
+
+    width: 76px;
+    height: 76px;
+
+    margin:
+        0 auto
+        25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            145deg,
+            #b67b9d,
+            #98627f
+        );
+
+    border:
+        2px solid
+        rgba(220, 188, 119, 0.70);
+
+    box-shadow:
+        0 12px 32px
+        rgba(129, 79, 107, 0.20),
+        0 0 0 7px
+        rgba(255, 255, 255, 0.40);
+}
+
+
+.rsvp-premium-heart {
+    background:
+        linear-gradient(
+            145deg,
+            #c692ad,
+            #a87391
+        );
+}
+
+
+/* =========================================================
+   TEXTO PEQUEÑO
+========================================================= */
+
+.rsvp-premium-small {
+    margin:
+        0 0
+        13px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    color: #9c7a8a;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.rsvp-premium-title {
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(
+            42px,
+            6vw,
+            58px
+        );
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #846976;
+}
+
+
+/* =========================================================
+   DIVISOR
+========================================================= */
+
+.rsvp-premium-divider {
+    width: min(300px, 75%);
+
+    margin:
+        27px auto
+        24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    transform-origin: center;
+}
+
+
+.rsvp-premium-divider span {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(190, 150, 82, 0.65),
+            transparent
+        );
+}
+
+
+.rsvp-premium-divider i {
+    color: #bf9958;
+
+    font-size: 10px;
+
+    font-style: normal;
+}
+
+
+/* =========================================================
+   NOMBRE
+========================================================= */
+
+.rsvp-premium-name {
+    margin:
+        0 0
+        17px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    color: #a27b8e;
+}
+
+
+/* =========================================================
+   MENSAJE
+========================================================= */
+
+.rsvp-premium-message {
+    max-width: 410px;
+
+    margin: 0 auto;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 21px;
+
+    font-weight: 400;
+
+    line-height: 1.65;
+
+    color: #7f6c75;
+}
+
+
+/* =========================================================
+   PERSONAS CONFIRMADAS
+========================================================= */
+
+.rsvp-premium-guests {
+    width: fit-content;
+
+    margin:
+        25px auto
+        0;
+
+    padding:
+        10px 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 999px;
+
+    border:
+        1px solid
+        rgba(190, 150, 82, 0.30);
+
+    background:
+        rgba(255, 255, 255, 0.45);
+
+    color: #987488;
+}
+
+
+.rsvp-premium-guests span {
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   FIRMA CAMILA
+========================================================= */
+
+.rsvp-premium-signature {
+    margin-top: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    color: #ba9252;
+}
+
+
+.rsvp-premium-signature strong {
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 45px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #a16e89;
+}
+
+
+.rsvp-premium-signature span {
+    color: #b47a98;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   BOTÓN MODIFICAR
+========================================================= */
+
+.rsvp-premium-modify {
+    margin-top: 30px;
+
+    padding:
+        13px 24px;
+
+    border-radius: 999px;
+
+    border:
+        1px solid
+        rgba(188, 148, 82, 0.48);
+
+    background:
+        rgba(255, 255, 255, 0.50);
+
+    color: #896d7a;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.8px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 9px 25px
+        rgba(118, 79, 101, 0.06);
+}
+
+
+/* =========================================================
+   PARTÍCULAS
+========================================================= */
+
+.rsvp-particles {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 4;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+.rsvp-particle {
+    position: absolute;
+
+    top: -30px;
+
+    pointer-events: none;
+}
+
+
+/* Pétalos */
+
+.rsvp-petal {
+    width: 13px;
+    height: 18px;
+
+    border-radius:
+        80% 20%
+        70% 30%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e9bfd8,
+            #cfa1c2
+        );
+
+    box-shadow:
+        0 3px 8px
+        rgba(130, 86, 112, 0.10);
+}
+
+
+/* Destellos */
+
+.rsvp-spark {
+    color: #c5a05d;
+
+    font-size: 12px;
+
+    text-shadow:
+        0 0 9px
+        rgba(197, 160, 93, 0.30);
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .rsvp-premium-result {
+        min-height: 680px;
+
+        padding:
+            75px 15px;
+    }
+
+
+    .rsvp-premium-card {
+        width: 100%;
+
+        padding:
+            52px 22px
+            45px;
+
+        border-radius: 28px;
+    }
+
+
+    .rsvp-premium-card::before {
+        inset: 7px;
+
+        border-radius: 21px;
+    }
+
+
+    .rsvp-premium-check,
+    .rsvp-premium-heart {
+        width: 68px;
+        height: 68px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .rsvp-premium-small {
+        font-size: 7px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .rsvp-premium-title {
+        font-size:
+            clamp(
+                38px,
+                11vw,
+                48px
+            );
+    }
+
+
+    .rsvp-premium-message {
+        max-width: 300px;
+
+        font-size: 19px;
+    }
+
+
+    .rsvp-premium-signature strong {
+        font-size: 41px;
+    }
+
+
+    .rsvp-premium-modify {
+        font-size: 7px;
+
+        letter-spacing: 1.4px;
+    }
+
+}
