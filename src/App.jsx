@@ -6,140 +6,226 @@ import Hero from "./components/Hero";
 import MessageLetter from "./components/MessageLetter";
 import Countdown from "./components/Countdown";
 import Family from "./components/Family";
+import EventDetails from "./components/EventDetails";
 import Litinerary from "./components/Litinerary";
 import DressCode from "./components/DressCode";
 import Gallery from "./components/Gallery";
 import Gifts from "./components/Gifts";
 import RSVP from "./components/RSVP";
-import "./App.css";
-import EventDetails from "./components/EventDetails";
-import { Gift } from "lucide-react";
 import Closing from "./components/Closing";
 import MagicDecorations from "./components/MagicDecorations";
 import ScrollReveal from "./components/ScrollReveal";
-import OpeningTrasition from "./components/OpeningTransition";
+import OpeningTransition from "./components/OpeningTransition";
 
-
+import "./App.css";
 
 
 function App() {
 
-    const [opened, setOpened] =
-        useState(false);
+    const [opened, setOpened] = useState(false);
 
     const [opening, setOpening] = useState(false);
 
-    const musicRef =
-        useRef(null);
+    const musicRef = useRef(null);
+
 
     const handleOpen = async () => {
-    if (opening) return;
 
-    setOpening(true);
+        // Evitar doble clic
+        if (opening) return;
 
-    // Iniciar música inmediatamente después del toque del usuario
-    try {
-        await musicRef.current?.playMusic();
-    } catch (error) {
-        console.log("No se pudo iniciar la música:", error);
-    }
+        // Oculta portada y comienza transición
+        setOpening(true);
 
-    // Esperar la animación cinematográfica
-    setTimeout(() => {
-        setOpened(true);
-        setOpening(false);
+        // Iniciar música
+        try {
 
-        window.scrollTo({
-            top: 0,
-            behavior: "instant"
-        });
-    }, 1800);
-};
+            await musicRef.current?.playMusic();
+
+        } catch (error) {
+
+            console.log(
+                "No se pudo iniciar la música:",
+                error
+            );
+
+        }
+
+
+        // Esperamos a que termine la animación
+        setTimeout(() => {
+
+            setOpened(true);
+
+            setOpening(false);
+
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "instant"
+            });
+
+        }, 1800);
+
+    };
+
 
     return (
         <>
 
-            {!opened && !opening && (
-            <Cover onOpen={handleOpen} />
-        )}
+            {/* ===============================
+                PORTADA
+            =============================== */}
 
+            {!opened && !opening && (
+
+                <Cover
+                    onOpen={handleOpen}
+                />
+
+            )}
+
+
+            {/* ===============================
+                MÚSICA
+            =============================== */}
 
             <MusicPlayer
                 ref={musicRef}
             />
 
+
+            {/* ===============================
+                TRANSICIÓN DE APERTURA
+            =============================== */}
+
             {opening && (
-            <OpeningTransition />
-        )}
+
+                <OpeningTransition />
+
+            )}
+
+
+            {/* ===============================
+                INVITACIÓN
+            =============================== */}
 
             {opened && (
 
                 <main className="invitation">
-                    
+
+
+                    {/* HERO */}
+
                     <ScrollReveal>
+
                         <Hero />
+
                     </ScrollReveal>
-                    
+
+
+                    {/* MENSAJE */}
 
                     <ScrollReveal>
+
                         <MessageLetter />
+
                     </ScrollReveal>
-                    
+
+
+                    {/* CONTADOR */}
+
                     <ScrollReveal>
+
                         <Countdown />
+
                     </ScrollReveal>
-                    
+
+
+                    {/* FAMILIA */}
+
                     <ScrollReveal>
+
                         <Family />
+
                     </ScrollReveal>
-                    
+
+
+                    {/* DETALLES DEL EVENTO */}
+
                     <ScrollReveal>
+
                         <EventDetails />
+
                     </ScrollReveal>
-                    
+
+
+                    {/* ITINERARIO */}
+
                     <ScrollReveal>
+
                         <Litinerary />
+
                     </ScrollReveal>
-                    
+
+
+                    {/* VESTIMENTA */}
+
                     <ScrollReveal>
+
                         <DressCode />
+
                     </ScrollReveal>
-                    
+
+
+                    {/* GALERÍA */}
+
                     <ScrollReveal>
+
                         <Gallery />
+
                     </ScrollReveal>
-                    
+
+
+                    {/* REGALOS */}
+
                     <ScrollReveal>
+
                         <Gifts />
+
                     </ScrollReveal>
-                    
+
+
+                    {/* CONFIRMACIÓN */}
+
                     <ScrollReveal>
+
                         <RSVP />
+
                     </ScrollReveal>
-                    
+
+
+                    {/* CIERRE */}
+
                     <ScrollReveal>
+
                         <Closing />
-                    </ScrollReveal>
-                    
-                    <ScrollReveal>
-                        <MagicDecorations />
+
                     </ScrollReveal>
 
-                    <ScrollReveal>
-                        <OpeningTrasition />
-                    </ScrollReveal>
-                     
 
-                    
-                    
+                    {/* DECORACIONES GLOBALES */}
+
+                    <MagicDecorations />
+
 
                 </main>
-
 
             )}
 
         </>
     );
 }
+
 
 export default App;
