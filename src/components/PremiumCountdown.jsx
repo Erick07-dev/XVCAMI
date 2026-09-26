@@ -2,14 +2,16 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CalendarDays, Sparkles } from "lucide-react";
 
-const eventDate = new Date("2026-11-16T18:00:00");
+import "./PremiumCountdown.css";
 
-export default function Countdown() {
+const EVENT_DATE = new Date("2026-11-16T18:00:00");
 
-    const calculateTimeLeft = () => {
+export default function PremiumCountdown() {
+
+    const calculateTime = () => {
 
         const difference =
-            eventDate.getTime() - new Date().getTime();
+            EVENT_DATE.getTime() - new Date().getTime();
 
         if (difference <= 0) {
             return {
@@ -40,26 +42,45 @@ export default function Countdown() {
     };
 
 
-    const [timeLeft, setTimeLeft] =
-        useState(calculateTimeLeft());
+    const [time, setTime] =
+        useState(calculateTime());
 
 
     useEffect(() => {
 
-        const timer = setInterval(() => {
+        const interval = setInterval(() => {
 
-            setTimeLeft(calculateTimeLeft());
+            setTime(calculateTime());
 
         }, 1000);
 
-
-        return () => clearInterval(timer);
+        return () => clearInterval(interval);
 
     }, []);
 
 
-    const formatNumber = (number) =>
-        String(number).padStart(2, "0");
+    const format = (value) =>
+        String(value).padStart(2, "0");
+
+
+    const units = [
+        {
+            value: time.days,
+            label: "DÍAS"
+        },
+        {
+            value: time.hours,
+            label: "HORAS"
+        },
+        {
+            value: time.minutes,
+            label: "MINUTOS"
+        },
+        {
+            value: time.seconds,
+            label: "SEGUNDOS"
+        }
+    ];
 
 
     const addToCalendar = () => {
@@ -67,18 +88,15 @@ export default function Countdown() {
         const calendarData = [
             "BEGIN:VCALENDAR",
             "VERSION:2.0",
+            "PRODID:-//XV Camila//ES",
             "BEGIN:VEVENT",
-
             "DTSTART:20261116T180000",
             "DTEND:20261116T235900",
-
             "SUMMARY:Mis XV Años - Camila",
-
             "DESCRIPTION:Celebración de los XV años de Camila.",
-
             "END:VEVENT",
             "END:VCALENDAR"
-        ].join("\n");
+        ].join("\r\n");
 
 
         const blob = new Blob(
@@ -113,84 +131,75 @@ export default function Countdown() {
     };
 
 
-    const units = [
-        {
-            value: timeLeft.days,
-            label: "DÍAS"
-        },
-        {
-            value: timeLeft.hours,
-            label: "HORAS"
-        },
-        {
-            value: timeLeft.minutes,
-            label: "MIN"
-        },
-        {
-            value: timeLeft.seconds,
-            label: "SEG"
-        }
-    ];
-
-
     return (
 
-        <section className="premium-countdown">
+        <section className="xv-premium-countdown">
 
-            {/* Destellos */}
+            {/* FONDOS DECORATIVOS */}
 
-            <div className="countdown-magic">
+            <div className="xv-countdown-glow xv-glow-one" />
 
-                <motion.span
-                    className="countdown-star star-one"
-                    animate={{
-                        opacity: [0.2, 1, 0.2],
-                        scale: [0.7, 1.3, 0.7],
-                        rotate: [0, 45, 0]
-                    }}
-                    transition={{
-                        duration: 3,
-                        repeat: Infinity
-                    }}
-                >
-                    ✦
-                </motion.span>
+            <div className="xv-countdown-glow xv-glow-two" />
 
 
-                <motion.span
-                    className="countdown-star star-two"
-                    animate={{
-                        opacity: [1, 0.2, 1],
-                        scale: [1.2, 0.7, 1.2]
-                    }}
-                    transition={{
-                        duration: 4,
-                        repeat: Infinity
-                    }}
-                >
-                    ✦
-                </motion.span>
+            {/* DESTELLOS */}
+
+            <motion.span
+                className="xv-countdown-sparkle xv-sparkle-one"
+
+                animate={{
+                    opacity: [0.2, 1, 0.2],
+                    scale: [0.7, 1.3, 0.7],
+                    rotate: [0, 90, 180]
+                }}
+
+                transition={{
+                    duration: 3,
+                    repeat: Infinity
+                }}
+            >
+                ✦
+            </motion.span>
 
 
-                <motion.span
-                    className="countdown-star star-three"
-                    animate={{
-                        opacity: [0.3, 1, 0.3],
-                        y: [0, -8, 0]
-                    }}
-                    transition={{
-                        duration: 3.5,
-                        repeat: Infinity
-                    }}
-                >
-                    ✧
-                </motion.span>
+            <motion.span
+                className="xv-countdown-sparkle xv-sparkle-two"
 
-            </div>
+                animate={{
+                    opacity: [1, 0.3, 1],
+                    scale: [1, 0.7, 1]
+                }}
 
+                transition={{
+                    duration: 4,
+                    repeat: Infinity
+                }}
+            >
+                ✧
+            </motion.span>
+
+
+            <motion.span
+                className="xv-countdown-sparkle xv-sparkle-three"
+
+                animate={{
+                    opacity: [0.3, 1, 0.3],
+                    y: [0, -10, 0]
+                }}
+
+                transition={{
+                    duration: 3.5,
+                    repeat: Infinity
+                }}
+            >
+                ✦
+            </motion.span>
+
+
+            {/* CONTENIDO */}
 
             <motion.div
-                className="countdown-content"
+                className="xv-countdown-container"
 
                 initial={{
                     opacity: 0,
@@ -204,19 +213,19 @@ export default function Countdown() {
 
                 viewport={{
                     once: false,
-                    amount: 0.2
+                    amount: 0.15
                 }}
 
                 transition={{
-                    duration: 0.9,
-                    ease: "easeOut"
+                    duration: 0.8,
+                    ease: [0.22, 1, 0.36, 1]
                 }}
             >
 
-                {/* Icono */}
+                {/* ICONO */}
 
                 <motion.div
-                    className="countdown-icon"
+                    className="xv-countdown-icon"
 
                     animate={{
                         y: [0, -5, 0]
@@ -229,32 +238,37 @@ export default function Countdown() {
                     }}
                 >
 
-                    <Sparkles size={21} />
+                    <Sparkles size={22} />
 
                 </motion.div>
 
 
-                {/* Texto superior */}
+                {/* SUBTÍTULO */}
 
-                <p className="countdown-small-title">
+                <p className="xv-countdown-eyebrow">
 
                     CADA VEZ FALTA MENOS
 
                 </p>
 
 
-                <h2 className="countdown-title">
+                {/* TÍTULO */}
 
-                    Para celebrar un día
+                <h2 className="xv-countdown-heading">
+
+                    Para celebrar
                     <br />
-                    inolvidable
+
+                    <span>
+                        un día inolvidable
+                    </span>
 
                 </h2>
 
 
-                {/* Separador */}
+                {/* DIVISOR */}
 
-                <div className="countdown-divider">
+                <div className="xv-countdown-divider">
 
                     <span />
 
@@ -267,25 +281,27 @@ export default function Countdown() {
 
                 {/* CONTADOR */}
 
-                <div className="countdown-numbers">
+                <div className="xv-countdown-grid">
 
                     {units.map((unit) => (
 
                         <div
-                            className="countdown-unit"
+                            className="xv-countdown-card"
                             key={unit.label}
                         >
 
-                            <div className="countdown-number-wrapper">
+                            <div className="xv-countdown-number">
 
-                                <AnimatePresence mode="popLayout">
+                                <AnimatePresence
+                                    mode="popLayout"
+                                >
 
                                     <motion.strong
                                         key={unit.value}
 
                                         initial={{
                                             opacity: 0,
-                                            y: -12,
+                                            y: -10,
                                             scale: 0.9
                                         }}
 
@@ -297,18 +313,16 @@ export default function Countdown() {
 
                                         exit={{
                                             opacity: 0,
-                                            y: 12,
+                                            y: 10,
                                             scale: 0.9
                                         }}
 
                                         transition={{
-                                            duration: 0.35
+                                            duration: 0.3
                                         }}
                                     >
 
-                                        {formatNumber(
-                                            unit.value
-                                        )}
+                                        {format(unit.value)}
 
                                     </motion.strong>
 
@@ -317,7 +331,7 @@ export default function Countdown() {
                             </div>
 
 
-                            <span>
+                            <span className="xv-countdown-label">
 
                                 {unit.label}
 
@@ -330,9 +344,9 @@ export default function Countdown() {
                 </div>
 
 
-                {/* Fecha */}
+                {/* FECHA */}
 
-                <div className="countdown-date">
+                <div className="xv-countdown-date">
 
                     <span />
 
@@ -345,7 +359,9 @@ export default function Countdown() {
                 </div>
 
 
-                <p className="countdown-romantic-text">
+                {/* MENSAJE */}
+
+                <p className="xv-countdown-message">
 
                     ♡ Camila espera compartir
                     este momento contigo ♡
@@ -353,12 +369,12 @@ export default function Countdown() {
                 </p>
 
 
-                {/* Calendario */}
+                {/* BOTÓN */}
 
                 <motion.button
                     type="button"
 
-                    className="countdown-calendar-button"
+                    className="xv-calendar-button"
 
                     onClick={addToCalendar}
 

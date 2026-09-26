@@ -1,0 +1,1032 @@
+/* =========================================================
+   XV CAMILA
+   PREMIUM COUNTDOWN
+   Diseño integrado con la invitación
+========================================================= */
+
+
+/* =========================================================
+   SECCIÓN PRINCIPAL
+========================================================= */
+
+.xv-premium-countdown {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 105px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    /* MISMO COLOR GLOBAL */
+    background: var(--xv-bg-main) !important;
+
+    margin: 0 !important;
+
+    border: 0 !important;
+
+    outline: 0 !important;
+
+    box-shadow: none !important;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   LUZ CENTRAL
+========================================================= */
+
+.xv-premium-countdown::before {
+    content: "";
+
+    position: absolute;
+
+    width: 750px;
+    height: 750px;
+
+    left: 50%;
+    top: 45%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 240, 249, 0.18) 0%,
+            rgba(240, 213, 234, 0.10) 40%,
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   IMPORTANTE:
+   NO CREAMOS UNA FRANJA SUPERIOR O INFERIOR
+========================================================= */
+
+.xv-premium-countdown::after {
+    content: none !important;
+    display: none !important;
+}
+
+
+/* =========================================================
+   LUCES DECORATIVAS
+========================================================= */
+
+.xv-countdown-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(18px);
+
+    z-index: 0;
+}
+
+
+/* Luz superior izquierda */
+
+.xv-glow-one {
+    width: 430px;
+    height: 430px;
+
+    top: -230px;
+    left: -220px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(218, 184, 211, 0.16),
+            transparent 70%
+        );
+}
+
+
+/* Luz inferior derecha */
+
+.xv-glow-two {
+    width: 480px;
+    height: 480px;
+
+    right: -240px;
+    bottom: -250px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(205, 185, 220, 0.14),
+            transparent 70%
+        );
+}
+
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+========================================================= */
+
+.xv-countdown-container {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(900px, 100%);
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   ICONO SUPERIOR
+========================================================= */
+
+.xv-countdown-icon {
+    position: relative;
+
+    width: 56px;
+    height: 56px;
+
+    margin: 0 auto 21px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #9d6387;
+
+    background:
+        rgba(
+            255,
+            248,
+            251,
+            0.78
+        );
+
+    border:
+        1px solid
+        rgba(
+            194,
+            157,
+            91,
+            0.52
+        );
+
+    box-shadow:
+        0 10px 28px
+        rgba(
+            119,
+            76,
+            106,
+            0.08
+        );
+}
+
+
+/* Círculo decorativo */
+
+.xv-countdown-icon::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -6px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(
+            194,
+            157,
+            91,
+            0.10
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TEXTO SUPERIOR
+========================================================= */
+
+.xv-countdown-eyebrow {
+    margin: 0 0 15px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 6px;
+
+    color: #987487;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.xv-countdown-heading {
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(
+            43px,
+            6vw,
+            67px
+        );
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #806772;
+}
+
+
+.xv-countdown-heading span {
+    color: #9d7589;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   DIVISOR
+========================================================= */
+
+.xv-countdown-divider {
+    width: min(370px, 76%);
+
+    margin:
+        30px auto
+        40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+}
+
+
+.xv-countdown-divider span {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(
+                187,
+                145,
+                77,
+                0.65
+            ),
+            transparent
+        );
+}
+
+
+.xv-countdown-divider i {
+    color: #bd9656;
+
+    font-size: 10px;
+
+    font-style: normal;
+
+    text-shadow:
+        0 0 10px
+        rgba(
+            189,
+            150,
+            86,
+            0.20
+        );
+}
+
+
+/* =========================================================
+   GRID DEL CONTADOR
+========================================================= */
+
+.xv-countdown-grid {
+    width: min(760px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   TARJETAS
+========================================================= */
+
+.xv-countdown-card {
+    position: relative;
+
+    min-width: 0;
+
+    padding:
+        28px 8px
+        23px;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(
+                255,
+                255,
+                255,
+                0.70
+            ),
+            rgba(
+                246,
+                231,
+                240,
+                0.55
+            )
+        );
+
+    border:
+        1px solid
+        rgba(
+            190,
+            151,
+            88,
+            0.30
+        );
+
+    box-shadow:
+        0 14px 36px
+        rgba(
+            119,
+            76,
+            104,
+            0.07
+        ),
+        inset 0 1px 0
+        rgba(
+            255,
+            255,
+            255,
+            0.75
+        );
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+}
+
+
+/* Marco interior */
+
+.xv-countdown-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 6px;
+
+    border-radius: 19px;
+
+    border:
+        1px solid
+        rgba(
+            190,
+            151,
+            88,
+            0.10
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   BRILLO DE LAS TARJETAS
+========================================================= */
+
+.xv-countdown-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    transform:
+        skewX(-18deg);
+
+    background:
+        linear-gradient(
+            100deg,
+            transparent,
+            rgba(
+                255,
+                255,
+                255,
+                0.55
+            ),
+            transparent
+        );
+
+    animation:
+        xvCountdownShine
+        8s ease-in-out
+        infinite;
+
+    pointer-events: none;
+}
+
+
+@keyframes xvCountdownShine {
+
+    0%,
+    68% {
+        left: -120%;
+    }
+
+    100% {
+        left: 160%;
+    }
+
+}
+
+
+/* =========================================================
+   NÚMEROS
+========================================================= */
+
+.xv-countdown-number {
+    position: relative;
+
+    z-index: 2;
+
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.xv-countdown-number strong {
+    position: absolute;
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(
+            45px,
+            6vw,
+            68px
+        );
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #9f6c87;
+
+    text-shadow:
+        0 4px 14px
+        rgba(
+            111,
+            70,
+            92,
+            0.07
+        );
+}
+
+
+/* =========================================================
+   DÍAS / HORAS / MINUTOS / SEGUNDOS
+========================================================= */
+
+.xv-countdown-label {
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    margin-top: 7px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color: #8c6e7e;
+}
+
+
+/* =========================================================
+   FECHA
+========================================================= */
+
+.xv-countdown-date {
+    width: min(540px, 92%);
+
+    margin:
+        42px auto
+        0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+}
+
+
+.xv-countdown-date > span {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(
+                190,
+                151,
+                88,
+                0.60
+            ),
+            transparent
+        );
+}
+
+
+.xv-countdown-date p {
+    margin: 0;
+
+    white-space: nowrap;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 3px;
+
+    color: #876b7b;
+}
+
+
+/* =========================================================
+   MENSAJE
+========================================================= */
+
+.xv-countdown-message {
+    max-width: 460px;
+
+    margin:
+        27px auto
+        0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    line-height: 1.5;
+
+    color: #927286;
+}
+
+
+/* =========================================================
+   BOTÓN CALENDARIO
+========================================================= */
+
+.xv-calendar-button {
+    margin-top: 29px;
+
+    padding:
+        15px 27px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border-radius: 999px;
+
+    border:
+        1px solid
+        rgba(
+            188,
+            148,
+            82,
+            0.60
+        );
+
+    background:
+        linear-gradient(
+            135deg,
+            #a96d92,
+            #936080
+        );
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px
+        rgba(
+            117,
+            73,
+            100,
+            0.15
+        );
+
+    transition:
+        box-shadow
+        0.3s ease,
+        background
+        0.3s ease;
+}
+
+
+.xv-calendar-button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #b2789c,
+            #9c6988
+        );
+
+    box-shadow:
+        0 15px 35px
+        rgba(
+            117,
+            73,
+            100,
+            0.20
+        );
+}
+
+
+.xv-calendar-button svg {
+    flex-shrink: 0;
+
+    color: #f5dfad;
+}
+
+
+.xv-calendar-button span {
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   DESTELLOS
+========================================================= */
+
+.xv-countdown-sparkle {
+    position: absolute;
+
+    z-index: 3;
+
+    color: #c39d5c;
+
+    pointer-events: none;
+
+    text-shadow:
+        0 0 12px
+        rgba(
+            195,
+            157,
+            92,
+            0.30
+        );
+}
+
+
+.xv-sparkle-one {
+    top: 18%;
+    left: 9%;
+
+    font-size: 16px;
+}
+
+
+.xv-sparkle-two {
+    top: 32%;
+    right: 8%;
+
+    font-size: 13px;
+}
+
+
+.xv-sparkle-three {
+    bottom: 18%;
+    left: 12%;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   TABLET Y CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .xv-premium-countdown {
+        min-height: auto;
+
+        padding:
+            85px 14px;
+    }
+
+
+    .xv-countdown-icon {
+        width: 50px;
+        height: 50px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .xv-countdown-eyebrow {
+        font-size: 8px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .xv-countdown-heading {
+        font-size:
+            clamp(
+                39px,
+                12vw,
+                49px
+            );
+
+        line-height: 1.02;
+    }
+
+
+    .xv-countdown-divider {
+        width: 65%;
+
+        margin:
+            25px auto
+            32px;
+    }
+
+
+    .xv-countdown-grid {
+        width: 100%;
+
+        grid-template-columns:
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
+
+        gap: 7px;
+    }
+
+
+    .xv-countdown-card {
+        padding:
+            21px 2px
+            18px;
+
+        border-radius: 18px;
+    }
+
+
+    .xv-countdown-card::before {
+        inset: 4px;
+
+        border-radius: 14px;
+    }
+
+
+    .xv-countdown-number {
+        height: 49px;
+    }
+
+
+    .xv-countdown-number strong {
+        font-size:
+            clamp(
+                32px,
+                10vw,
+                44px
+            );
+    }
+
+
+    .xv-countdown-label {
+        margin-top: 5px;
+
+        font-size: 5.5px;
+
+        letter-spacing: 0.7px;
+    }
+
+
+    .xv-countdown-date {
+        width: 96%;
+
+        margin-top: 32px;
+
+        gap: 7px;
+    }
+
+
+    .xv-countdown-date p {
+        font-size: 7px;
+
+        letter-spacing: 1.4px;
+    }
+
+
+    .xv-countdown-message {
+        max-width: 285px;
+
+        margin-top: 23px;
+
+        font-size: 18px;
+    }
+
+
+    .xv-calendar-button {
+        width: min(
+            290px,
+            92%
+        );
+
+        padding:
+            14px 16px;
+
+        margin-top: 24px;
+    }
+
+
+    .xv-calendar-button span {
+        font-size: 7px;
+
+        letter-spacing: 1.4px;
+    }
+
+
+    .xv-sparkle-one {
+        left: 5%;
+    }
+
+
+    .xv-sparkle-two {
+        right: 5%;
+    }
+
+
+    .xv-sparkle-three {
+        left: 5%;
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES PEQUEÑOS
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .xv-premium-countdown {
+        padding:
+            75px 10px;
+    }
+
+
+    .xv-countdown-heading {
+        font-size: 38px;
+    }
+
+
+    .xv-countdown-grid {
+        gap: 5px;
+    }
+
+
+    .xv-countdown-card {
+        padding:
+            18px 1px
+            15px;
+    }
+
+
+    .xv-countdown-number strong {
+        font-size: 33px;
+    }
+
+
+    .xv-countdown-label {
+        font-size: 5px;
+
+        letter-spacing: 0.4px;
+    }
+
+
+    .xv-countdown-date p {
+        font-size: 6px;
+
+        letter-spacing: 1px;
+    }
+
+}

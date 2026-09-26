@@ -965,24 +965,34 @@ body {
 ========================= */
 
 .countdown-section {
-
     position: relative;
-
     overflow: hidden;
 
-    padding:
-        110px 20px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #fff8fb 0%,
-            #fff0f5 45%,
-            #f9dbe6 100%
-        );
+    padding: 110px 20px;
 
     text-align: center;
 
+    /*
+       Ahora sí tiene color visible:
+       rosa perla -> rosa suave -> lila rosado
+    */
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(255, 255, 255, 0.40) 0%,
+            rgba(255, 255, 255, 0.10) 35%,
+            transparent 65%
+        ),
+        linear-gradient(
+            180deg,
+            #f7e3eb 0%,
+            #f3d8e5 25%,
+            #ead8ec 52%,
+            #e7d3e9 72%,
+            #f9dbe6 100%
+        );
+
+    color: #684351;
 }
 
 .countdown-section::before {
@@ -991,8 +1001,8 @@ body {
 
     position: absolute;
 
-    width: 450px;
-    height: 450px;
+    width: 520px;
+    height: 520px;
 
     border-radius: 50%;
 
@@ -1002,43 +1012,41 @@ body {
     background:
         radial-gradient(
             circle,
-            rgba(
-                201,
-                154,
-                61,
-                .15
-            ),
-            transparent 70%
+            rgba(213, 177, 205, 0.50) 0%,
+            rgba(224, 197, 218, 0.22) 42%,
+            transparent 72%
         );
+
+        filter: blur(5px);
+
+    pointer-events: none;
 
 }
 
 .countdown-section::after {
-
     content: "";
 
     position: absolute;
 
-    width: 400px;
-    height: 400px;
+    width: 520px;
+    height: 520px;
 
     border-radius: 50%;
 
-    right: -180px;
-    bottom: -180px;
+    right: -220px;
+    bottom: -220px;
 
     background:
         radial-gradient(
             circle,
-            rgba(
-                181,
-                45,
-                91,
-                .10
-            ),
-            transparent 70%
+            rgba(190, 167, 207, 0.42) 0%,
+            rgba(224, 198, 218, 0.18) 45%,
+            transparent 72%
         );
 
+    filter: blur(5px);
+
+    pointer-events: none;
 }
 
 .countdown-content {
@@ -16444,4 +16452,990 @@ select {
         width: 170px;
         height: 170px;
     }
+}
+
+/* =========================================================
+   COUNTDOWN PREMIUM - XV CAMILA
+   Paleta suave: rosa perla + lila suave + dorado
+========================================================= */
+
+.premium-countdown {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 105px 20px 110px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    /*
+        Fondo continuo y delicado.
+        Evita franjas lilas fuertes entre secciones.
+    */
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(255, 255, 255, 0.55) 35%,
+            rgba(255, 255, 255, 0) 65%
+        ),
+        linear-gradient(
+            180deg,
+            #fbf7f9 0%,
+            #faf4f8 25%,
+            #f8f0f6 55%,
+            #faf4f8 78%,
+            #fbf7f9 100%
+        );
+
+    color: #876f79;
+}
+
+
+/* =========================================================
+   TRANSICIÓN SUPERIOR
+========================================================= */
+
+.premium-countdown::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 170px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(251, 247, 249, 1) 0%,
+            rgba(251, 247, 249, 0.75) 35%,
+            rgba(251, 247, 249, 0) 100%
+        );
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   TRANSICIÓN INFERIOR
+========================================================= */
+
+.premium-countdown::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 170px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(251, 247, 249, 1) 0%,
+            rgba(251, 247, 249, 0.70) 35%,
+            rgba(251, 247, 249, 0) 100%
+        );
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   CONTENIDO
+========================================================= */
+
+.countdown-content {
+    position: relative;
+
+    z-index: 3;
+
+    width: min(900px, 100%);
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   ICONO SUPERIOR
+========================================================= */
+
+.countdown-icon {
+    position: relative;
+
+    width: 52px;
+    height: 52px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #a77b8f;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.88),
+            rgba(246, 234, 243, 0.82)
+        );
+
+    border:
+        1px solid
+        rgba(194, 157, 91, 0.45);
+
+    box-shadow:
+        0 10px 30px
+        rgba(129, 91, 112, 0.08),
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.95);
+}
+
+
+/* Halo alrededor del icono */
+
+.countdown-icon::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -7px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(194, 157, 91, 0.10);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TEXTO PEQUEÑO
+========================================================= */
+
+.countdown-small-title {
+    margin: 0 0 15px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 6px;
+
+    color: #a17f8d;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.countdown-title {
+    margin: 0 auto;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(
+            42px,
+            6vw,
+            66px
+        );
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #846d77;
+
+    text-shadow:
+        0 4px 18px
+        rgba(126, 94, 108, 0.05);
+}
+
+
+/* =========================================================
+   DIVISOR DORADO
+========================================================= */
+
+.countdown-divider {
+    width: min(360px, 75%);
+
+    margin: 30px auto 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+.countdown-divider span {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(194, 157, 91, 0.60),
+            transparent
+        );
+}
+
+
+.countdown-divider i {
+    color: #c29d5b;
+
+    font-size: 10px;
+
+    font-style: normal;
+
+    text-shadow:
+        0 0 12px
+        rgba(194, 157, 91, 0.25);
+}
+
+
+/* =========================================================
+   CONTENEDOR DE NÚMEROS
+========================================================= */
+
+.countdown-numbers {
+    position: relative;
+
+    z-index: 3;
+
+    width: min(760px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   TARJETAS
+========================================================= */
+
+.countdown-unit {
+    position: relative;
+
+    min-width: 0;
+
+    padding: 28px 8px 23px;
+
+    overflow: hidden;
+
+    border-radius: 26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.78),
+            rgba(250, 242, 247, 0.70)
+        );
+
+    border:
+        1px solid
+        rgba(194, 157, 91, 0.25);
+
+    box-shadow:
+        0 15px 40px
+        rgba(123, 88, 106, 0.07),
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.90);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+}
+
+
+/* Marco interior */
+
+.countdown-unit::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 6px;
+
+    border-radius: 20px;
+
+    border:
+        1px solid
+        rgba(194, 157, 91, 0.08);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   BRILLO QUE RECORRE LAS TARJETAS
+========================================================= */
+
+.countdown-unit::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    transform: skewX(-18deg);
+
+    background:
+        linear-gradient(
+            100deg,
+            transparent,
+            rgba(255, 255, 255, 0.72),
+            transparent
+        );
+
+    animation:
+        countdownPremiumShine
+        7s ease-in-out infinite;
+}
+
+
+@keyframes countdownPremiumShine {
+
+    0%,
+    65% {
+        left: -120%;
+    }
+
+    100% {
+        left: 160%;
+    }
+}
+
+
+/* =========================================================
+   NÚMEROS
+========================================================= */
+
+.countdown-number-wrapper {
+    position: relative;
+
+    z-index: 2;
+
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.countdown-number-wrapper strong {
+    position: absolute;
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(
+            45px,
+            6vw,
+            67px
+        );
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #a57c8d;
+
+    text-shadow:
+        0 4px 15px
+        rgba(132, 91, 110, 0.08);
+}
+
+
+/* DÍAS / HORAS / MIN / SEG */
+
+.countdown-unit > span {
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    margin-top: 7px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    letter-spacing: 2.5px;
+
+    color: #a08791;
+}
+
+
+/* =========================================================
+   FECHA
+========================================================= */
+
+.countdown-date {
+    position: relative;
+
+    z-index: 3;
+
+    width: min(530px, 90%);
+
+    margin: 42px auto 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+.countdown-date span {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(194, 157, 91, 0.50),
+            transparent
+        );
+}
+
+
+.countdown-date p {
+    margin: 0;
+
+    white-space: nowrap;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 3px;
+
+    color: #917984;
+}
+
+
+/* =========================================================
+   TEXTO ROMÁNTICO
+========================================================= */
+
+.countdown-romantic-text {
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 450px;
+
+    margin: 27px auto 0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    line-height: 1.5;
+
+    color: #a18491;
+}
+
+
+/* =========================================================
+   BOTÓN AGREGAR AL CALENDARIO
+========================================================= */
+
+.countdown-calendar-button {
+    position: relative;
+
+    z-index: 4;
+
+    margin-top: 30px;
+
+    min-width: 285px;
+
+    padding: 15px 27px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 11px;
+
+    border:
+        1px solid
+        rgba(194, 157, 91, 0.55);
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.86),
+            rgba(246, 232, 241, 0.88)
+        );
+
+    color: #8b6d7b;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 32px
+        rgba(127, 88, 108, 0.08),
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.95);
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.countdown-calendar-button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(244, 226, 238, 0.94)
+        );
+
+    border-color:
+        rgba(194, 157, 91, 0.75);
+
+    box-shadow:
+        0 16px 38px
+        rgba(127, 88, 108, 0.11);
+}
+
+
+.countdown-calendar-button svg {
+    flex-shrink: 0;
+
+    color: #b08c53;
+}
+
+
+.countdown-calendar-button span {
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color: #896f7a;
+}
+
+
+/* =========================================================
+   DESTELLOS DECORATIVOS
+========================================================= */
+
+.countdown-magic {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+.countdown-star {
+    position: absolute;
+
+    color: #c8a866;
+
+    pointer-events: none;
+
+    text-shadow:
+        0 0 12px
+        rgba(200, 168, 102, 0.22);
+}
+
+
+.star-one {
+    top: 19%;
+    left: 10%;
+
+    font-size: 15px;
+}
+
+
+.star-two {
+    top: 37%;
+    right: 10%;
+
+    font-size: 11px;
+}
+
+
+.star-three {
+    bottom: 20%;
+    left: 8%;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   DECORACIÓN DE LUZ MUY SUAVE
+========================================================= */
+
+.countdown-content::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: -1;
+
+    width: 500px;
+    height: 500px;
+
+    top: 45%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(239, 216, 230, 0.28) 0%,
+            rgba(247, 235, 242, 0.12) 45%,
+            transparent 72%
+        );
+
+    filter: blur(8px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .premium-countdown {
+        min-height: auto;
+
+        padding:
+            85px 14px 90px;
+    }
+
+
+    .countdown-icon {
+        width: 48px;
+        height: 48px;
+
+        margin-bottom: 17px;
+    }
+
+
+    .countdown-small-title {
+        font-size: 8px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .countdown-title {
+        font-size:
+            clamp(
+                39px,
+                12vw,
+                48px
+            );
+
+        line-height: 1.02;
+    }
+
+
+    .countdown-divider {
+        width: 62%;
+
+        margin:
+            24px auto 32px;
+    }
+
+
+    .countdown-numbers {
+        width: 100%;
+
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+
+        gap: 7px;
+    }
+
+
+    .countdown-unit {
+        min-width: 0;
+
+        padding:
+            20px 2px 17px;
+
+        border-radius: 18px;
+    }
+
+
+    .countdown-unit::after {
+        inset: 4px;
+
+        border-radius: 14px;
+    }
+
+
+    .countdown-number-wrapper {
+        height: 48px;
+    }
+
+
+    .countdown-number-wrapper strong {
+        font-size:
+            clamp(
+                33px,
+                10vw,
+                45px
+            );
+    }
+
+
+    .countdown-unit > span {
+        margin-top: 5px;
+
+        font-size: 6px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .countdown-date {
+        width: 96%;
+
+        margin-top: 31px;
+
+        gap: 8px;
+    }
+
+
+    .countdown-date p {
+        font-size: 7px;
+
+        letter-spacing: 1.4px;
+    }
+
+
+    .countdown-romantic-text {
+        max-width: 285px;
+
+        margin-top: 22px;
+
+        font-size: 18px;
+    }
+
+
+    .countdown-calendar-button {
+        width: min(290px, 92%);
+
+        min-width: 0;
+
+        margin-top: 25px;
+
+        padding:
+            14px 16px;
+    }
+
+
+    .countdown-calendar-button span {
+        font-size: 7px;
+
+        letter-spacing: 1.4px;
+    }
+
+
+    .star-one {
+        left: 5%;
+    }
+
+
+    .star-two {
+        right: 5%;
+    }
+
+
+    .star-three {
+        left: 5%;
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES PEQUEÑOS
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .premium-countdown {
+        padding:
+            75px 10px 80px;
+    }
+
+
+    .countdown-title {
+        font-size: 38px;
+    }
+
+
+    .countdown-numbers {
+        gap: 5px;
+    }
+
+
+    .countdown-unit {
+        padding:
+            18px 1px 15px;
+    }
+
+
+    .countdown-number-wrapper strong {
+        font-size: 34px;
+    }
+
+
+    .countdown-date p {
+        font-size: 6px;
+
+        letter-spacing: 1px;
+    }
+
+}
+
+/* =====================================================
+   FONDO GLOBAL UNIFICADO - XV CAMILA
+===================================================== */
+
+:root {
+    --xv-bg-main: #efd8ec;
+}
+
+
+/* Fondo general de toda la invitación */
+
+.invitation {
+    position: relative;
+
+    background: var(--xv-bg-main) !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    gap: 0 !important;
+}
+
+
+/* Todos los ScrollReveal sin separación */
+
+.invitation > .scroll-reveal {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    outline: 0 !important;
+}
+
+
+/* Evitar espacios entre secciones */
+
+.invitation section {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+
+    outline: 0 !important;
 }

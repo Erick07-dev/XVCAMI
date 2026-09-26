@@ -4,7 +4,7 @@ import Cover from "./components/Cover";
 import MusicPlayer from "./components/MusicPlayer";
 import Hero from "./components/Hero";
 import MessageLetter from "./components/MessageLetter";
-import Countdown from "./components/Countdown";
+import PremiumCountdown from "./components/PremiumCountdown";
 import Family from "./components/Family";
 import EventDetails from "./components/EventDetails";
 import Litinerary from "./components/Litinerary";
@@ -16,6 +16,7 @@ import Closing from "./components/Closing";
 import MagicDecorations from "./components/MagicDecorations";
 import ScrollReveal from "./components/ScrollReveal";
 import OpeningTransition from "./components/OpeningTransition";
+
 
 import "./App.css";
 
@@ -137,7 +138,7 @@ function App() {
 
                     <ScrollReveal>
 
-                        <Countdown />
+                        <PremiumCountdown />
 
                     </ScrollReveal>
 
