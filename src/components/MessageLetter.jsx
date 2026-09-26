@@ -158,75 +158,69 @@ export default function MessageLetter() {
 
 
                     <p className="letter-opening">
-                        Querida familia y amigos:
-                    </p>
+    Querida familia y amigos:
+</p>
 
+<p className="letter-text">
+    Hoy estoy por comenzar una de las etapas
+    más bonitas de mi vida, y no podría imaginar
+    este momento sin las personas que han formado
+    parte de mi historia.
+</p>
 
-                    <p className="letter-text">
-                        Hoy estoy por comenzar una de las etapas
-                        más bonitas de mi vida, y no podría imaginar
-                        este momento sin las personas que han formado
-                        parte de mi historia.
-                    </p>
+<p className="letter-text">
+    Cada sonrisa, cada consejo, cada abrazo y
+    cada recuerdo compartido me han acompañado
+    hasta llegar a este día tan especial.
+</p>
 
+<p className="letter-highlight">
+    Por eso, mi mayor regalo será poder celebrar
+    mis XV años junto a ustedes.
+</p>
 
-                    <p className="letter-text">
-                        Cada sonrisa, cada consejo, cada abrazo y
-                        cada recuerdo compartido me han acompañado
-                        hasta llegar a este día tan especial.
-                    </p>
+<p className="letter-text">
+    Deseo que este día esté lleno de alegría,
+    sonrisas, momentos inolvidables y recuerdos
+    que podamos guardar para siempre en el corazón.
+</p>
 
+<p className="letter-thanks">
+    Gracias por acompañarme y formar parte
+    de este momento tan importante en mi vida.
+</p>
 
-                    <p className="letter-highlight">
-                        Por eso, mi mayor regalo será poder celebrar
-                        mis XV años junto a ustedes.
-                    </p>
+{/* Firma */}
 
+<div className="letter-signature">
 
-                    <p className="letter-text">
-                        Deseo que esta noche esté llena de alegría,
-                        momentos inolvidables y recuerdos que podamos
-                        guardar para siempre en el corazón.
-                    </p>
+    <p>
+        Con cariño,
+    </p>
 
+    <motion.h3
+        initial={{
+            opacity: 0,
+            y: 15
+        }}
+        whileInView={{
+            opacity: 1,
+            y: 0
+        }}
+        viewport={{ once: true }}
+        transition={{
+            delay: 0.8,
+            duration: 1
+        }}
+    >
+        Camila
+    </motion.h3>
 
-                    <p className="letter-thanks">
-                        Gracias por formar parte de mi historia.
-                    </p>
+    <span>
+        Mis XV Años
+    </span>
 
-
-                    {/* Firma */}
-
-                    <div className="letter-signature">
-
-                        <p>
-                            Con cariño,
-                        </p>
-
-                        <motion.h3
-                            initial={{
-                                opacity: 0,
-                                y: 15
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                y: 0
-                            }}
-                            viewport={{ once: true }}
-                            transition={{
-                                delay: 0.8,
-                                duration: 1
-                            }}
-                        >
-                            Camila
-                        </motion.h3>
-
-                        <span>
-                            Mis XV Años
-                        </span>
-
-                    </div>
-
+</div>
 
                     {/* Adorno inferior */}
 
