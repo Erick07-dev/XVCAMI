@@ -16123,3 +16123,83 @@ select {
             translateX(6px) !important;
     }
 }
+
+/* =====================================================
+   CAMILA - CENTRADO DEFINITIVO EN CELULAR
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .garden-name {
+        position: relative !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 auto 12px !important;
+
+        padding: 5px 0 15px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        overflow: visible !important;
+
+        /* Quitamos desplazamientos anteriores */
+        transform: none !important;
+    }
+
+    .garden-name h1 {
+        position: relative !important;
+
+        display: block !important;
+
+        width: auto !important;
+        max-width: none !important;
+
+        margin: 0 auto !important;
+
+        /*
+         * Espacio para que el trazo de la C
+         * no vuelva a cortarse
+         */
+        padding: 5px 20px 15px 35px !important;
+
+        font-family: "Great Vibes", cursive !important;
+
+        /*
+         * Sigue grande, pero cabe mejor
+         */
+        font-size: clamp(105px, 29vw, 130px) !important;
+
+        line-height: 1.05 !important;
+
+        text-align: center !important;
+        white-space: nowrap !important;
+
+        overflow: visible !important;
+
+        /* IMPORTANTE */
+        transform: translateX(-10px) !important;
+    }
+
+    /* Estrellas laterales */
+
+    .garden-name > span {
+        position: absolute !important;
+        top: 48% !important;
+
+        font-size: 9px !important;
+
+        z-index: 5 !important;
+    }
+
+    .garden-name > span:first-child {
+        left: 8% !important;
+    }
+
+    .garden-name > span:last-child {
+        right: 8% !important;
+    }
+}
