@@ -35,6 +35,66 @@ const photos = [
     {
         src: "/images/gallery/camila6.png",
         alt: "Recuerdo de Camila"
+    },
+     {
+        src: "/images/gallery/camila7.png",
+        alt: "Recuerdo de Camila"
+    },
+    {
+        src: "/images/gallery/camila8.png",
+        alt: "Recuerdo de Camila"
+    },
+    {
+        src: "/images/gallery/camila9.png",
+        alt: "Recuerdo de Camila"
+    },
+    {
+        src: "/images/gallery/camila10.png",
+        alt: "Recuerdo de Camila"
+    },
+    {
+        src: "/images/gallery/camila11.png",
+        alt: "Recuerdo de Camila"
+    },
+    {
+        src: "/images/gallery/camila12.jpg",
+        alt: "Recuerdo de Camila"
+    } ,
+    {
+        src: "/images/gallery/camila13.png",
+        alt: "Recuerdo de Camila"
+    },
+    {
+        src: "/images/gallery/camila14.png",
+        alt: "Recuerdo de Camila"
+    },
+    {
+        src: "/images/gallery/camila15.png",
+        alt: "Recuerdo de Camila"
+    },
+    {
+        src: "/images/gallery/camila16.png",
+        alt: "Recuerdo de Camila"
+    },
+    {
+        src: "/images/gallery/camila17.png",
+        alt: "Recuerdo de Camila"
+    },
+    {
+        src: "/images/gallery/camila18.png",
+        alt: "Recuerdo de Camila"
+    },
+    {
+        src: "/images/gallery/camila19.png",
+        alt: "Recuerdo de Camila"
+    },
+    {
+        src: "/images/gallery/camila20.jpeg",
+        alt: "Recuerdo de Camila"
+    },
+    {
+        src: "/images/gallery/camila21.gif",
+        alt: "Recuerdo de Camila"
     }
 ];
 
