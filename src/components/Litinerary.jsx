@@ -20,35 +20,42 @@ const events = [
         icon: Church,
     },
     {
-        time: "4:00 P.M HRS",
+        time: "3:00 P.M HRS",
         title: "Recepción",
         description:
             "Es momento de reunirnos y comenzar la celebración.",
         icon: Martini,
     },
     {
-        time: "20:30 HRS",
-        title: "Cena",
+        time: "18:00 HRS",
+        title: "Mesa de Dulces",
         description:
             "Disfrutemos juntos de una cena preparada para esta ocasión.",
         icon: UtensilsCrossed,
     },
     {
-        time: "21:30 HRS",
+        time: "19:00 HRS",
         title: "Vals",
         description:
             "Uno de los momentos más especiales de la noche.",
         icon: Music,
     },
     {
-        time: "22:00 HRS",
+        time: "20:00 HRS",
         title: "Pastel",
         description:
             "Compartamos un dulce momento para celebrar mis XV años.",
         icon: CakeSlice,
     },
     {
-        time: "22:30 HRS",
+        time: "20:20 HRS",
+        title: "Batucada",
+        description:
+            "Compartamos un dulce momento para celebrar mis XV años.",
+        icon: CakeSlice,
+    },
+    {
+        time: "22:00 HRS",
         title: "¡A Bailar!",
         description:
             "Que comience la fiesta. ¡Disfrutemos juntos toda la noche!",

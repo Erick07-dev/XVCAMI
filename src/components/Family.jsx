@@ -71,7 +71,7 @@ export default function Family() {
                             <span>✦</span>
 
                             <h3>
-                                Jorge Gonzalez Perez 
+                                Jorge González Perez 
                             </h3>
 
                             <p>
@@ -90,7 +90,7 @@ export default function Family() {
                             <span>✦</span>
 
                             <h3>
-                                Arina Lizbeth Pineda Garcia
+                                Ariana Pineda Garcia 
                             </h3>
 
                             <p>
