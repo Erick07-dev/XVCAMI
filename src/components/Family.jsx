@@ -90,7 +90,7 @@ export default function Family() {
                             <span>✦</span>
 
                             <h3>
-                                Ariana Pineda Garcia 
+                                Ariana Lizbeth Pineda Garcia 
                             </h3>
 
                             <p>
