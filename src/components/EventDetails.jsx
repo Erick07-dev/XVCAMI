@@ -28,15 +28,15 @@ export default function EventDetails() {
             time: "2:00 P.M.",
             address: "Av. 16 de Enero s/n, El Arenal, Hidalgo",
             icon: Church,
-            map: "https://maps.app.goo.gl/VwvdKBH4m5rBtzYw6"
+            map: "https://maps.app.goo.gl/h51BdkaqrSq6qpoF8"
         },
         {
             type: "RECEPCIÓN",
-            title: "Casa. Fam. Gonzalez Pineda",
+            title: "Casa. Fam. González Pineda",
             time: "4:00 P.M.",
             address: "Av. Mina, El Arenal, Hidalgo",
             icon: PartyPopper,
-            map: "https://maps.app.goo.gl/mPT8jEa33TLFz2Dy7"
+            map: "https://maps.app.goo.gl/R4LTUCPyYQfWkya16"
         }
     ];
 
