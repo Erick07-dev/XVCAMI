@@ -64,7 +64,7 @@ const MusicPlayer = forwardRef(function MusicPlayer(_, ref) {
         <>
             <audio
                 ref={audioRef}
-                src="/music/Coldplay_-_A_sky_full_star_(mp3.pm)"
+                src="/music/Coldplay_-_A_sky_full_star_(mp3.pm).mp3 "
                 loop
                 preload="auto"
             />
